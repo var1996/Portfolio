@@ -39,37 +39,17 @@ export default function CaseStudyCreative() {
     <div className="bg-black grid grid-cols-12 gap-6 pt-20 pb-24">
 
       {/* ── Creative Platform Header ── */}
-      <h2 className="col-start-2 col-span-7 font-body text-[38px] font-normal leading-[1.1] text-white mb-6">
+      <h2 className="col-start-2 col-span-7 font-body text-[38px] font-normal leading-[1.1] text-white">
         Creative Platform
       </h2>
 
-      {/* ── Gallery Row 1: 2 landscape images ── */}
-      <div className="col-start-2 col-span-5 overflow-hidden">
+      {/* ── Creative Platform Image ── */}
+      <div className="col-start-2 col-span-10 mt-8">
         <img
-          src="/assets/casestudy_images"
-          alt="Creative platform 01"
-          className="w-full h-full object-cover aspect-video"
+          src="/assets/casestudy_images/3 Creative Platorm Images.png"
+          alt="Creative platform"
+          className="w-full h-auto object-contain"
         />
-      </div>
-      <div className="col-start-7 col-span-5 overflow-hidden">
-        <img
-          src="/assets/casestudy_images/3 Creative Platform Image 02.png"
-          alt="Creative platform 02"
-          className="w-full h-full object-cover aspect-video"
-        />
-      </div>
-
-      {/* ── Gallery Row 2: 3 portrait images, wrapped in cols 2–11 ── */}
-      <div className="col-start-2 col-span-10 grid grid-cols-3 gap-6">
-        {['03', '04', '05'].map((n) => (
-          <div key={n} className="aspect-[3/4] overflow-hidden">
-            <img
-              src={`/assets/casestudy_images/3 Creative Platform Image ${n}.png`}
-              alt={`Creative platform ${n}`}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        ))}
       </div>
 
       {/* ════════════════ BRAND VOICE ════════════════ */}

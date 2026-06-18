@@ -15,8 +15,8 @@ const tiktokSans = TikTok_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'Design Portfolio',
-  description: 'Design Portfolio',
+  title: 'Varsharanee | Brand Designer',
+  description: 'Brand DesignPortfolio',
 }
 
 export default function RootLayout({

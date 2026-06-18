@@ -8,6 +8,8 @@ import CaseStudyTypography from '@/components/CaseStudyTypography'
 import CaseStudyArtDirection from '@/components/CaseStudyArtDirection'
 import CaseStudyPatterns from '@/components/CaseStudyPatterns'
 import CaseStudyDigital from '@/components/CaseStudyDigital'
+import CaseStudyPhysical from '@/components/CaseStudyPhysical'
+import Footer from '@/components/Footer'
 
 const SERVICES = [
   'CREATIVE DIRECTION',
@@ -88,6 +90,8 @@ export default function CaseStudy() {
       <CaseStudyArtDirection />
       <CaseStudyPatterns />
       <CaseStudyDigital />
+      <CaseStudyPhysical />
+      <Footer />
     </div>
   )
 }

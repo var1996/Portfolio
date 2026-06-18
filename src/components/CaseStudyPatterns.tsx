@@ -47,7 +47,7 @@ export default function CaseStudyPatterns() {
         <img
           src="/assets/casestudy_images/tamba-1.png"
           alt="Tamba T1"
-          className="w-[65px] h-[70px] object-contain"
+          className="w-full h-auto object-contain"
         />
       </div>
 

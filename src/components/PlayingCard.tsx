@@ -13,18 +13,19 @@ const SCROLL_STEP = 120
 // [start%, end%] of total scroll range for each queen layer fade.
 // fadeIndex 0 = top layer (0.png). fadeIndex 9 is excluded — it never fades.
 const QUEEN_FADES: Record<number, [number, number]> = {
-  0: [0,   8],
-  1: [8,  16],
-  2: [16, 24],
-  3: [24, 32],
-  4: [32, 40],
-  5: [40, 48],
-  6: [48, 56],
-  7: [56, 64],
-  8: [64, 72],
+  0: [0,   10],
+  1: [10,  20],
+  2: [20,  30],
+  3: [35,  45],
+  4: [45,  55],
+  5: [55,  65],
+  6: [65,  75],
+  7: [75,  85],
+  8: [85,  90],
 }
 
 const SECTIONS = [
+  'my name means queen of rain',
   'Born and raised in Zimbabwe',
   'At 18, moved to Australia',
   'Currently based in Thailand',
@@ -135,7 +136,7 @@ export default function PlayingCard() {
         alt="Q pip"
         width={48}
         height={48}
-        className="absolute top-4 left-4"
+        className="absolute top-4 left-[14px]"
       />
 
       <div className="flex-1 mt-16 mx-16 relative border-8 border-black border-b-0 rounded-t-2xl overflow-hidden flex flex-col">
@@ -148,7 +149,7 @@ export default function PlayingCard() {
             {SECTIONS.map((text, i) => (
               <section
                 key={text}
-                className={i === SECTIONS.length - 1 ? 'mb-132' : 'mb-48'}
+                className={i === SECTIONS.length - 1 ? 'mb-140' : 'mb-48'}
               >
                 <h2 className="font-display leading-normal text-center uppercase text-[4rem] text-black">
                   {text}

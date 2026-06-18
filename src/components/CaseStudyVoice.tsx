@@ -146,7 +146,7 @@ export default function CaseStudyVoice() {
       </p>
 
       {/* Brand Values Image — cols 2–11 */}
-      <div className="col-start-2 col-span-10 mt-10">
+      <div className="col-start-2 col-span-10 mt-16">
         <img
           src="/assets/casestudy_images/50.png"
           alt="Brand value archetypes"
@@ -191,7 +191,7 @@ export default function CaseStudyVoice() {
 
       {/* ════════════════ AUDIENCE ARCHETYPE CARDS ════════════════ */}
 
-      <div className="col-start-2 col-span-10 grid grid-cols-4 gap-6 mt-10">
+      <div className="col-start-2 col-span-10 grid grid-cols-4 gap-6 mt-16">
         {AUDIENCE_CARDS.map((c) => (
           <AudienceCard key={c.caption} {...c} />
         ))}
