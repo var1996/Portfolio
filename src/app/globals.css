@@ -4,3 +4,28 @@
   --font-display: var(--font-display);
   --font-body: var(--font-body);
 }
+
+@theme {
+  --color-accent: #740614;
+  --color-card: #EDE0D4;
+  --color-pink: #F5748E;
+  --color-yellow: #DCBE00;
+  --color-gold: #D6B300;
+  --color-rose: #F48AA5;
+  --transition-duration-slow: 600ms;
+}
+
+@utility scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+html,
+body {
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}

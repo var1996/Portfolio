@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Boldonse, TikTok_Sans } from 'next/font/google'
 import './globals.css'
+import Nav from '@/components/Nav'
 
 const boldonse = Boldonse({
   weight: '400',
@@ -26,10 +27,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${boldonse.variable} ${tiktokSans.variable} h-full antialiased`}
+      className={`${boldonse.variable} ${tiktokSans.variable} antialiased`}
     >
-      <body className="font-body min-h-full">
-        <div className="mx-8 grid grid-cols-12 gap-6">{children}</div>
+      <body className="bg-black text-white font-body h-screen overflow-hidden flex flex-col">
+        <Nav />
+        <div className="flex-1 grid grid-cols-12 auto-rows-fr gap-6 px-8 overflow-hidden">
+          {children}
+        </div>
       </body>
     </html>
   )
