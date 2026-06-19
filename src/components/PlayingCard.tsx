@@ -136,7 +136,7 @@ export default function PlayingCard() {
         alt="Q pip"
         width={48}
         height={48}
-        className="absolute top-4 left-[14px]"
+        className="absolute top-4 left-[13px]"
       />
 
       <div className="flex-1 mt-16 mx-16 relative border-8 border-black border-b-0 rounded-t-2xl overflow-hidden flex flex-col">
