@@ -97,7 +97,7 @@ export default function CaseStudyContext() {
       </div>
 
       {/* ── SECTION 2: Purpose ── */}
-      <div className="col-start-2 col-span-7 flex flex-col gap-4 mt-24">
+      <div className="col-start-2 col-span-7 flex flex-col gap-4 mt-16">
         <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
           PURPOSE
         </p>
@@ -112,13 +112,13 @@ export default function CaseStudyContext() {
       </div>
 
       {/* ── Section 2 quote — centered across cols 2–11 ── */}
-      <p className="col-start-2 col-span-10 text-center font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow mt-24">
+      <p className="col-start-2 col-span-10 text-center font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow mt-16">
         &ldquo;TO GIVE ZIMBABWEANS, BOTH AT HOME AND ABROAD, SOMETHING POWERFUL TO UNITE
         AROUND AND FEEL PROUD OF.&rdquo;
       </p>
 
       {/* ── SECTION 3: Research & Market Insights ── */}
-      <div className="col-start-2 col-span-7 flex flex-col gap-4 mt-24">
+      <div className="col-start-2 col-span-7 flex flex-col gap-4 mt-16">
         <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
           RESEARCH &amp; MARKET INSIGHTS
         </p>
@@ -146,7 +146,7 @@ export default function CaseStudyContext() {
       </div>
 
       {/* ── Insight grid — cols 2–11, 2-col, 4 cards ── */}
-      <div className="col-start-2 col-span-10 grid grid-cols-2 gap-x-6 gap-y-16 mt-24">
+      <div className="col-start-2 col-span-10 grid grid-cols-2 gap-x-6 gap-y-16 mt-16">
         {INSIGHTS.map((insight) => (
           <InsightCard key={insight.id} {...insight} />
         ))}
