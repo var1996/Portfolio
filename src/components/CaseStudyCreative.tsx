@@ -52,36 +52,11 @@ export default function CaseStudyCreative() {
         />
       </div>
 
-      {/* ════════════════ BRAND VOICE ════════════════ */}
-
-      {/* Header */}
-      <h2 className="col-start-2 col-span-7 font-body text-[38px] font-normal leading-[1.1] text-white mt-24">
-        The brand speaks. Here is how it sounds
-      </h2>
-
-      {/* Intro paragraph */}
-      <p className="col-start-2 col-span-7 font-body text-[18px] font-normal leading-[1.5] text-white">
-        A brand identity isn&apos;t only what you see, it&apos;s what you hear, read, and feel when
-        the brand communicates. Tamba10&apos;s tone of voice was built to be as distinctive as
-        its visual system: culturally grounded, high-energy, and always speaking to the
-        specific people it&apos;s for. This section covers the four voice pillars, the audience
-        it speaks to, the visual content direction, and the rules that keep the voice
-        consistent.
-      </p>
-
       {/* ════════════════ BRAND VALUES ════════════════ */}
 
       {/* Caption */}
       <p className="col-start-2 col-span-7 font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow mt-24">
         BRAND VALUES
-      </p>
-
-      {/* Supporting paragraph */}
-      <p className="col-start-2 col-span-7 font-body text-[18px] font-normal leading-[1.5] text-white">
-        The brand values weren&apos;t listed as abstract nouns. They were given characters,
-        each one drawn from a cricket term and translated into a human archetype. This was
-        a deliberate creative decision: the language of the sport becomes the language of
-        the brand.
       </p>
 
       {/* Values grid — cols 2–11, 2-col, left=01+03, right=02+04 */}
