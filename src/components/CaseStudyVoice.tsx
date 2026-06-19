@@ -64,17 +64,7 @@ const AUDIENCE_CARDS = [
   },
 ]
 
-function PillarCard({
-  id,
-  label,
-  body,
-  bullets,
-}: {
-  id: string
-  label: string
-  body: string
-  bullets: string[]
-}) {
+function PillarCard({ id, label, body, bullets }: { id: string; label: string; body: string; bullets: string[] }) {
   return (
     <div className="border-t border-white/20 pt-6 flex flex-col gap-4">
       <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink">
@@ -93,15 +83,7 @@ function PillarCard({
   )
 }
 
-function AudienceCard({
-  caption,
-  title,
-  body,
-}: {
-  caption: string
-  title: string
-  body: string
-}) {
+function AudienceCard({ caption, title, body }: { caption: string; title: string; body: string }) {
   return (
     <div className="bg-yellow rounded-[30px] p-6 min-h-[210px] flex flex-col gap-2">
       <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-white">
@@ -115,38 +97,37 @@ function AudienceCard({
 
 export default function CaseStudyVoice() {
   return (
-    <div className="bg-black grid grid-cols-12 gap-6 pt-20 pb-24">
+    <div className="bg-black px-12 grid grid-cols-[1fr_2fr] gap-x-16 gap-y-12 pt-20 pb-24">
 
-      {/* ── Section Header ── */}
-      <h2 className="col-start-2 col-span-7 font-body text-[38px] font-normal leading-[1.1] text-white">
-        The brand speaks. Here is how it sounds
-      </h2>
-      <p className="col-start-2 col-span-7 font-body text-[18px] font-normal leading-[1.5] text-white">
+      {/* ── Brand Voice Intro ── */}
+      <div className="self-start">
+        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
+          The brand speaks. Here is how it sounds
+        </h2>
+      </div>
+
+      <p className="font-body text-[18px] font-normal leading-[1.5] text-white self-start">
         A brand identity isn&apos;t only what you see, it&apos;s what you hear, read, and feel
         when the brand communicates. Tamba10&apos;s tone of voice was built to be as distinctive
         as its visual system: culturally grounded, high-energy, and always speaking to the
         specific people it&apos;s for. This section covers the four voice pillars, the audience
-        it speaks to, the visual content direction, and the rules that keep the voice
-        consistent.
+        it speaks to, the visual content direction, and the rules that keep the voice consistent.
       </p>
 
-      {/* ════════════════ BRAND VALUES ════════════════ */}
+      {/* ── Brand Values ── */}
+      <div className="self-start flex flex-col gap-3">
+        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
+          BRAND VALUES
+        </p>
+      </div>
 
-      {/* Caption */}
-      <p className="col-start-2 col-span-7 font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow mt-24">
-        BRAND VALUES
-      </p>
-
-      {/* Supporting copy */}
-      <p className="col-start-2 col-span-7 font-body text-[18px] font-normal leading-[1.5] text-white">
-        The brand values weren&apos;t listed as abstract nouns. They were given characters,
-        each one drawn from a cricket term and translated into a human archetype. This was
-        a deliberate creative decision: the language of the sport becomes the language of
-        the brand.
-      </p>
-
-      {/* Brand Values Image — cols 2–11 */}
-      <div className="col-start-2 col-span-10 mt-16">
+      <div className="flex flex-col gap-6">
+        <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
+          The brand values weren&apos;t listed as abstract nouns. They were given characters,
+          each one drawn from a cricket term and translated into a human archetype. This was
+          a deliberate creative decision: the language of the sport becomes the language of
+          the brand.
+        </p>
         <img
           src="/assets/casestudy_images/50.png"
           alt="Brand value archetypes"
@@ -154,52 +135,43 @@ export default function CaseStudyVoice() {
         />
       </div>
 
-      {/* ════════════════ FOUR VOICE PILLARS ════════════════ */}
+      {/* ── Voice Pillars ── */}
+      <div className="self-start flex flex-col gap-3">
+        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
+          THE FOUR VOICE PILLARS
+        </p>
+      </div>
 
-      {/* Caption */}
-      <p className="col-start-2 col-span-7 font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow mt-24">
-        THE FOUR VOICE PILLARS
-      </p>
-
-      {/* Pillars grid — 2-col, left=01+03, right=02+04 */}
-      <div className="col-start-2 col-span-10 grid grid-cols-2 gap-x-6 gap-y-16">
+      <div className="grid grid-cols-2 gap-x-6 gap-y-10">
         {PILLARS.map((p) => (
           <PillarCard key={p.id} {...p} />
         ))}
       </div>
 
-      {/* ════════════════ VOICE PRINCIPLE QUOTE ════════════════ */}
-
-      <p className="col-start-2 col-span-10 text-center font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow mt-24">
+      {/* ── Quote — full width ── */}
+      <p className="col-span-2 text-center font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
         &ldquo;WHO THE VOICE SPEAKS TO, THE BRAND SPEAKS LOUDLY, MOVES FAST, AND ALWAYS SOUNDS
         LIKE IT BELONGS TO THE PEOPLE&rdquo;
       </p>
 
-      {/* ════════════════ AUDIENCE INTRODUCTION ════════════════ */}
-
-      {/* Caption */}
-      <p className="col-start-2 col-span-7 font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow mt-24">
-        WHO THE VOICE SPEAKS TO
-      </p>
-
-      {/* Supporting copy */}
-      <p className="col-start-2 col-span-7 font-body text-[18px] font-normal leading-[1.5] text-white">
-        The tone shifts in register depending on who&apos;s in the room but the four pillars
-        stay constant. Four audience archetypes define who Tamba10 is speaking to at any
-        given moment. Below are the four archetypes.
-      </p>
-
-      {/* ════════════════ AUDIENCE ARCHETYPE CARDS ════════════════ */}
-
-      <div className="col-start-2 col-span-10 grid grid-cols-4 gap-6 mt-16">
-        {AUDIENCE_CARDS.map((c) => (
-          <AudienceCard key={c.caption} {...c} />
-        ))}
+      {/* ── Audience ── */}
+      <div className="self-start flex flex-col gap-3">
+        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
+          WHO THE VOICE SPEAKS TO
+        </p>
       </div>
 
-      {/* ════════════════ PERSONA SECTION ════════════════ */}
-
-      <div className="col-start-2 col-span-10 mt-24">
+      <div className="flex flex-col gap-8">
+        <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
+          The tone shifts in register depending on who&apos;s in the room but the four pillars
+          stay constant. Four audience archetypes define who Tamba10 is speaking to at any
+          given moment. Below are the four archetypes.
+        </p>
+        <div className="grid grid-cols-2 gap-6">
+          {AUDIENCE_CARDS.map((c) => (
+            <AudienceCard key={c.caption} {...c} />
+          ))}
+        </div>
         <img
           src="/assets/casestudy_images/3 Persona Image.png"
           alt="Audience personas"

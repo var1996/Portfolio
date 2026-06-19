@@ -27,24 +27,23 @@ function ValueCard({ id, label, body }: { id: string; label: string; body: strin
       <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink">
         {id} {label}
       </p>
-      <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
-        {body}
-      </p>
+      <p className="font-body text-[18px] font-normal leading-[1.5] text-white">{body}</p>
     </div>
   )
 }
 
 export default function CaseStudyCreative() {
   return (
-    <div className="bg-black grid grid-cols-12 gap-6 pt-20 pb-24">
+    <div className="bg-black px-12 grid grid-cols-[1fr_2fr] gap-x-16 gap-y-12 pt-20 pb-24">
 
-      {/* ── Creative Platform Header ── */}
-      <h2 className="col-start-2 col-span-7 font-body text-[38px] font-normal leading-[1.1] text-white">
-        Creative Platform
-      </h2>
+      {/* ── Creative Platform ── */}
+      <div className="self-start">
+        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
+          Creative Platform
+        </h2>
+      </div>
 
-      {/* ── Creative Platform Image ── */}
-      <div className="col-start-2 col-span-10 mt-8">
+      <div>
         <img
           src="/assets/casestudy_images/3 Creative Platorm Images.png"
           alt="Creative platform"
@@ -52,15 +51,14 @@ export default function CaseStudyCreative() {
         />
       </div>
 
-      {/* ════════════════ BRAND VALUES ════════════════ */}
+      {/* ── Brand Values ── */}
+      <div className="self-start flex flex-col gap-3">
+        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
+          BRAND VALUES
+        </p>
+      </div>
 
-      {/* Caption */}
-      <p className="col-start-2 col-span-7 font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow mt-24">
-        BRAND VALUES
-      </p>
-
-      {/* Values grid — cols 2–11, 2-col, left=01+03, right=02+04 */}
-      <div className="col-start-2 col-span-10 grid grid-cols-2 gap-x-6 gap-y-16 mt-16">
+      <div className="grid grid-cols-2 gap-6">
         {BRAND_VALUES.map((v) => (
           <ValueCard key={v.id} {...v} />
         ))}

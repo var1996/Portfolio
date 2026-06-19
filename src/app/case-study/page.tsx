@@ -40,32 +40,10 @@ export default function CaseStudy() {
       </div>
 
       {/* Project info */}
-      <div className="grid grid-cols-12 gap-6 mt-10 pb-16">
+      <div className="px-12 grid grid-cols-[1fr_2fr] gap-x-16 gap-y-6 mt-10 pb-16">
 
-        {/* Left: summary + service tags — cols 2–10 */}
-        <div className="col-start-2 col-span-9 flex flex-col gap-6">
-          <p className="font-body text-[25px] leading-[1.3] font-regular text-white">
-            Zim Afro T10, rebranded to Tamba 10, was reimagined from a cricket tournament
-            into a full-scale sports and music festival. The rebrand built a new visual
-            language, brand architecture, motion principles, campaign assets, and a scalable
-            design system to hold it all together — transforming Tamba 10 from a sporting
-            event into a cultural festival platform built to engage a new generation of fans.
-          </p>
-
-          <div className="flex gap-3 flex-wrap">
-            {SERVICES.map((tag) => (
-              <div
-                key={tag}
-                className="h-[33px] min-w-[151px] px-4 flex items-center justify-center font-body text-xs font-semibold uppercase tracking-wide text-white border border-yellow bg-yellow/30 rounded-[40px] whitespace-nowrap"
-              >
-                {tag}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Right: metadata — cols 11–12 */}
-        <div className="col-start-11 col-span-2 flex flex-col gap-4 pt-1">
+        {/* Col 1: metadata */}
+        <div className="flex flex-col gap-4 self-start">
           {META.map(({ label, value }) => (
             <div key={label} className="flex flex-col gap-0.5">
               <span className="font-body text-xs font-semibold uppercase text-pink">
@@ -76,6 +54,27 @@ export default function CaseStudy() {
               </span>
             </div>
           ))}
+        </div>
+
+        {/* Col 2: summary + service tags */}
+        <div className="flex flex-col gap-6">
+          <p className="font-body text-[25px] leading-[1.3] font-regular text-white">
+            Zim Afro T10, rebranded to Tamba 10, was reimagined from a cricket tournament
+            into a full-scale sports and music festival. The rebrand built a new visual
+            language, brand architecture, motion principles, campaign assets, and a scalable
+            design system to hold it all together — transforming Tamba 10 from a sporting
+            event into a cultural festival platform built to engage a new generation of fans.
+          </p>
+          <div className="flex gap-3 flex-wrap">
+            {SERVICES.map((tag) => (
+              <div
+                key={tag}
+                className="h-[33px] min-w-[151px] px-4 flex items-center justify-center font-body text-xs font-semibold uppercase tracking-wide text-white border border-yellow bg-yellow/30 rounded-[40px] whitespace-nowrap"
+              >
+                {tag}
+              </div>
+            ))}
+          </div>
         </div>
 
       </div>

@@ -51,76 +51,67 @@ const RESPONSE_CARDS = [
   },
 ]
 
-function Card({
-  id,
-  label,
-  body,
-  labelColor,
-}: {
-  id: string
-  label: string
-  body: string
-  labelColor: string
-}) {
+function Card({ id, label, body, labelColor }: { id: string; label: string; body: string; labelColor: string }) {
   return (
     <div className="border-t border-white/20 pt-6 flex flex-col gap-4">
       <p className={`font-body text-xs font-semibold uppercase tracking-[0.08em] ${labelColor}`}>
         {id} {label}
       </p>
-      <p className="font-body text-[18px] font-normal leading-[1.6] text-white">
-        {body}
-      </p>
+      <p className="font-body text-[18px] font-normal leading-[1.6] text-white">{body}</p>
     </div>
   )
 }
 
 export default function CaseStudyIntro() {
   return (
-    <div className="bg-black grid grid-cols-12 gap-6 pt-20 pb-24">
+    <div className="bg-black px-12 grid grid-cols-[1fr_2fr] gap-x-16 gap-y-12 pt-20 pb-24">
 
-      {/* ── Intro heading — cols 2–8 ── */}
-      <h1 className="col-start-2 col-span-7 font-body text-[38px] font-normal leading-[1.2]">
-        <span className="text-white">From Zim Afro T10 to </span>
-        <span className="text-gold">TAMBA10</span>
-        <span className="text-white">:</span>
-        <br />
-        <span className="text-white">A name that moves</span>
-      </h1>
+      {/* ── Name Intro ── */}
+      <div className="self-start">
+        <h1 className="font-body text-[38px] font-normal leading-[1.2]">
+          <span className="text-white">From Zim Afro T10 to </span>
+          <span className="text-gold">TAMBA10</span>
+          <span className="text-white">:</span>
+          <br />
+          <span className="text-white">A name that moves</span>
+        </h1>
+      </div>
 
-      {/* ── Intro body — cols 2–8 ── */}
-      <div className="col-start-2 col-span-7 flex flex-col gap-5 font-body text-[18px] font-normal leading-[1.6] text-white">
+      <div className="flex flex-col gap-5 font-body text-[18px] font-normal leading-[1.6] text-white self-start">
         <p>
           This rebrand required a new name. The old name, Zim Afro T10, was simply
           descriptive and geographic. It told you where the league was from. But it
           carried no feeling, cultural weight or invitation.
         </p>
-        <p>
-          The rename to Tamba10 was one of the most deliberate decisions in this project.
-        </p>
+        <p>The rename to Tamba10 was one of the most deliberate decisions in this project.</p>
       </div>
 
-      {/* ── Section title: Anatomy — cols 2–8 ── */}
-      <h2 className="col-start-2 col-span-7 font-body text-[38px] font-normal leading-[1.2] text-white mt-20">
-        Anatomy of the name
-      </h2>
+      {/* ── Anatomy ── */}
+      <div className="self-start flex flex-col gap-3">
+        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
+          ANATOMY OF THE NAME
+        </p>
+        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
+          Anatomy of the name
+        </h2>
+      </div>
 
-      {/* ── Anatomy body — cols 2–8 ── */}
-      <div className="col-start-2 col-span-7 flex flex-col gap-8 font-body text-[18px] font-normal leading-[1.6] text-white">
+      <div className="flex flex-col gap-8 self-start">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.08em] text-rose mb-3">
+          <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-rose mb-3">
             Tamba: To play. To dance.
           </p>
-          <p>
+          <p className="font-body text-[18px] font-normal leading-[1.6] text-white">
             Drawn from local Zimbabwean language, tamba captures the dual soul of this
             league. The athletic play on the pitch and the rhythmic, joyful movement that
             fills the stands. It&apos;s a word that belongs to the people the brand is for.
           </p>
         </div>
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.08em] text-rose mb-3">
+          <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-rose mb-3">
             10: The format. The pulse.
           </p>
-          <p>
+          <p className="font-body text-[18px] font-normal leading-[1.6] text-white">
             T10 is the cricket format. Fast, electrifying, and built for a generation with
             an appetite for high-intensity entertainment. Fused into the name itself, 10
             isn&apos;t a category label anymore; it becomes part of the brand&apos;s identity.
@@ -128,42 +119,44 @@ export default function CaseStudyIntro() {
         </div>
       </div>
 
-      {/* ── Quote — cols 2–8, centered ── */}
-      <p className="col-start-4 col-span-7 text-center font-body text-xs font-semibold uppercase tracking-[0.08em] text-gold mt-20">
-        &ldquo;TAMBA&rdquo; CAPTURES MOVEMENT, RHYTHM, AND JOY — THE TWO WORLDS BEING BROUGHT
-        TOGETHER IN A SINGLE WORD.
-      </p>
-
-      {/* ── Logo — cols 2–8, centered ── */}
-      <div className="col-start-4 col-span-7 flex justify-center mt-8">
-        <Image
-          src="/assets/casestudy_images/1 tamba logo.png"
-          alt="Tamba10 Logo"
-          width={1200}
-          height={400}
-          className="w-[75%] h-auto"
-        />
+      {/* ── Quote + Logo — full width ── */}
+      <div className="col-span-2 flex flex-col items-center gap-8">
+        <p className="text-center font-body text-xs font-semibold uppercase tracking-[0.08em] text-gold max-w-2xl">
+          &ldquo;TAMBA&rdquo; CAPTURES MOVEMENT, RHYTHM, AND JOY — THE TWO WORLDS BEING BROUGHT
+          TOGETHER IN A SINGLE WORD.
+        </p>
+        <div className="w-[60%]">
+          <Image
+            src="/assets/casestudy_images/1 tamba logo.png"
+            alt="Tamba10 Logo"
+            width={1200}
+            height={400}
+            className="w-full h-auto"
+          />
+        </div>
       </div>
 
-      {/* ── Section title: Feature cards — cols 2–8 ── */}
-      <h2 className="col-start-2 col-span-7 font-body text-[38px] font-normal leading-[1.2] text-white mt-20">
-        A name that carries its soul
-      </h2>
+      {/* ── A name that carries its soul ── */}
+      <div className="self-start">
+        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
+          A name that carries its soul
+        </h2>
+      </div>
 
-      {/* ── Feature cards — cols 2–11, 3-col inner grid ── */}
-      <div className="col-start-2 col-span-10 grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-3 gap-6">
         {FEATURE_CARDS.map((card) => (
           <Card key={card.id} {...card} labelColor="text-rose" />
         ))}
       </div>
 
-      {/* ── Section title: Emotional responses — cols 2–8 ── */}
-      <h2 className="col-start-2 col-span-7 font-body text-[38px] font-normal leading-[1.2] text-white mt-20">
-        The Emotional Responses Evoked
-      </h2>
+      {/* ── Emotional Responses ── */}
+      <div className="self-start">
+        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
+          The Emotional Responses Evoked
+        </h2>
+      </div>
 
-      {/* ── Response cards — cols 2–11, 3-col inner grid ── */}
-      <div className="col-start-2 col-span-10 grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-3 gap-6">
         {RESPONSE_CARDS.map((card) => (
           <Card key={card.id} {...card} labelColor="text-gold" />
         ))}
