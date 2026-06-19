@@ -29,7 +29,7 @@ export default function RootLayout({
       lang="en"
       className={`${boldonse.variable} ${tiktokSans.variable} antialiased`}
     >
-      <body className="bg-black text-white font-body h-screen overflow-hidden flex flex-col">
+      <body className="bg-white text-black font-body h-screen overflow-hidden flex flex-col">
         <Nav />
         <div className="flex-1 grid grid-cols-12 auto-rows-fr gap-6 px-8 overflow-hidden">
           {children}

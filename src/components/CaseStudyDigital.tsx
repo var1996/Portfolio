@@ -1,10 +1,10 @@
 export default function CaseStudyDigital() {
   return (
-    <div className="bg-black px-12 grid grid-cols-[1fr_2fr] gap-x-16 gap-y-12 pt-20 pb-24">
+    <div className="bg-white px-12 grid grid-cols-[1fr_2fr] gap-x-16 gap-y-12 pt-20 pb-24">
 
       {/* Col 1 — header */}
       <div className="self-start">
-        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
+        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-black">
           Digital Applications. How we show up in the world
         </h2>
       </div>
@@ -17,7 +17,7 @@ export default function CaseStudyDigital() {
             alt="Seat allocation 1"
             className="w-full h-auto object-contain"
           />
-          <div className="flex flex-col gap-4 font-body text-[18px] font-normal leading-[1.5] text-white/85">
+          <div className="flex flex-col gap-4 font-body text-[18px] font-normal leading-[1.5] text-black/85">
             <p>
               Merging the digital and physical touch-points by having tickets reflect seat allocation
               with aims of creating a more seamless and enjoyable user experience.
