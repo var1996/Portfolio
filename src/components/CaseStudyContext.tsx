@@ -112,7 +112,7 @@ export default function CaseStudyContext() {
       </div>
 
       {/* ── Section 2 quote — centered across cols 2–11 ── */}
-      <p className="col-start-2 col-span-10 text-center font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
+      <p className="col-start-2 col-span-10 text-center font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow mt-24">
         &ldquo;TO GIVE ZIMBABWEANS, BOTH AT HOME AND ABROAD, SOMETHING POWERFUL TO UNITE
         AROUND AND FEEL PROUD OF.&rdquo;
       </p>
