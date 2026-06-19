@@ -87,16 +87,16 @@ export default function CaseStudyIntro() {
       </div>
 
       {/* ── Anatomy ── */}
-      <div className="self-start flex flex-col gap-3">
-        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
-          ANATOMY OF THE NAME
-        </p>
+      <div className="self-start">
         <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
           Anatomy of the name
         </h2>
       </div>
 
       <div className="flex flex-col gap-8 self-start">
+        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
+          ANATOMY OF THE NAME
+        </p>
         <div>
           <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-rose mb-3">
             Tamba: To play. To dance.

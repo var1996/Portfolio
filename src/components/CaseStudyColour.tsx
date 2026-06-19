@@ -51,22 +51,24 @@ export default function CaseStudyColour() {
     <div className="bg-black px-12 grid grid-cols-[1fr_2fr] gap-x-16 gap-y-12 pt-20 pb-24">
 
       {/* Col 1 — header */}
-      <div className="self-start flex flex-col gap-3">
-        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
-          COLOUR SYSTEM
-        </p>
+      <div className="self-start">
         <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
           The colours that carry the brand
         </h2>
       </div>
 
       {/* Col 2 — body */}
-      <p className="font-body text-[18px] font-normal leading-[1.5] text-white self-start">
+      <div className="flex flex-col gap-6 self-start">
+        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
+          COLOUR SYSTEM
+        </p>
+        <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
         The colour palette was built to balance energy, culture, performance, and premium
         positioning. The system combines bold signature colours with supporting neutrals,
         creating flexibility across campaigns, digital platforms, merchandise, and event
         experiences.
-      </p>
+        </p>
+      </div>
 
       {/* Full-width row — colour swatches */}
       <div className="col-span-2 grid grid-cols-5 gap-6">

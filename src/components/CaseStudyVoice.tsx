@@ -115,13 +115,12 @@ export default function CaseStudyVoice() {
       </p>
 
       {/* ── Brand Values ── */}
-      <div className="self-start flex flex-col gap-3">
+      <div />
+
+      <div className="flex flex-col gap-6">
         <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
           BRAND VALUES
         </p>
-      </div>
-
-      <div className="flex flex-col gap-6">
         <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
           The brand values weren&apos;t listed as abstract nouns. They were given characters,
           each one drawn from a cricket term and translated into a human archetype. This was
@@ -136,16 +135,17 @@ export default function CaseStudyVoice() {
       </div>
 
       {/* ── Voice Pillars ── */}
-      <div className="self-start flex flex-col gap-3">
+      <div />
+
+      <div className="flex flex-col gap-6">
         <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
           THE FOUR VOICE PILLARS
         </p>
-      </div>
-
-      <div className="grid grid-cols-2 gap-x-6 gap-y-10">
-        {PILLARS.map((p) => (
-          <PillarCard key={p.id} {...p} />
-        ))}
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10">
+          {PILLARS.map((p) => (
+            <PillarCard key={p.id} {...p} />
+          ))}
+        </div>
       </div>
 
       {/* ── Quote — full width ── */}
@@ -155,13 +155,12 @@ export default function CaseStudyVoice() {
       </p>
 
       {/* ── Audience ── */}
-      <div className="self-start flex flex-col gap-3">
+      <div />
+
+      <div className="flex flex-col gap-8">
         <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
           WHO THE VOICE SPEAKS TO
         </p>
-      </div>
-
-      <div className="flex flex-col gap-8">
         <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
           The tone shifts in register depending on who&apos;s in the room but the four pillars
           stay constant. Four audience archetypes define who Tamba10 is speaking to at any

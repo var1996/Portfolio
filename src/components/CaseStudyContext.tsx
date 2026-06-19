@@ -52,11 +52,11 @@ const INSIGHTS = [
 
 function InsightCard({ id, label, bullets }: { id: string; label: string; bullets: string[] }) {
   return (
-    <div className="border-t border-white/20 pt-6 flex flex-col gap-5">
+    <div className="border-t border-white/20 pt-6 flex flex-col gap-4">
       <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink">
         {id} {label}
       </p>
-      <ul className="flex flex-col gap-3">
+      <ul className="flex flex-col gap-2">
         {bullets.map((b) => (
           <li key={b} className="flex gap-3 font-body text-[18px] font-normal leading-[1.5] text-white">
             <span className="shrink-0 mt-[0.55em] w-1 h-1 rounded-full bg-white inline-block" />
@@ -73,16 +73,16 @@ export default function CaseStudyContext() {
     <div className="bg-black px-12 grid grid-cols-[1fr_2fr] gap-x-16 gap-y-12 pt-20 pb-24">
 
       {/* ── Context ── */}
-      <div className="self-start flex flex-col gap-3">
-        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
-          CONTEXT
-        </p>
+      <div className="self-start">
         <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
           A League that lost it&apos;s roar
         </h2>
       </div>
 
       <div className="flex flex-col gap-6 font-body text-[18px] font-normal leading-[1.5] text-white self-start">
+        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
+          CONTEXT
+        </p>
         <p>
           A league with a hybrid format that blends cricket with the energy of African
           festival culture. Despite its potential, the league had struggled to hold its
@@ -98,20 +98,22 @@ export default function CaseStudyContext() {
       </div>
 
       {/* ── Purpose ── */}
-      <div className="self-start flex flex-col gap-3">
-        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
-          PURPOSE
-        </p>
+      <div className="self-start">
         <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
           Why now, why this?
         </h2>
       </div>
 
-      <p className="font-body text-[18px] font-normal leading-[1.5] text-white self-start">
-        The rebrands mission was to give Zimbabweans, both at home and in the diaspora
-        something powerful to unite around and feel genuinely proud of. The goal was to
-        establish Zimbabwe as Africa&apos;s home ground for cricket and culture.
-      </p>
+      <div className="flex flex-col gap-6 self-start">
+        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
+          PURPOSE
+        </p>
+        <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
+          The rebrands mission was to give Zimbabweans, both at home and in the diaspora
+          something powerful to unite around and feel genuinely proud of. The goal was to
+          establish Zimbabwe as Africa&apos;s home ground for cricket and culture.
+        </p>
+      </div>
 
       {/* ── Quote — full width ── */}
       <p className="col-span-2 text-center font-body text-xs font-semibold uppercase tracking-[0.08em] text-gold">
@@ -120,39 +122,39 @@ export default function CaseStudyContext() {
       </p>
 
       {/* ── Research ── */}
-      <div className="self-start flex flex-col gap-3">
-        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
-          RESEARCH &amp; MARKET INSIGHTS
-        </p>
+      <div className="self-start">
         <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
           Reading the Playing Field
         </h2>
       </div>
 
-      <div className="flex flex-col gap-6 font-body text-[18px] font-normal leading-[1.5] text-white self-start">
-        <p>
-          The competitor analysis and market insights converged into three sharp conclusions
-          each one a building block for the rebrand strategy. The analysis revealed a
-          critical gap: no competitor in Africa was running a hybrid T10 cricket and culture
-          format. This creates a powerful opportunity to position the league as something new.
+      <div className="flex flex-col gap-6 self-start">
+        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
+          RESEARCH &amp; MARKET INSIGHTS
         </p>
-        <ol className="list-decimal pl-6 flex flex-col gap-4 marker:text-white">
-          {SECTION3_FINDINGS.map((item) => (
-            <li key={item}>{item}</li>
+        <div className="flex flex-col gap-6 font-body text-[18px] font-normal leading-[1.5] text-white">
+          <p>
+            The competitor analysis and market insights converged into three sharp conclusions
+            each one a building block for the rebrand strategy. The analysis revealed a
+            critical gap: no competitor in Africa was running a hybrid T10 cricket and culture
+            format. This creates a powerful opportunity to position the league as something new.
+          </p>
+          <ol className="list-decimal pl-6 flex flex-col gap-4 marker:text-white">
+            {SECTION3_FINDINGS.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ol>
+          <p>
+            Beyond competitors, the research surfaced four macro forces shaping the
+            entertainment and sport landscape. Together, they made the case for Tamba10&apos;s
+            brand strategy.
+          </p>
+        </div>
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 mt-4">
+          {INSIGHTS.map((insight) => (
+            <InsightCard key={insight.id} {...insight} />
           ))}
-        </ol>
-        <p>
-          Beyond competitors, the research surfaced four macro forces shaping the
-          entertainment and sport landscape. Together, they made the case for Tamba10&apos;s
-          brand strategy.
-        </p>
-      </div>
-
-      {/* ── Insights grid — full width ── */}
-      <div className="col-span-2 grid grid-cols-2 gap-x-6 gap-y-10">
-        {INSIGHTS.map((insight) => (
-          <InsightCard key={insight.id} {...insight} />
-        ))}
+        </div>
       </div>
 
     </div>

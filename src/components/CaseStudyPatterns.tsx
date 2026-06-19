@@ -31,20 +31,18 @@ export default function CaseStudyPatterns() {
       </div>
 
       {/* ── T Patterns ── */}
-      <div className="self-start flex flex-col gap-3">
+      <div />
+
+      <div className="flex flex-col gap-6">
         <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
           T PATTERNS
         </p>
-      </div>
-
-      <div className="flex flex-col gap-6">
         <p className="font-body text-[18px] font-normal leading-[1.5] text-white/85">
           The following patterns are built from the custom &ldquo;T&rdquo; form within the Tamba10
           typeface, transforming a single typographic element into a bold, expressive visual system.
           Repeated, rotated, and layered, the forms create a sense of rhythm and movement.
         </p>
 
-        {/* T1 + T2 flanking graphic 2 + 3 */}
         <div className="grid grid-cols-[auto_1fr_1fr_auto] gap-4 items-end">
           <img src="/assets/casestudy_images/tamba-1.png" alt="Tamba T1" className="w-[65px] h-[70px] object-contain" />
           <img src="/assets/casestudy_images/art direction graphic 2.png" alt="Graphic 2" className="w-full h-auto object-contain" />
@@ -52,7 +50,6 @@ export default function CaseStudyPatterns() {
           <img src="/assets/casestudy_images/tamba-2.png" alt="Tamba T2" className="w-[65px] h-[70px] object-contain" />
         </div>
 
-        {/* T3 above graphic 4 + 5 */}
         <div className="flex flex-col gap-0">
           <img src="/assets/casestudy_images/tamba-3.png" alt="Tamba T3" className="w-[65px] h-[70px] object-contain" />
           <div className="grid grid-cols-2 gap-6">
@@ -63,28 +60,27 @@ export default function CaseStudyPatterns() {
       </div>
 
       {/* ── Arrows + Artist Frames ── */}
-      <div className="self-start flex flex-col gap-3">
+      <div />
+
+      <div className="flex flex-col gap-6">
         <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
           ARROWS &amp; WAYFINDING
         </p>
-      </div>
-
-      <div className="grid grid-cols-2 gap-6">
-        {/* Arrows section */}
-        <div className="flex flex-col gap-4">
-          <div className="flex items-end gap-2">
-            <img src="/assets/casestudy_images/tamba t 4.png" alt="Tamba T4" className="w-[65px] h-[70px] object-contain shrink-0" />
-            <img src="/assets/casestudy_images/arrow graphic.png" alt="Arrow graphic" className="w-full h-auto object-contain" />
+        <div className="grid grid-cols-2 gap-6">
+          <div className="flex flex-col gap-4">
+            <div className="flex items-end gap-2">
+              <img src="/assets/casestudy_images/tamba t 4.png" alt="Tamba T4" className="w-[65px] h-[70px] object-contain shrink-0" />
+              <img src="/assets/casestudy_images/arrow graphic.png" alt="Arrow graphic" className="w-full h-auto object-contain" />
+            </div>
           </div>
-        </div>
-        {/* Artist Frames section */}
-        <div className="flex flex-col gap-4">
-          <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
-            ARTIST AND PLAYER FRAMES
-          </p>
-          <div className="flex items-end gap-2">
-            <img src="/assets/casestudy_images/tamba t 5.png" alt="Tamba T5" className="w-[65px] h-[70px] object-contain shrink-0" />
-            <img src="/assets/casestudy_images/Artist Frames.png" alt="Artist and player frames" className="w-full h-auto object-contain" />
+          <div className="flex flex-col gap-4">
+            <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
+              ARTIST AND PLAYER FRAMES
+            </p>
+            <div className="flex items-end gap-2">
+              <img src="/assets/casestudy_images/tamba t 5.png" alt="Tamba T5" className="w-[65px] h-[70px] object-contain shrink-0" />
+              <img src="/assets/casestudy_images/Artist Frames.png" alt="Artist and player frames" className="w-full h-auto object-contain" />
+            </div>
           </div>
         </div>
       </div>

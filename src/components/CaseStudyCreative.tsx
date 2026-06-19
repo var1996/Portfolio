@@ -52,16 +52,17 @@ export default function CaseStudyCreative() {
       </div>
 
       {/* ── Brand Values ── */}
-      <div className="self-start flex flex-col gap-3">
+      <div />
+
+      <div className="flex flex-col gap-6">
         <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
           BRAND VALUES
         </p>
-      </div>
-
-      <div className="grid grid-cols-2 gap-6">
-        {BRAND_VALUES.map((v) => (
-          <ValueCard key={v.id} {...v} />
-        ))}
+        <div className="grid grid-cols-2 gap-6">
+          {BRAND_VALUES.map((v) => (
+            <ValueCard key={v.id} {...v} />
+          ))}
+        </div>
       </div>
 
     </div>

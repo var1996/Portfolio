@@ -15,13 +15,12 @@ export default function CaseStudyBrand() {
       </p>
 
       {/* ── Vision ── */}
-      <div className="self-start flex flex-col gap-3">
+      <div />
+
+      <div className="flex flex-col gap-6">
         <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
           VISION
         </p>
-      </div>
-
-      <div className="flex flex-col gap-6">
         <div className="grid grid-cols-2 gap-6 items-start">
           <img
             src="/assets/casestudy_images/3 Vision Image.png"
@@ -47,44 +46,46 @@ export default function CaseStudyBrand() {
       </div>
 
       {/* ── Mission ── */}
-      <div className="self-start flex flex-col gap-3">
+      <div />
+
+      <div className="flex flex-col gap-6">
         <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
           MISSION
         </p>
-      </div>
-
-      <div className="grid grid-cols-2 gap-6 items-start">
-        <img
-          src="/assets/casestudy_images/3 Mission Image.png"
-          alt="Mission"
-          className="w-full h-auto object-contain"
-        />
-        <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
-          The goal is not just to host matches, but to create a destination, a place where
-          sport, entertainment, and community come together, a homeground. This vision stakes
-          Zimbabwe&apos;s claim on the continental stage, not as a participant, but as the host
-          of something the world comes to.
-        </p>
+        <div className="grid grid-cols-2 gap-6 items-start">
+          <img
+            src="/assets/casestudy_images/3 Mission Image.png"
+            alt="Mission"
+            className="w-full h-auto object-contain"
+          />
+          <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
+            The goal is not just to host matches, but to create a destination, a place where
+            sport, entertainment, and community come together, a homeground. This vision stakes
+            Zimbabwe&apos;s claim on the continental stage, not as a participant, but as the host
+            of something the world comes to.
+          </p>
+        </div>
       </div>
 
       {/* ── Tagline ── */}
-      <div className="self-start flex flex-col gap-3">
+      <div />
+
+      <div className="flex flex-col gap-6">
         <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
           TAGLINE
         </p>
-      </div>
-
-      <div className="grid grid-cols-2 gap-6 items-start">
-        <img
-          src="/assets/casestudy_images/3 Tagline image.png"
-          alt="Tagline"
-          className="w-full h-auto object-contain"
-        />
-        <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
-          With the mission and vision defined, the creative platform needed a headline one
-          phrase that could carry the whole brand on a stadium screen, on a t-shirt, and in
-          a conversation. It had to land in two places at once.
-        </p>
+        <div className="grid grid-cols-2 gap-6 items-start">
+          <img
+            src="/assets/casestudy_images/3 Tagline image.png"
+            alt="Tagline"
+            className="w-full h-auto object-contain"
+          />
+          <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
+            With the mission and vision defined, the creative platform needed a headline one
+            phrase that could carry the whole brand on a stadium screen, on a t-shirt, and in
+            a conversation. It had to land in two places at once.
+          </p>
+        </div>
       </div>
 
       {/* ── Tagline meanings — full-width two-col ── */}
