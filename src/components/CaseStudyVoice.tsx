@@ -148,8 +148,8 @@ export default function CaseStudyVoice() {
         </div>
       </div>
 
-      {/* ── Quote — full width ── */}
-      <p className="col-span-2 text-center font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
+      {/* ── Quote ── */}
+      <p className="col-start-2 font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
         &ldquo;WHO THE VOICE SPEAKS TO, THE BRAND SPEAKS LOUDLY, MOVES FAST, AND ALWAYS SOUNDS
         LIKE IT BELONGS TO THE PEOPLE&rdquo;
       </p>

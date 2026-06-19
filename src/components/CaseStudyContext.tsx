@@ -115,8 +115,8 @@ export default function CaseStudyContext() {
         </p>
       </div>
 
-      {/* ── Quote — full width ── */}
-      <p className="col-span-2 text-center font-body text-xs font-semibold uppercase tracking-[0.08em] text-gold">
+      {/* ── Quote ── */}
+      <p className="col-start-2 font-body text-xs font-semibold uppercase tracking-[0.08em] text-gold">
         &ldquo;TO GIVE ZIMBABWEANS, BOTH AT HOME AND ABROAD, SOMETHING POWERFUL TO UNITE
         AROUND AND FEEL PROUD OF.&rdquo;
       </p>

@@ -119,9 +119,9 @@ export default function CaseStudyIntro() {
         </div>
       </div>
 
-      {/* ── Quote + Logo — full width ── */}
-      <div className="col-span-2 flex flex-col items-center gap-8">
-        <p className="text-center font-body text-xs font-semibold uppercase tracking-[0.08em] text-gold max-w-2xl">
+      {/* ── Quote + Logo ── */}
+      <div className="col-start-2 flex flex-col gap-8">
+        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-gold">
           &ldquo;TAMBA&rdquo; CAPTURES MOVEMENT, RHYTHM, AND JOY — THE TWO WORLDS BEING BROUGHT
           TOGETHER IN A SINGLE WORD.
         </p>
