@@ -10,8 +10,6 @@ gsap.registerPlugin(ScrollTrigger)
 
 const SCROLL_STEP = 120
 
-// [start%, end%] of total scroll range for each queen layer fade.
-// fadeIndex 0 = top layer (0.png). fadeIndex 9 is excluded — it never fades.
 const QUEEN_FADES: Record<number, [number, number]> = {
   0: [0,   10],
   1: [10,  20],
@@ -24,6 +22,9 @@ const QUEEN_FADES: Record<number, [number, number]> = {
   8: [85,  90],
 }
 
+// Last 8% of scroll: card shrinks, case-study panel reveals
+const CARD_COLLAPSE_RANGE: [number, number] = [92, 100]
+
 const SECTIONS = [
   'my name means queen of rain',
   'Born and raised in Zimbabwe',
@@ -32,11 +33,13 @@ const SECTIONS = [
 ]
 
 export default function PlayingCard() {
-  const innerRef = useRef<HTMLDivElement>(null)
-  const contentRef = useRef<HTMLDivElement>(null)
+  const innerRef        = useRef<HTMLDivElement>(null)
+  const contentRef      = useRef<HTMLDivElement>(null)
+  const cardBoxRef      = useRef<HTMLDivElement>(null)
+  const caseStudyRef    = useRef<HTMLDivElement>(null)
+  const caseStudyInnerRef = useRef<HTMLDivElement>(null)
 
-  // Wheel + keyboard scroll hijack — calls ScrollTrigger.update() so GSAP
-  // reacts immediately to programmatic scrollTop changes
+  // Wheel + keyboard scroll hijack
   useEffect(() => {
     const el = innerRef.current
     if (!el) return
@@ -49,12 +52,12 @@ export default function PlayingCard() {
 
     const onKeyDown = (e: KeyboardEvent) => {
       switch (e.key) {
-        case 'ArrowDown':  el.scrollTop += SCROLL_STEP; break
-        case 'ArrowUp':    el.scrollTop -= SCROLL_STEP; break
-        case 'PageDown':   el.scrollTop += el.clientHeight; break
-        case 'PageUp':     el.scrollTop -= el.clientHeight; break
-        case 'Home':       el.scrollTop = 0; break
-        case 'End':        el.scrollTop = el.scrollHeight; break
+        case 'ArrowDown': el.scrollTop += SCROLL_STEP; break
+        case 'ArrowUp':   el.scrollTop -= SCROLL_STEP; break
+        case 'PageDown':  el.scrollTop += el.clientHeight; break
+        case 'PageUp':    el.scrollTop -= el.clientHeight; break
+        case 'Home':      el.scrollTop = 0; break
+        case 'End':       el.scrollTop = el.scrollHeight; break
       }
       ScrollTrigger.update()
     }
@@ -67,13 +70,15 @@ export default function PlayingCard() {
     }
   }, [])
 
-  // GSAP ScrollTrigger — one trigger per queen image, scoped to the inner scroller
+  // GSAP ScrollTrigger — queen fades + card collapse
   useEffect(() => {
-    const el = innerRef.current
-    const content = contentRef.current
-    if (!el || !content) return
+    const el             = innerRef.current
+    const content        = contentRef.current
+    const cardBox        = cardBoxRef.current
+    const caseStudy      = caseStudyRef.current
+    const caseStudyInner = caseStudyInnerRef.current
+    if (!el || !content || !cardBox || !caseStudy || !caseStudyInner) return
 
-    // Teach ScrollTrigger how to read scroll position from the inner div
     ScrollTrigger.scrollerProxy(el, {
       scrollTop(value) {
         if (arguments.length) el.scrollTop = value as number
@@ -92,7 +97,7 @@ export default function PlayingCard() {
         Number(b.getAttribute('data-queens-image'))
     )
 
-    const triggers = images
+    const queenTriggers = images
       .filter((img) => Number(img.getAttribute('data-queens-image')) !== 9)
       .map((img) => {
         const fadeIndex = Number(img.getAttribute('data-queens-image'))
@@ -122,8 +127,34 @@ export default function PlayingCard() {
         )
       })
 
+    // Card collapse + case-study reveal over the final scroll stretch
+    const [collapseStart, collapseEnd] = CARD_COLLAPSE_RANGE
+
+    const collapseTimeline = gsap.timeline({
+      scrollTrigger: {
+        scroller: el,
+        trigger: content,
+        start: () => {
+          const scrollable = el.scrollHeight - el.clientHeight
+          return `top+=${(collapseStart / 100) * scrollable}px top`
+        },
+        end: () => {
+          const scrollable = el.scrollHeight - el.clientHeight
+          return `top+=${(collapseEnd / 100) * scrollable}px top`
+        },
+        scrub: true,
+        invalidateOnRefresh: true,
+      },
+    })
+
+    collapseTimeline
+      .to(cardBox,        { flexGrow: 0.6, ease: 'none' }, 0)
+      .to(caseStudy,      { flexGrow: 0.4, ease: 'none' }, 0)
+      .to(caseStudyInner, { opacity: 1,    ease: 'none' }, 0)
+
     return () => {
-      triggers.forEach((t) => t.scrollTrigger?.kill())
+      queenTriggers.forEach((t) => t.scrollTrigger?.kill())
+      collapseTimeline.scrollTrigger?.kill()
       ScrollTrigger.getAll().forEach((t) => t.kill())
     }
   }, [])
@@ -139,27 +170,49 @@ export default function PlayingCard() {
         className="absolute top-4 left-[13px]"
       />
 
-      <div className="flex-1 mt-16 mx-16 relative border-8 border-black border-b-0 rounded-t-2xl overflow-hidden flex flex-col">
+      {/* Layout container: card box + case-study panel stacked vertically */}
+      <div className="flex-1 mt-16 mx-16 flex flex-col min-h-0">
 
+        {/* Card visual — starts full size, shrinks on scroll-complete */}
         <div
-          ref={innerRef}
-          className="flex-1 min-h-0 overflow-y-scroll overflow-x-hidden scrollbar-hide"
+          ref={cardBoxRef}
+          className="relative border-8 border-black border-b-0 rounded-t-2xl overflow-hidden flex flex-col min-h-0"
+          style={{ flexGrow: 1, flexBasis: 0 }}
         >
-          <div ref={contentRef} className="p-8">
-            {SECTIONS.map((text, i) => (
-              <section
-                key={text}
-                className={i === SECTIONS.length - 1 ? 'mb-140' : 'mb-48'}
-              >
-                <h2 className="font-display leading-normal text-center uppercase text-[4rem] text-black">
-                  {text}
-                </h2>
-              </section>
-            ))}
+          <div
+            ref={innerRef}
+            className="flex-1 min-h-0 overflow-y-scroll overflow-x-hidden scrollbar-hide"
+          >
+            <div ref={contentRef} className="p-8">
+              {SECTIONS.map((text, i) => (
+                <section
+                  key={text}
+                  className={i === SECTIONS.length - 1 ? 'mb-140' : 'mb-48'}
+                >
+                  <h2 className="font-display leading-normal text-center uppercase text-[4rem] text-black">
+                    {text}
+                  </h2>
+                </section>
+              ))}
+            </div>
+          </div>
+
+          <Queens />
+        </div>
+
+        {/* Case-study panel — starts invisible, revealed on scroll-complete */}
+        <div
+          ref={caseStudyRef}
+          className="overflow-hidden flex flex-col min-h-0"
+          style={{ flexGrow: 0, flexBasis: 0 }}
+        >
+          <div ref={caseStudyInnerRef} className="p-8 opacity-0">
+            <h3 className="font-display uppercase text-[2rem] text-black">
+              Case Study
+            </h3>
           </div>
         </div>
 
-        <Queens />
       </div>
     </div>
   )
