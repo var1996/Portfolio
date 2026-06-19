@@ -129,7 +129,7 @@ export default function CaseStudyIntro() {
       </div>
 
       {/* ── Quote — cols 2–8, centered ── */}
-      <p className="col-start-4 col-span-7 text-center font-body text-xs font-semibold uppercase tracking-[0.08em] text-white/50 mt-20">
+      <p className="col-start-4 col-span-7 text-center font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow mt-20">
         &ldquo;TAMBA&rdquo; CAPTURES MOVEMENT, RHYTHM, AND JOY — THE TWO WORLDS BEING BROUGHT
         TOGETHER IN A SINGLE WORD.
       </p>
