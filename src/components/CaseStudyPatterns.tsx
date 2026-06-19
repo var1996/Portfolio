@@ -1,16 +1,16 @@
 export default function CaseStudyPatterns() {
   return (
-    <div className="bg-white px-12 grid grid-cols-[1fr_2fr] gap-x-16 gap-y-12 pt-20 pb-24">
+    <div className="bg-black px-12 grid grid-cols-[1fr_2fr] gap-x-16 gap-y-12 pt-20 pb-24">
 
       {/* ── Intro ── */}
       <div className="self-start">
-        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-black">
+        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
           Patterns and graphics
         </h2>
       </div>
 
       <div className="flex flex-col gap-8">
-        <p className="font-body text-[18px] font-normal leading-[1.5] text-black/85">
+        <p className="font-body text-[18px] font-normal leading-[1.5] text-white/85">
           Patterns and graphics bring the brand to life. Inspired by rhythm, movement, and African
           visual language, these elements add energy and flexibility across different touchpoints.
         </p>
@@ -20,7 +20,7 @@ export default function CaseStudyPatterns() {
             alt="Art Direction Graphic 1"
             className="w-full h-auto object-contain"
           />
-          <p className="font-body text-[18px] font-normal leading-[1.5] text-black/85">
+          <p className="font-body text-[18px] font-normal leading-[1.5] text-white/85">
             This illustration captures the fluidity and energy of the sport, while subtly
             incorporating the &ldquo;T&rdquo; form from our custom typeface. The sense of movement
             reflects the dual nature of tamba10, where music and cricket intersect. The inclusion of
@@ -37,7 +37,7 @@ export default function CaseStudyPatterns() {
         <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
           T PATTERNS
         </p>
-        <p className="font-body text-[18px] font-normal leading-[1.5] text-black/85">
+        <p className="font-body text-[18px] font-normal leading-[1.5] text-white/85">
           The following patterns are built from the custom &ldquo;T&rdquo; form within the Tamba10
           typeface, transforming a single typographic element into a bold, expressive visual system.
           Repeated, rotated, and layered, the forms create a sense of rhythm and movement.

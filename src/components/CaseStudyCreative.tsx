@@ -23,22 +23,22 @@ const BRAND_VALUES = [
 
 function ValueCard({ id, label, body }: { id: string; label: string; body: string }) {
   return (
-    <div className="border-t border-black/20 pt-6 flex flex-col gap-4">
+    <div className="border-t border-white/20 pt-6 flex flex-col gap-4">
       <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink">
         {id} {label}
       </p>
-      <p className="font-body text-[18px] font-normal leading-[1.5] text-black">{body}</p>
+      <p className="font-body text-[18px] font-normal leading-[1.5] text-white">{body}</p>
     </div>
   )
 }
 
 export default function CaseStudyCreative() {
   return (
-    <div className="bg-white px-12 grid grid-cols-[1fr_2fr] gap-x-16 gap-y-12 pt-20 pb-24">
+    <div className="bg-black px-12 grid grid-cols-[1fr_2fr] gap-x-16 gap-y-12 pt-20 pb-24">
 
       {/* ── Creative Platform ── */}
       <div className="self-start">
-        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-black">
+        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
           Creative Platform
         </h2>
       </div>

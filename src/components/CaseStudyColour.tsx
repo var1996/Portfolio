@@ -48,11 +48,11 @@ const COLOURS = [
 
 export default function CaseStudyColour() {
   return (
-    <div className="bg-white px-12 grid grid-cols-[1fr_2fr] gap-x-16 gap-y-12 pt-20 pb-24">
+    <div className="bg-black px-12 grid grid-cols-[1fr_2fr] gap-x-16 gap-y-12 pt-20 pb-24">
 
       {/* Col 1 — header */}
       <div className="self-start">
-        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-black">
+        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
           The colours that carry the brand
         </h2>
       </div>
@@ -62,7 +62,7 @@ export default function CaseStudyColour() {
         <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
           COLOUR SYSTEM
         </p>
-        <p className="font-body text-[18px] font-normal leading-[1.5] text-black">
+        <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
         The colour palette was built to balance energy, culture, performance, and premium
         positioning. The system combines bold signature colours with supporting neutrals,
         creating flexibility across campaigns, digital platforms, merchandise, and event
@@ -88,7 +88,7 @@ export default function CaseStudyColour() {
               <p className="font-body text-xs font-semibold">{c.hex}</p>
               <p className="font-body text-[15px] font-normal">{c.name}</p>
             </div>
-            <p className="font-body text-[15px] font-normal leading-[1.5] text-black/85">
+            <p className="font-body text-[15px] font-normal leading-[1.5] text-white/85">
               {c.description}
             </p>
           </div>

@@ -66,14 +66,14 @@ const AUDIENCE_CARDS = [
 
 function PillarCard({ id, label, body, bullets }: { id: string; label: string; body: string; bullets: string[] }) {
   return (
-    <div className="border-t border-black/20 pt-6 flex flex-col gap-4">
+    <div className="border-t border-white/20 pt-6 flex flex-col gap-4">
       <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink">
         {id} {label}
       </p>
-      <p className="font-body text-[18px] font-normal leading-[1.5] text-black">{body}</p>
+      <p className="font-body text-[18px] font-normal leading-[1.5] text-white">{body}</p>
       <ul className="flex flex-col gap-2">
         {bullets.map((b) => (
-          <li key={b} className="flex gap-3 font-body text-[18px] font-normal leading-[1.5] text-black">
+          <li key={b} className="flex gap-3 font-body text-[18px] font-normal leading-[1.5] text-white">
             <span className="shrink-0 mt-[0.3em]">•</span>
             <span>{b}</span>
           </li>
@@ -86,27 +86,27 @@ function PillarCard({ id, label, body, bullets }: { id: string; label: string; b
 function AudienceCard({ caption, title, body }: { caption: string; title: string; body: string }) {
   return (
     <div className="bg-yellow rounded-[30px] p-6 min-h-[210px] flex flex-col gap-2">
-      <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-black">
+      <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-white">
         {caption}
       </p>
       <p className="font-body text-[18px] font-normal text-black">{title}</p>
-      <p className="font-body text-[15px] font-normal leading-[1.4] text-black mt-1">{body}</p>
+      <p className="font-body text-[15px] font-normal leading-[1.4] text-white mt-1">{body}</p>
     </div>
   )
 }
 
 export default function CaseStudyVoice() {
   return (
-    <div className="bg-white px-12 grid grid-cols-[1fr_2fr] gap-x-16 gap-y-12 pt-20 pb-24">
+    <div className="bg-black px-12 grid grid-cols-[1fr_2fr] gap-x-16 gap-y-12 pt-20 pb-24">
 
       {/* ── Brand Voice Intro ── */}
       <div className="self-start">
-        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-black">
+        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
           The brand speaks. Here is how it sounds
         </h2>
       </div>
 
-      <p className="font-body text-[18px] font-normal leading-[1.5] text-black self-start">
+      <p className="font-body text-[18px] font-normal leading-[1.5] text-white self-start">
         A brand identity isn&apos;t only what you see, it&apos;s what you hear, read, and feel
         when the brand communicates. Tamba10&apos;s tone of voice was built to be as distinctive
         as its visual system: culturally grounded, high-energy, and always speaking to the
@@ -121,7 +121,7 @@ export default function CaseStudyVoice() {
         <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
           BRAND VALUES
         </p>
-        <p className="font-body text-[18px] font-normal leading-[1.5] text-black">
+        <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
           The brand values weren&apos;t listed as abstract nouns. They were given characters,
           each one drawn from a cricket term and translated into a human archetype. This was
           a deliberate creative decision: the language of the sport becomes the language of
@@ -161,7 +161,7 @@ export default function CaseStudyVoice() {
         <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
           WHO THE VOICE SPEAKS TO
         </p>
-        <p className="font-body text-[18px] font-normal leading-[1.5] text-black">
+        <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
           The tone shifts in register depending on who&apos;s in the room but the four pillars
           stay constant. Four audience archetypes define who Tamba10 is speaking to at any
           given moment. Below are the four archetypes.

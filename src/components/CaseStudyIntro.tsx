@@ -53,31 +53,31 @@ const RESPONSE_CARDS = [
 
 function Card({ id, label, body, labelColor }: { id: string; label: string; body: string; labelColor: string }) {
   return (
-    <div className="border-t border-black/20 pt-6 flex flex-col gap-4">
+    <div className="border-t border-white/20 pt-6 flex flex-col gap-4">
       <p className={`font-body text-xs font-semibold uppercase tracking-[0.08em] ${labelColor}`}>
         {id} {label}
       </p>
-      <p className="font-body text-[18px] font-normal leading-[1.6] text-black">{body}</p>
+      <p className="font-body text-[18px] font-normal leading-[1.6] text-white">{body}</p>
     </div>
   )
 }
 
 export default function CaseStudyIntro() {
   return (
-    <div className="bg-white px-12 grid grid-cols-[1fr_2fr] gap-x-16 gap-y-12 pt-20 pb-24">
+    <div className="bg-black px-12 grid grid-cols-[1fr_2fr] gap-x-16 gap-y-12 pt-20 pb-24">
 
       {/* ── Name Intro ── */}
       <div className="self-start">
         <h1 className="font-body text-[38px] font-normal leading-[1.2]">
-          <span className="text-black">From Zim Afro T10 to </span>
+          <span className="text-white">From Zim Afro T10 to </span>
           <span className="text-gold">TAMBA10</span>
-          <span className="text-black">:</span>
+          <span className="text-white">:</span>
           <br />
-          <span className="text-black">A name that moves</span>
+          <span className="text-white">A name that moves</span>
         </h1>
       </div>
 
-      <div className="flex flex-col gap-5 font-body text-[18px] font-normal leading-[1.6] text-black self-start">
+      <div className="flex flex-col gap-5 font-body text-[18px] font-normal leading-[1.6] text-white self-start">
         <p>
           This rebrand required a new name. The old name, Zim Afro T10, was simply
           descriptive and geographic. It told you where the league was from. But it
@@ -88,7 +88,7 @@ export default function CaseStudyIntro() {
 
       {/* ── Anatomy ── */}
       <div className="self-start">
-        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-black">
+        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
           Anatomy of the name
         </h2>
       </div>
@@ -101,7 +101,7 @@ export default function CaseStudyIntro() {
           <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-rose mb-3">
             Tamba: To play. To dance.
           </p>
-          <p className="font-body text-[18px] font-normal leading-[1.6] text-black">
+          <p className="font-body text-[18px] font-normal leading-[1.6] text-white">
             Drawn from local Zimbabwean language, tamba captures the dual soul of this
             league. The athletic play on the pitch and the rhythmic, joyful movement that
             fills the stands. It&apos;s a word that belongs to the people the brand is for.
@@ -111,7 +111,7 @@ export default function CaseStudyIntro() {
           <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-rose mb-3">
             10: The format. The pulse.
           </p>
-          <p className="font-body text-[18px] font-normal leading-[1.6] text-black">
+          <p className="font-body text-[18px] font-normal leading-[1.6] text-white">
             T10 is the cricket format. Fast, electrifying, and built for a generation with
             an appetite for high-intensity entertainment. Fused into the name itself, 10
             isn&apos;t a category label anymore; it becomes part of the brand&apos;s identity.
@@ -138,7 +138,7 @@ export default function CaseStudyIntro() {
 
       {/* ── A name that carries its soul ── */}
       <div className="self-start">
-        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-black">
+        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
           A name that carries its soul
         </h2>
       </div>
@@ -151,7 +151,7 @@ export default function CaseStudyIntro() {
 
       {/* ── Emotional Responses ── */}
       <div className="self-start">
-        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-black">
+        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
           The Emotional Responses Evoked
         </h2>
       </div>
