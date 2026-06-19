@@ -33,11 +33,11 @@ const SECTIONS = [
 ]
 
 export default function PlayingCard() {
-  const innerRef        = useRef<HTMLDivElement>(null)
-  const contentRef      = useRef<HTMLDivElement>(null)
-  const cardBoxRef      = useRef<HTMLDivElement>(null)
-  const caseStudyRef    = useRef<HTMLDivElement>(null)
-  const caseStudyInnerRef = useRef<HTMLDivElement>(null)
+  const innerRef           = useRef<HTMLDivElement>(null)
+  const contentRef         = useRef<HTMLDivElement>(null)
+  const cardBoxRef         = useRef<HTMLDivElement>(null)
+  const caseStudyRef       = useRef<HTMLDivElement>(null)
+  const caseStudyInnerRef  = useRef<HTMLDivElement>(null)
 
   // Wheel + keyboard scroll hijack
   useEffect(() => {
@@ -70,7 +70,7 @@ export default function PlayingCard() {
     }
   }, [])
 
-  // GSAP ScrollTrigger — queen fades + card collapse
+  // GSAP — queen fades + card collapse
   useEffect(() => {
     const el             = innerRef.current
     const content        = contentRef.current
@@ -90,7 +90,7 @@ export default function PlayingCard() {
     })
 
     const images = Array.from(
-      el.parentElement!.querySelectorAll<HTMLImageElement>('[data-queens-image]')
+      cardBox.querySelectorAll<HTMLImageElement>('[data-queens-image]')
     ).sort(
       (a, b) =>
         Number(a.getAttribute('data-queens-image')) -
@@ -127,7 +127,14 @@ export default function PlayingCard() {
         )
       })
 
-    // Card collapse + case-study reveal over the final scroll stretch
+    // Reveal height: 40% of the layout container's actual height
+    const layoutContainer = caseStudy.parentElement!
+    const targetHeight = layoutContainer.clientHeight * 0.4
+
+    // Set initial state explicitly so GSAP knows where to start
+    gsap.set(caseStudy, { height: 0 })
+    gsap.set(caseStudyInner, { opacity: 0 })
+
     const [collapseStart, collapseEnd] = CARD_COLLAPSE_RANGE
 
     const collapseTimeline = gsap.timeline({
@@ -148,9 +155,8 @@ export default function PlayingCard() {
     })
 
     collapseTimeline
-      .to(cardBox,        { flexGrow: 0.6, ease: 'none' }, 0)
-      .to(caseStudy,      { flexGrow: 0.4, ease: 'none' }, 0)
-      .to(caseStudyInner, { opacity: 1,    ease: 'none' }, 0)
+      .to(caseStudy,      { height: targetHeight, ease: 'none' }, 0)
+      .to(caseStudyInner, { opacity: 1,           ease: 'none' }, 0)
 
     return () => {
       queenTriggers.forEach((t) => t.scrollTrigger?.kill())
@@ -173,11 +179,10 @@ export default function PlayingCard() {
       {/* Layout container: card box + case-study panel stacked vertically */}
       <div className="flex-1 mt-16 mx-16 flex flex-col min-h-0">
 
-        {/* Card visual — starts full size, shrinks on scroll-complete */}
+        {/* Card box — flex-1 so it fills all space the case-study panel doesn't take */}
         <div
           ref={cardBoxRef}
-          className="relative border-8 border-black border-b-0 rounded-t-2xl overflow-hidden flex flex-col min-h-0"
-          style={{ flexGrow: 1, flexBasis: 0 }}
+          className="flex-1 relative border-8 border-black border-b-0 rounded-t-2xl overflow-hidden flex flex-col min-h-0"
         >
           <div
             ref={innerRef}
@@ -200,13 +205,12 @@ export default function PlayingCard() {
           <Queens />
         </div>
 
-        {/* Case-study panel — starts invisible, revealed on scroll-complete */}
+        {/* Case-study panel — starts at height 0, GSAP reveals it */}
         <div
           ref={caseStudyRef}
-          className="overflow-hidden flex flex-col min-h-0"
-          style={{ flexGrow: 0, flexBasis: 0 }}
+          className="overflow-hidden shrink-0"
         >
-          <div ref={caseStudyInnerRef} className="p-8 opacity-0">
+          <div ref={caseStudyInnerRef} className="p-8">
             <h3 className="font-display uppercase text-[2rem] text-black">
               Case Study
             </h3>
