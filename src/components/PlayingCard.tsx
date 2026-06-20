@@ -239,7 +239,7 @@ export default function PlayingCard() {
                   key={text}
                   className={i === SECTIONS.length - 1 ? 'mb-140' : 'mb-48'}
                 >
-                  <h2 className="font-display leading-normal text-center uppercase text-[4rem] text-black">
+                  <h2 className="font-abril leading-normal text-center uppercase text-[84px] text-black">
                     {text}
                   </h2>
                 </section>
@@ -277,7 +277,7 @@ export default function PlayingCard() {
         ref={ctaRef}
         className="fixed inset-x-0 top-[calc(52%-70px)] z-50 flex justify-center pointer-events-none"
       >
-        <Link href="/case-study" style={{ position: 'relative', left: '-20px' }} className="group flex items-center gap-2 bg-black/90 backdrop-blur-sm text-white font-body text-[13px] font-semibold uppercase tracking-[0.1em] px-6 py-3 rounded-full hover:bg-[#740614] transition-colors duration-200">
+        <Link href="/case-study" style={{ position: 'relative', left: '-5px' }} className="group flex items-center gap-2 bg-black/90 backdrop-blur-sm text-white font-body text-[13px] font-semibold uppercase tracking-[0.1em] px-6 py-3 rounded-full hover:bg-[#740614] transition-colors duration-200">
           Read Case Study
           <svg
             width="13"

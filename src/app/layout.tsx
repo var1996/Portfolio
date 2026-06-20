@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Boldonse, TikTok_Sans } from 'next/font/google'
+import { Boldonse, TikTok_Sans, Abril_Fatface } from 'next/font/google'
 import './globals.css'
 import Nav from '@/components/Nav'
 
@@ -12,6 +12,12 @@ const boldonse = Boldonse({
 const tiktokSans = TikTok_Sans({
   subsets: ['latin'],
   variable: '--font-body',
+})
+
+const abrilFatface = Abril_Fatface({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-abril',
 })
 
 export const metadata: Metadata = {
@@ -27,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${boldonse.variable} ${tiktokSans.variable} antialiased`}
+      className={`${boldonse.variable} ${tiktokSans.variable} ${abrilFatface.variable} antialiased`}
     >
       <body className="bg-black text-white font-body h-screen overflow-hidden flex flex-col">
         <Nav />

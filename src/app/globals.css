@@ -3,6 +3,7 @@
 @theme inline {
   --font-display: var(--font-display);
   --font-body: var(--font-body);
+  --font-abril: var(--font-abril);
 }
 
 @theme {
