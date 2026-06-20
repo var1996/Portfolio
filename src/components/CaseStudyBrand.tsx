@@ -108,11 +108,11 @@ export default function CaseStudyBrand() {
           MISSION
         </p>
         <div className="grid grid-cols-2 gap-6 items-start">
-          <img
-            src="/assets/casestudy_images/3 Mission Image.png"
-            alt="Mission"
-            className="w-full h-auto object-contain"
-          />
+          <div className="bg-yellow p-8 flex items-center justify-center">
+            <p className="font-body font-semibold uppercase text-black text-center leading-tight text-[22px]">
+              To establish Zimbabwe as Africa&apos;s home ground for cricket and culture
+            </p>
+          </div>
           <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
             The goal is not just to host matches, but to create a destination, a place where
             sport, entertainment, and community come together, a homeground. This vision stakes
@@ -130,11 +130,11 @@ export default function CaseStudyBrand() {
           TAGLINE
         </p>
         <div className="grid grid-cols-2 gap-6 items-start">
-          <img
-            src="/assets/casestudy_images/3 Tagline image.png"
-            alt="Tagline"
-            className="w-full h-auto object-contain"
-          />
+          <div className="bg-yellow p-6 flex items-center justify-center">
+            <p className="font-display uppercase leading-none text-[clamp(2rem,5vw,4rem)] text-center">
+              <span className="text-pink">UN</span><span className="text-black">MATCHED</span>
+            </p>
+          </div>
           <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
             With the mission and vision defined, the creative platform needed a headline one
             phrase that could carry the whole brand on a stadium screen, on a t-shirt, and in
