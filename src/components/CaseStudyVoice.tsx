@@ -97,7 +97,7 @@ function AudienceCard({ caption, title, body }: { caption: string; title: string
 
 export default function CaseStudyVoice() {
   return (
-    <div className="bg-black px-12 grid grid-cols-[1fr_2fr] gap-x-16 gap-y-12 pt-20 pb-24">
+    <div className="bg-black px-[30px] grid grid-cols-[1fr_2fr] gap-x-16 gap-y-12 pt-20 pb-24">
 
       {/* ── Brand Voice Intro ── */}
       <div className="self-start">

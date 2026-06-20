@@ -46,7 +46,7 @@ export default function CaseStudy() {
       </div>
 
       {/* Project info */}
-      <div className="px-12 grid grid-cols-[2fr_1fr] gap-x-16 gap-y-6 mt-10 pb-16">
+      <div className="px-[30px] grid grid-cols-[2fr_1fr] gap-x-16 gap-y-6 mt-10 pb-16">
 
         {/* Col 1: summary + service tags */}
         <div className="flex flex-col gap-6">

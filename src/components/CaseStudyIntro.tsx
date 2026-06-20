@@ -64,7 +64,7 @@ function Card({ id, label, body, labelColor }: { id: string; label: string; body
 
 export default function CaseStudyIntro() {
   return (
-    <div className="bg-black px-6 grid grid-cols-[1fr_2fr] gap-x-6 gap-y-12 pt-20 pb-24">
+    <div className="bg-black px-[30px] grid grid-cols-[1fr_2fr] gap-x-6 gap-y-12 pt-20 pb-24">
 
       {/* ── Name Intro ── */}
       <div className="self-start">
@@ -94,9 +94,6 @@ export default function CaseStudyIntro() {
       </div>
 
       <div className="flex flex-col gap-8 self-start">
-        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
-          ANATOMY OF THE NAME
-        </p>
         <div>
           <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-rose mb-3">
             Tamba: To play. To dance.

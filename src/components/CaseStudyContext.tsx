@@ -70,7 +70,7 @@ function InsightCard({ id, label, bullets }: { id: string; label: string; bullet
 
 export default function CaseStudyContext() {
   return (
-    <div className="bg-white px-6 grid grid-cols-[1fr_2fr] gap-x-6 gap-y-12 pt-20 pb-24">
+    <div className="bg-white px-[30px] grid grid-cols-[1fr_2fr] gap-x-6 gap-y-12 pt-20 pb-24">
 
       {/* ── Context ── */}
       <div className="self-start">

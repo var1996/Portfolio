@@ -18,7 +18,7 @@ export default function Footer() {
   }
 
   return (
-    <div className="bg-black px-12 grid grid-cols-[1fr_2fr] gap-x-16 border-t border-white/10 items-end">
+    <div className="bg-black px-[30px] grid grid-cols-[1fr_2fr] gap-x-16 border-t border-white/10 items-end">
 
       {/* Col 1: copyright */}
       <p className="pb-10 font-body text-[15px] font-normal text-white/40">
