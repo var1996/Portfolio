@@ -104,7 +104,7 @@ export default function CaseStudyContext() {
       {/* ── Purpose ── */}
       <div className="self-start">
         <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
-          Reading the<br />Playing Field
+          Reading the playing<br />field
         </h2>
       </div>
 
