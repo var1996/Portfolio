@@ -212,6 +212,19 @@ export default function PlayingCard() {
   return (
     <div ref={wrapperRef} className="col-start-4 col-span-6 flex flex-col bg-card rounded-t-3xl relative overflow-hidden">
 
+      {/* Pattern texture — covers outer border area only; cardBoxRef bg-card blocks it inside */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: "url('/assets/queens/pattern.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          mixBlendMode: 'multiply',
+          opacity: 0.35,
+        }}
+      />
+
       {/* Q-pip — wrapped for GSAP fade */}
       <div ref={qPipRef} className="absolute top-[4px] left-[13px] z-10">
         <img
@@ -226,7 +239,7 @@ export default function PlayingCard() {
       <div className="flex-1 mt-16 mx-16 flex flex-col min-h-0">
         <div
           ref={cardBoxRef}
-          className="flex-1 relative border-8 border-black border-b-0 rounded-t-2xl overflow-hidden flex flex-col min-h-0"
+          className="flex-1 relative border-8 border-black border-b-0 rounded-t-2xl overflow-hidden flex flex-col min-h-0 bg-card"
         >
           <div
             ref={innerRef}
