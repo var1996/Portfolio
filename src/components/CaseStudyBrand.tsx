@@ -53,31 +53,44 @@ export default function CaseStudyBrand() {
           </div>
 
           {/* Line 2 */}
-          <div className="flex flex-col items-center gap-3 w-full">
+          <div className="flex flex-col items-center w-full pb-16">
             <p className="font-body font-semibold uppercase text-black text-[22px] leading-tight">
-              AFRICAN TALENT <span className="text-pink underline decoration-pink decoration-2">OUT OF BOUNDS</span> , WHERE
+              AFRICAN TALENT{' '}
+              <span className="relative inline-block">
+                <span className="text-pink underline decoration-pink decoration-2">OUT OF BOUNDS</span>
+                <span className="absolute top-full left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 pt-1">
+                  <span className="block w-px h-4 bg-black/40" />
+                  <span className="font-body text-[9px] font-semibold uppercase tracking-wide text-black/60 text-center whitespace-nowrap">
+                    SCORING HIGH IN CRICKET<br />GOING FURTHER THAN EXPECTED<br />EXPLORING OUTSIDE THE KNOWN
+                  </span>
+                </span>
+              </span>
+              {' '}, WHERE
             </p>
-            <div className="flex flex-col items-center gap-1 ml-[5px]">
-              <div className="w-px h-4 bg-black/40" />
-              <p className="font-body text-[9px] font-semibold uppercase tracking-wide text-black/60 text-center">SCORING HIGH IN CRICKET<br />GOING FURTHER THAN EXPECTED<br />EXPLORING OUTSIDE THE KNOWN</p>
-            </div>
           </div>
 
           {/* Line 3 */}
-          <div className="flex flex-col items-center gap-3 w-full">
+          <div className="flex flex-col items-center w-full pb-16">
             <p className="font-body font-semibold uppercase text-black text-[22px] leading-tight">
-              WHERE <span className="text-pink underline decoration-pink decoration-2">RHYTHM</span> MEETS THE <span className="text-pink underline decoration-pink decoration-2">PITCH.</span>
+              WHERE{' '}
+              <span className="relative inline-block">
+                <span className="text-pink underline decoration-pink decoration-2">RHYTHM</span>
+                <span className="absolute top-full left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 pt-1">
+                  <span className="block w-px h-4 bg-black/40" />
+                  <span className="font-body text-[9px] font-semibold uppercase tracking-wide text-black/60 text-center whitespace-nowrap">PACE</span>
+                </span>
+              </span>
+              {' '}MEETS THE{' '}
+              <span className="relative inline-block">
+                <span className="text-pink underline decoration-pink decoration-2">PITCH.</span>
+                <span className="absolute top-full left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 pt-1">
+                  <span className="block w-px h-4 bg-black/40" />
+                  <span className="font-body text-[9px] font-semibold uppercase tracking-wide text-black/60 text-center whitespace-nowrap">
+                    CRICKET PITCH<br />MUSIC PITCH
+                  </span>
+                </span>
+              </span>
             </p>
-            <div className="relative w-full h-16">
-              <div className="absolute flex flex-col items-center gap-1" style={{ left: '34%', transform: 'translateX(-50%)' }}>
-                <div className="w-px h-4 bg-black/40" />
-                <p className="font-body text-[9px] font-semibold uppercase tracking-wide text-black/60 text-center">PACE</p>
-              </div>
-              <div className="absolute flex flex-col items-center gap-1" style={{ left: '59%', transform: 'translateX(-50%)' }}>
-                <div className="w-px h-4 bg-black/40" />
-                <p className="font-body text-[9px] font-semibold uppercase tracking-wide text-black/60 text-center">CRICKET PITCH<br />MUSIC PITCH</p>
-              </div>
-            </div>
           </div>
 
         </div>
