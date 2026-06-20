@@ -5,7 +5,7 @@ export default function CaseStudyBrand() {
       {/* ── Intro ── */}
       <div className="self-start">
         <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
-          The words that run the brand
+          The words that lay the foundation of the brand
         </h2>
       </div>
 
@@ -21,17 +21,15 @@ export default function CaseStudyBrand() {
         <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
           VISION
         </p>
-        <div className="grid grid-cols-2 gap-6 items-start">
-          <img
-            src="/assets/casestudy_images/3 Vision Image.png"
-            alt="Vision"
-            className="w-full h-auto object-contain"
-          />
-          <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
-            This vision reflects three ideas. First, unity, bringing people together through
-            sport and music. Second, African talent, celebrating the players, artists, and
-            creators shaping the continent&apos;s future. And lastly, rhythm, the pace, energy,
-            and excitement that define both music and cricket.
+        <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
+          This vision reflects three ideas. First, unity, bringing people together through
+          sport and music. Second, African talent, celebrating the players, artists, and
+          creators shaping the continent&apos;s future. And lastly, rhythm, the pace, energy,
+          and excitement that define both music and cricket.
+        </p>
+        <div className="bg-yellow p-8 flex items-center justify-center">
+          <p className="font-body font-semibold uppercase text-black text-center leading-tight text-[22px]">
+            Become a unifying force that takes African talent out of bounds, where rhythm meets the pitch.
           </p>
         </div>
         <img
