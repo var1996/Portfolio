@@ -33,51 +33,49 @@ export default function CaseStudyBrand() {
           </p>
         </div>
         {/* Coded Vision Explanation */}
-        <div className="bg-yellow px-8 py-10 flex flex-col gap-10">
+        <div className="bg-yellow px-8 py-10 flex flex-col gap-10 items-center text-center">
 
           {/* Line 1 */}
-          <div className="flex flex-col">
-            <p className="font-body font-semibold uppercase text-black text-[15px] leading-tight tracking-wide">
+          <div className="flex flex-col items-center gap-3 w-full">
+            <p className="font-body font-semibold uppercase text-black text-[22px] leading-tight">
               BECOME A <span className="text-pink underline decoration-pink decoration-2">UNIFYING FORCE</span> THAT TAKES
             </p>
-            <div className="flex mt-3 pl-[84px] gap-10">
+            <div className="flex justify-center gap-12">
               <div className="flex flex-col items-center gap-1">
                 <div className="w-px h-4 bg-black/40" />
-                <p className="font-body text-[8px] font-semibold uppercase tracking-wide text-black/60 text-center">COMMUNITY<br />BRINGING PEOPLE TOGETHER</p>
+                <p className="font-body text-[9px] font-semibold uppercase tracking-wide text-black/60 text-center">COMMUNITY<br />BRINGING PEOPLE TOGETHER</p>
               </div>
               <div className="flex flex-col items-center gap-1">
                 <div className="w-px h-4 bg-black/40" />
-                <p className="font-body text-[8px] font-semibold uppercase tracking-wide text-black/60 text-center">POWERFUL SPIN FORCE<br />FORCE TO BE RECKONED WITH</p>
+                <p className="font-body text-[9px] font-semibold uppercase tracking-wide text-black/60 text-center">POWERFUL SPIN FORCE<br />FORCE TO BE RECKONED WITH</p>
               </div>
             </div>
           </div>
 
           {/* Line 2 */}
-          <div className="flex flex-col">
-            <p className="font-body font-semibold uppercase text-black text-[15px] leading-tight tracking-wide">
+          <div className="flex flex-col items-center gap-3 w-full">
+            <p className="font-body font-semibold uppercase text-black text-[22px] leading-tight">
               AFRICAN TALENT <span className="text-pink underline decoration-pink decoration-2">OUT OF BOUNDS</span> , WHERE
             </p>
-            <div className="flex mt-3 pl-[136px]">
-              <div className="flex flex-col items-center gap-1">
-                <div className="w-px h-4 bg-black/40" />
-                <p className="font-body text-[8px] font-semibold uppercase tracking-wide text-black/60 text-center">SCORING HIGH IN CRICKET<br />GOING FURTHER THAN EXPECTED<br />EXPLORING OUTSIDE THE KNOWN</p>
-              </div>
+            <div className="flex flex-col items-center gap-1">
+              <div className="w-px h-4 bg-black/40" />
+              <p className="font-body text-[9px] font-semibold uppercase tracking-wide text-black/60 text-center">SCORING HIGH IN CRICKET<br />GOING FURTHER THAN EXPECTED<br />EXPLORING OUTSIDE THE KNOWN</p>
             </div>
           </div>
 
           {/* Line 3 */}
-          <div className="flex flex-col">
-            <p className="font-body font-semibold uppercase text-black text-[15px] leading-tight tracking-wide">
+          <div className="flex flex-col items-center gap-3 w-full">
+            <p className="font-body font-semibold uppercase text-black text-[22px] leading-tight">
               WHERE <span className="text-pink underline decoration-pink decoration-2">RHYTHM</span> MEETS THE <span className="text-pink underline decoration-pink decoration-2">PITCH.</span>
             </p>
-            <div className="flex mt-3 justify-between">
-              <div className="flex flex-col items-center gap-1 ml-[50px]">
+            <div className="flex justify-center gap-16">
+              <div className="flex flex-col items-center gap-1">
                 <div className="w-px h-4 bg-black/40" />
-                <p className="font-body text-[8px] font-semibold uppercase tracking-wide text-black/60 text-center">PACE</p>
+                <p className="font-body text-[9px] font-semibold uppercase tracking-wide text-black/60 text-center">PACE</p>
               </div>
-              <div className="flex flex-col items-center gap-1 mr-[10px]">
+              <div className="flex flex-col items-center gap-1">
                 <div className="w-px h-4 bg-black/40" />
-                <p className="font-body text-[8px] font-semibold uppercase tracking-wide text-black/60 text-center">CRICKET PITCH<br />MUSIC PITCH</p>
+                <p className="font-body text-[9px] font-semibold uppercase tracking-wide text-black/60 text-center">CRICKET PITCH<br />MUSIC PITCH</p>
               </div>
             </div>
           </div>
