@@ -1,7 +1,8 @@
 'use client'
 
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useCallback } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import Queens from '@/components/Queens'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -22,9 +23,6 @@ const QUEEN_FADES: Record<number, [number, number]> = {
   8: [85,  90],
 }
 
-// Last 8% of scroll: card shrinks, case-study panel reveals
-const CARD_COLLAPSE_RANGE: [number, number] = [92, 100]
-
 const SECTIONS = [
   'my name means queen of rain',
   'Born and raised in Zimbabwe',
@@ -33,21 +31,78 @@ const SECTIONS = [
 ]
 
 export default function PlayingCard() {
-  const innerRef           = useRef<HTMLDivElement>(null)
-  const contentRef         = useRef<HTMLDivElement>(null)
-  const cardBoxRef         = useRef<HTMLDivElement>(null)
-  const caseStudyRef       = useRef<HTMLDivElement>(null)
-  const caseStudyInnerRef  = useRef<HTMLDivElement>(null)
+  const wrapperRef        = useRef<HTMLDivElement>(null)
+  const innerRef          = useRef<HTMLDivElement>(null)
+  const contentRef        = useRef<HTMLDivElement>(null)
+  const cardBoxRef        = useRef<HTMLDivElement>(null)
+  const qPipRef           = useRef<HTMLDivElement>(null)
+  const endingQueenRef    = useRef<HTMLDivElement>(null)
+  const endingSpinnerRef  = useRef<HTMLDivElement>(null)
+  const ctaRef            = useRef<HTMLDivElement>(null)
+  const hasEndingFiredRef = useRef(false)
+
+  const triggerEnding = useCallback(() => {
+    if (hasEndingFiredRef.current) return
+    hasEndingFiredRef.current = true
+
+    const tl = gsap.timeline({ defaults: { ease: 'power2.inOut' } })
+
+    // Phase 1 — fade out card content, border, pip; simultaneously turn card black
+    tl.to([cardBoxRef.current, qPipRef.current], { opacity: 0, duration: 0.9 })
+    tl.to(wrapperRef.current, { backgroundColor: '#000000', duration: 0.9 }, 0)
+
+    // Phase 2 — reveal ending queen rising from off-screen (top-anchored, head first)
+    tl.to(
+      endingQueenRef.current,
+      { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' },
+      '-=0.25'
+    )
+
+    // Phase 3 — scale to half + 360° card-flip spin; transformOrigin keeps head pinned at top
+    tl.to(
+      endingSpinnerRef.current,
+      {
+        scale: 0.5,
+        rotateY: 360,
+        duration: 1.5,
+        ease: 'power3.inOut',
+        transformOrigin: '50% 0%',
+      },
+      '+=0.1'
+    )
+
+    // Phase 4 — slide CTA up and fade in
+    tl.to(
+      ctaRef.current,
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.65,
+        ease: 'power2.out',
+        onComplete: () => {
+          if (ctaRef.current) ctaRef.current.style.pointerEvents = 'auto'
+        },
+      },
+      '-=0.35'
+    )
+  }, [])
 
   // Wheel + keyboard scroll hijack
   useEffect(() => {
     const el = innerRef.current
     if (!el) return
 
+    const checkBottom = () => {
+      if (el.scrollTop + el.clientHeight >= el.scrollHeight - 10) {
+        triggerEnding()
+      }
+    }
+
     const onWheel = (e: WheelEvent) => {
       e.preventDefault()
       el.scrollTop += e.deltaY
       ScrollTrigger.update()
+      checkBottom()
     }
 
     const onKeyDown = (e: KeyboardEvent) => {
@@ -60,6 +115,7 @@ export default function PlayingCard() {
         case 'End':       el.scrollTop = el.scrollHeight; break
       }
       ScrollTrigger.update()
+      checkBottom()
     }
 
     window.addEventListener('wheel', onWheel, { passive: false })
@@ -68,16 +124,18 @@ export default function PlayingCard() {
       window.removeEventListener('wheel', onWheel)
       window.removeEventListener('keydown', onKeyDown)
     }
-  }, [])
+  }, [triggerEnding])
 
-  // GSAP — queen fades + card collapse
+  // GSAP — queen fades
   useEffect(() => {
-    const el             = innerRef.current
-    const content        = contentRef.current
-    const cardBox        = cardBoxRef.current
-    const caseStudy      = caseStudyRef.current
-    const caseStudyInner = caseStudyInnerRef.current
-    if (!el || !content || !cardBox || !caseStudy || !caseStudyInner) return
+    const el      = innerRef.current
+    const content = contentRef.current
+    const cardBox = cardBoxRef.current
+    if (!el || !content || !cardBox) return
+
+    // Set initial states — queen hidden 96px below its top-anchored resting position
+    gsap.set(endingQueenRef.current, { opacity: 0, y: 96 })
+    gsap.set(ctaRef.current, { opacity: 0, y: 32 })
 
     ScrollTrigger.scrollerProxy(el, {
       scrollTop(value) {
@@ -127,59 +185,27 @@ export default function PlayingCard() {
         )
       })
 
-    // Reveal height: 40% of the layout container's actual height
-    const layoutContainer = caseStudy.parentElement!
-    const targetHeight = layoutContainer.clientHeight * 0.4
-
-    // Set initial state explicitly so GSAP knows where to start
-    gsap.set(caseStudy, { height: 0 })
-    gsap.set(caseStudyInner, { opacity: 0 })
-
-    const [collapseStart, collapseEnd] = CARD_COLLAPSE_RANGE
-
-    const collapseTimeline = gsap.timeline({
-      scrollTrigger: {
-        scroller: el,
-        trigger: content,
-        start: () => {
-          const scrollable = el.scrollHeight - el.clientHeight
-          return `top+=${(collapseStart / 100) * scrollable}px top`
-        },
-        end: () => {
-          const scrollable = el.scrollHeight - el.clientHeight
-          return `top+=${(collapseEnd / 100) * scrollable}px top`
-        },
-        scrub: true,
-        invalidateOnRefresh: true,
-      },
-    })
-
-    collapseTimeline
-      .to(caseStudy,      { height: targetHeight, ease: 'none' }, 0)
-      .to(caseStudyInner, { opacity: 1,           ease: 'none' }, 0)
-
     return () => {
       queenTriggers.forEach((t) => t.scrollTrigger?.kill())
-      collapseTimeline.scrollTrigger?.kill()
       ScrollTrigger.getAll().forEach((t) => t.kill())
     }
   }, [])
 
   return (
-    <div className="col-start-4 col-span-6 flex flex-col bg-card rounded-t-3xl relative">
+    <div ref={wrapperRef} className="col-start-4 col-span-6 flex flex-col bg-card rounded-t-3xl relative overflow-hidden">
 
-      <Image
-        src="/assets/q-pip.png"
-        alt="Q pip"
-        width={48}
-        height={48}
-        className="absolute top-4 left-[13px]"
-      />
+      {/* Q-pip — wrapped for GSAP fade */}
+      <div ref={qPipRef} className="absolute top-4 left-[13px] z-10">
+        <Image
+          src="/assets/q-pip.png"
+          alt="Q pip"
+          width={48}
+          height={48}
+        />
+      </div>
 
-      {/* Layout container: card box + case-study panel stacked vertically */}
+      {/* Card layout */}
       <div className="flex-1 mt-16 mx-16 flex flex-col min-h-0">
-
-        {/* Card box — flex-1 so it fills all space the case-study panel doesn't take */}
         <div
           ref={cardBoxRef}
           className="flex-1 relative border-8 border-black border-b-0 rounded-t-2xl overflow-hidden flex flex-col min-h-0"
@@ -204,20 +230,51 @@ export default function PlayingCard() {
 
           <Queens />
         </div>
-
-        {/* Case-study panel — starts at height 0, GSAP reveals it */}
-        <div
-          ref={caseStudyRef}
-          className="overflow-hidden shrink-0"
-        >
-          <div ref={caseStudyInnerRef} className="p-8">
-            <h3 className="font-display uppercase text-[2rem] text-black">
-              Case Study
-            </h3>
-          </div>
-        </div>
-
       </div>
+
+      {/* ── Ending queen — top-anchored so head (image top) appears first ── */}
+      <div
+        ref={endingQueenRef}
+        className="absolute inset-x-0 top-0 pointer-events-none"
+        style={{ perspective: '900px' }}
+      >
+        <div
+          ref={endingSpinnerRef}
+          style={{ transformStyle: 'preserve-3d' }}
+        >
+          <img
+            src="/assets/queens/ending queen.png"
+            alt="Ending queen"
+            className="w-full h-auto block"
+          />
+        </div>
+      </div>
+
+      {/* ── CTA overlay ── */}
+      <div
+        ref={ctaRef}
+        className="absolute inset-x-0 top-[calc(43%-45px)] flex justify-center pointer-events-none"
+      >
+        <Link href="/case-study" className="group flex items-center gap-2 bg-black/90 backdrop-blur-sm text-white font-body text-[13px] font-semibold uppercase tracking-[0.1em] px-6 py-3 rounded-full hover:bg-[#740614] transition-colors duration-200">
+          Read Case Study
+          <svg
+            width="13"
+            height="13"
+            viewBox="0 0 13 13"
+            fill="none"
+            className="group-hover:translate-x-0.5 transition-transform duration-200"
+          >
+            <path
+              d="M2.5 6.5h8M6.5 2.5l4 4-4 4"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </Link>
+      </div>
+
     </div>
   )
 }
