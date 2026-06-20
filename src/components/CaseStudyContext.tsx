@@ -70,16 +70,16 @@ function InsightCard({ id, label, bullets }: { id: string; label: string; bullet
 
 export default function CaseStudyContext() {
   return (
-    <div className="bg-white px-6 grid grid-cols-[1fr_2fr] gap-x-6 gap-y-12 pt-20 pb-24">
+    <div className="bg-black px-[30px] grid grid-cols-[1fr_2fr] gap-x-6 gap-y-12 pt-20 pb-24">
 
       {/* ── Context ── */}
       <div className="self-start">
-        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-black">
+        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
           A League that lost it&apos;s roar
         </h2>
       </div>
 
-      <div className="flex flex-col gap-6 font-body text-[18px] font-normal leading-[1.5] text-black self-start">
+      <div className="flex flex-col gap-6 font-body text-[18px] font-normal leading-[1.5] text-black self-start bg-white p-8">
         <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink">
           CONTEXT
         </p>
@@ -99,13 +99,13 @@ export default function CaseStudyContext() {
 
       {/* ── Purpose ── */}
       <div className="self-start">
-         <h2 className="font-body text-[38px] font-normal leading-[1.1] text-black">
+         <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
           Reading the Playing
            Field
         </h2>
       </div>
 
-      <div className="flex flex-col gap-6 self-start">
+      <div className="flex flex-col gap-6 self-start bg-white p-8">
         <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink">
           PURPOSE
         </p>
@@ -123,7 +123,7 @@ export default function CaseStudyContext() {
     
       </div>
 
-      <div className="flex flex-col gap-6 self-start">
+      <div className="flex flex-col gap-6 self-start bg-white p-8">
         <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink">
           RESEARCH &amp; MARKET INSIGHTS
         </p>
