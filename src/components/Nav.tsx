@@ -7,18 +7,18 @@ export default function Nav() {
   const pathname = usePathname()
   const isHome = pathname === '/'
 
-  if (isHome) return <div className="w-full px-8 py-3 shrink-0 invisible" aria-hidden><p className="font-display uppercase">Varsharanee</p><p className="font-body">Brand Designer</p></div>
+  if (isHome) return <div className="w-full px-8 py-3 shrink-0 invisible" aria-hidden><img src="/q-pip.png" width={48} height={48} alt="" /></div>
 
   return (
-    <nav className="w-full px-8 py-3 flex items-center justify-between shrink-0">
-      <div>
-        <p className="font-display uppercase">Varsharanee</p>
-        <p className="font-body">Brand Designer</p>
-      </div>
+    <nav className="w-full px-8 py-3 flex items-center shrink-0">
       <Link href="/">
-        <button className="font-body text-sm rounded-xl bg-accent px-5 py-2 cursor-pointer transition-colors duration-200 hover:bg-accent/80 active:scale-95 transition-transform">
-          Home
-        </button>
+        <img
+          src="/q-pip.png"
+          alt="Return home"
+          width={48}
+          height={48}
+          className="cursor-pointer opacity-90 hover:opacity-100 transition-opacity duration-200"
+        />
       </Link>
     </nav>
   )
