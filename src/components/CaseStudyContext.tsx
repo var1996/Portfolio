@@ -52,7 +52,7 @@ const INSIGHTS = [
 
 function InsightCard({ id, label, bullets }: { id: string; label: string; bullets: string[] }) {
   return (
-    <div className="border-t border-black/20 pt-6 flex flex-col gap-4">
+    <div className="border-t border-yellow pt-6 flex flex-col gap-4">
       <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink">
         {id} {label}
       </p>
@@ -70,7 +70,7 @@ function InsightCard({ id, label, bullets }: { id: string; label: string; bullet
 
 export default function CaseStudyContext() {
   return (
-    <div className="bg-white px-[30px] grid grid-cols-[1fr_2fr] gap-x-6 gap-y-12 pt-20 pb-24">
+    <div className="bg-white px-6 grid grid-cols-[1fr_2fr] gap-x-6 gap-y-12 pt-20 pb-24">
 
       {/* ── Context ── */}
       <div className="self-start">
@@ -80,7 +80,7 @@ export default function CaseStudyContext() {
       </div>
 
       <div className="flex flex-col gap-6 font-body text-[18px] font-normal leading-[1.5] text-black self-start">
-        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
+        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink">
           CONTEXT
         </p>
         <p>
@@ -99,13 +99,14 @@ export default function CaseStudyContext() {
 
       {/* ── Purpose ── */}
       <div className="self-start">
-        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-black">
-          Why now, why this?
+         <h2 className="font-body text-[38px] font-normal leading-[1.1] text-black">
+          Reading the Playing
+           Field
         </h2>
       </div>
 
       <div className="flex flex-col gap-6 self-start">
-        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
+        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink">
           PURPOSE
         </p>
         <p className="font-body text-[18px] font-normal leading-[1.5] text-black">
@@ -115,21 +116,15 @@ export default function CaseStudyContext() {
         </p>
       </div>
 
-      {/* ── Quote ── */}
-      <p className="col-start-2 font-body text-xs font-semibold uppercase tracking-[0.08em] text-gold">
-        &ldquo;TO GIVE ZIMBABWEANS, BOTH AT HOME AND ABROAD, SOMETHING POWERFUL TO UNITE
-        AROUND AND FEEL PROUD OF.&rdquo;
-      </p>
+
 
       {/* ── Research ── */}
       <div className="self-start">
-        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-black">
-          Reading the Playing Field
-        </h2>
+    
       </div>
 
       <div className="flex flex-col gap-6 self-start">
-        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
+        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink">
           RESEARCH &amp; MARKET INSIGHTS
         </p>
         <div className="flex flex-col gap-6 font-body text-[18px] font-normal leading-[1.5] text-black">
