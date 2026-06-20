@@ -213,7 +213,7 @@ export default function PlayingCard() {
     <div ref={wrapperRef} className="col-start-4 col-span-6 flex flex-col bg-card rounded-t-3xl relative overflow-hidden">
 
       {/* Q-pip — wrapped for GSAP fade */}
-      <div ref={qPipRef} className="absolute top-[7px] left-[13px] z-10">
+      <div ref={qPipRef} className="absolute top-[4px] left-[13px] z-10">
         <img
           src="/q-pip.png"
           alt="Q pip"
