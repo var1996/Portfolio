@@ -106,25 +106,6 @@ export default function CaseStudyVoice() {
   return (
     <div className="bg-black px-[30px] grid grid-cols-[1fr_2fr] gap-x-16 gap-y-12 pt-20 pb-24">
 
-      {/* ── Brand Values ── */}
-      <div />
-
-      <div className="flex flex-col gap-6">
-        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
-          BRAND VALUES
-        </p>
-        <div className="flex flex-col">
-          {BRAND_VALUES.map((v) => (
-            <div key={v.id} className="border-t border-white/20 py-5 flex flex-col gap-2">
-              <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink">
-                {v.id} {v.label}
-              </p>
-              <p className="font-body text-[18px] font-normal leading-[1.5] text-white">{v.body}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* ── Brand Voice Intro ── */}
       <div className="self-start">
         <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
@@ -153,11 +134,16 @@ export default function CaseStudyVoice() {
           a deliberate creative decision: the language of the sport becomes the language of
           the brand.
         </p>
-        <img
-          src="/assets/casestudy_images/50.png"
-          alt="Brand value archetypes"
-          className="w-full h-auto object-contain"
-        />
+        <div className="flex flex-col">
+          {BRAND_VALUES.map((v) => (
+            <div key={v.id} className="border-t border-white/20 py-5 flex flex-col gap-2">
+              <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink">
+                {v.id} {v.label}
+              </p>
+              <p className="font-body text-[18px] font-normal leading-[1.5] text-white">{v.body}</p>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* ── Voice Pillars ── */}
