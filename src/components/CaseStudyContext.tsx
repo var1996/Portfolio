@@ -84,7 +84,7 @@ export default function CaseStudyContext() {
       </div>
 
       <div className="flex flex-col gap-6 font-body text-[18px] font-normal leading-[1.5] text-black self-start">
-        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink">
+        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink mt-[4px]">
           CONTEXT
         </p>
         <p>
