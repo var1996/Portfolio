@@ -31,14 +31,15 @@ export default function CaseStudy() {
     <div className="col-span-12 overflow-y-auto">
 
       {/* Featured image with title overlay */}
-      <div className="mt-8 aspect-video w-full relative overflow-hidden">
+      <div className="aspect-video w-full relative overflow-hidden">
         <img
           src="/assets/casestudy_images/Case Study Cover Image.png"
           alt="Tamba 10 case study cover"
           className="w-full h-full object-cover"
+          style={{ animation: 'kenBurns 18s ease-in-out infinite alternate' }}
         />
-        <div className="absolute top-8 left-8">
-          <h1 className="font-display uppercase text-yellow leading-tight text-[clamp(2rem,4.5vw,5rem)]">
+        <div className="absolute inset-0 flex items-center justify-center text-center px-8">
+          <h1 className="font-display uppercase text-yellow leading-tight text-[clamp(2.5rem,6vw,6rem)]">
             REBRANDING<br />OF ZIM AFRO T10
           </h1>
         </div>
