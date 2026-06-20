@@ -38,6 +38,7 @@ export default function PlayingCard() {
   const qPipRef           = useRef<HTMLDivElement>(null)
   const endingQueenRef    = useRef<HTMLDivElement>(null)
   const endingSpinnerRef  = useRef<HTMLDivElement>(null)
+  const endingQueenImgRef = useRef<HTMLImageElement>(null)
   const ctaRef            = useRef<HTMLDivElement>(null)
   const hasEndingFiredRef = useRef(false)
 
@@ -54,7 +55,7 @@ export default function PlayingCard() {
     // Phase 2 — reveal ending queen rising; rests 20px from top so float never hides behind nav
     tl.to(
       endingQueenRef.current,
-      { opacity: 1, y: 20, duration: 0.8, ease: 'power2.out' },
+      { opacity: 1, y: 40, duration: 0.8, ease: 'power2.out' },
       '-=0.25'
     )
 
@@ -70,6 +71,13 @@ export default function PlayingCard() {
       },
       '+=0.1'
     )
+
+    // Phase 3.5 — glow fades in after flip completes
+    tl.to(endingQueenImgRef.current, {
+      filter: 'drop-shadow(0 0 8px rgba(212,175,55,0.7)) drop-shadow(0 0 24px rgba(212,175,55,0.4)) drop-shadow(0 0 48px rgba(212,175,55,0.2))',
+      duration: 0.8,
+      ease: 'power2.out',
+    })
 
     // Phase 4 — slide CTA up and fade in
     tl.to(
@@ -144,6 +152,9 @@ export default function PlayingCard() {
     // Set initial states — queen hidden 96px below its top-anchored resting position
     gsap.set(endingQueenRef.current, { opacity: 0, y: 96 })
     gsap.set(ctaRef.current, { opacity: 0, y: 32 })
+    gsap.set(endingQueenImgRef.current, {
+      filter: 'drop-shadow(0 0 0px rgba(212,175,55,0)) drop-shadow(0 0 0px rgba(212,175,55,0)) drop-shadow(0 0 0px rgba(212,175,55,0))',
+    })
 
     ScrollTrigger.scrollerProxy(el, {
       scrollTop(value) {
@@ -203,9 +214,9 @@ export default function PlayingCard() {
     <div ref={wrapperRef} className="col-start-4 col-span-6 flex flex-col bg-card rounded-t-3xl relative overflow-hidden">
 
       {/* Q-pip — wrapped for GSAP fade */}
-      <div ref={qPipRef} className="absolute top-4 left-[13px] z-10">
+      <div ref={qPipRef} className="absolute top-[10px] left-[13px] z-10">
         <Image
-          src="/assets/q-pip.png"
+          src="/q-pip.png"
           alt="Q pip"
           width={48}
           height={48}
@@ -249,42 +260,14 @@ export default function PlayingCard() {
         <div
           ref={endingSpinnerRef}
           className="relative"
-          style={{
-            transformStyle: 'preserve-3d',
-            boxShadow: [
-              '0 8px 24px rgba(212,175,55,0.25)',
-              '0 24px 60px rgba(212,175,55,0.15)',
-              '0 60px 120px rgba(0,0,0,0.8)',
-            ].join(', '),
-          }}
+          style={{ transformStyle: 'preserve-3d' }}
         >
           <img
+            ref={endingQueenImgRef}
             src="/assets/queens/ending queen.png"
             alt="Ending queen"
             className="w-full h-auto block"
-            style={{
-              borderRadius: '12px',
-              filter: [
-                'drop-shadow(0 4px 12px rgba(212,175,55,0.5))',
-                'drop-shadow(0 16px 40px rgba(212,175,55,0.25))',
-                'drop-shadow(0 40px 80px rgba(0,0,0,0.9))',
-              ].join(' '),
-            }}
-          />
-
-          {/* Card edge highlights + directional light sheen */}
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              borderRadius: '12px',
-              boxShadow: [
-                'inset 0 1px 0 rgba(255,255,255,0.24)',
-                'inset 0 -1px 0 rgba(0,0,0,0.28)',
-                'inset 1px 0 0 rgba(255,255,255,0.14)',
-                'inset -1px 0 0 rgba(0,0,0,0.14)',
-              ].join(', '),
-              background: 'linear-gradient(148deg, rgba(255,255,255,0.13) 0%, rgba(255,255,255,0.03) 30%, transparent 52%, rgba(0,0,0,0.03) 72%, rgba(0,0,0,0.16) 100%)',
-            }}
+            style={{ borderRadius: '12px' }}
           />
         </div>
       </div>
@@ -292,9 +275,9 @@ export default function PlayingCard() {
       {/* ── CTA overlay ── */}
       <div
         ref={ctaRef}
-        className="fixed inset-x-0 top-[calc(52%-50px)] z-50 flex justify-center pointer-events-none"
+        className="fixed inset-x-0 top-[calc(52%-65px)] z-50 flex justify-center pointer-events-none"
       >
-        <Link href="/case-study" className="group flex items-center gap-2 bg-black/90 backdrop-blur-sm text-white font-body text-[13px] font-semibold uppercase tracking-[0.1em] px-6 py-3 rounded-full hover:bg-[#740614] transition-colors duration-200">
+        <Link href="/case-study" style={{ position: 'relative', left: '-20px' }} className="group flex items-center gap-2 bg-black/90 backdrop-blur-sm text-white font-body text-[13px] font-semibold uppercase tracking-[0.1em] px-6 py-3 rounded-full hover:bg-[#740614] transition-colors duration-200">
           Read Case Study
           <svg
             width="13"
