@@ -143,7 +143,7 @@ export default function CaseStudyIntro() {
         </h2>
       </div>
 
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-2 gap-6">
         {FEATURE_CARDS.map((card) => (
           <Card key={card.id} {...card} labelColor="text-rose" />
         ))}
@@ -156,7 +156,7 @@ export default function CaseStudyIntro() {
         </h2>
       </div>
 
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-2 gap-6">
         {RESPONSE_CARDS.map((card) => (
           <Card key={card.id} {...card} labelColor="text-gold" />
         ))}
