@@ -139,18 +139,10 @@ export default function CaseStudyBrand() {
         </div>
       </div>
 
-      {/* ── Tagline meanings — full-width two-col ── */}
-      <div className="col-span-2 grid grid-cols-2 gap-6">
-        <div className="flex flex-col gap-4">
-          <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
-            CRICKET MEANING
-          </p>
-          <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
-            In cricket, a match is the game itself the competition, the contest, the moment
-            everything is on the line. UNMATCHED says this league and the experience it
-            delivers are beyond comparison. No other match comes close.
-          </p>
-        </div>
+      {/* ── Tagline meanings ── */}
+      <div />
+
+      <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-4">
           <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
             CULTURAL MEANING
@@ -159,6 +151,16 @@ export default function CaseStudyBrand() {
             In everyday language, unmatched means without rival, without comparison, in a
             league of its own. It&apos;s a declaration of ambition for everything Tamba10
             represents, the talent, the energy, the cultural experience.
+          </p>
+        </div>
+        <div className="flex flex-col gap-4">
+          <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
+            CRICKET MEANING
+          </p>
+          <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
+            In cricket, a match is the game itself the competition, the contest, the moment
+            everything is on the line. UNMATCHED says this league and the experience it
+            delivers are beyond comparison. No other match comes close.
           </p>
         </div>
       </div>
