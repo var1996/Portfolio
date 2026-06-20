@@ -51,10 +51,10 @@ export default function PlayingCard() {
     tl.to([cardBoxRef.current, qPipRef.current], { opacity: 0, duration: 0.9 })
     tl.to(wrapperRef.current, { backgroundColor: '#000000', duration: 0.9 }, 0)
 
-    // Phase 2 — reveal ending queen rising from off-screen (top-anchored, head first)
+    // Phase 2 — reveal ending queen rising; rests 20px from top so float never hides behind nav
     tl.to(
       endingQueenRef.current,
-      { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' },
+      { opacity: 1, y: 20, duration: 0.8, ease: 'power2.out' },
       '-=0.25'
     )
 
@@ -81,6 +81,14 @@ export default function PlayingCard() {
         ease: 'power2.out',
         onComplete: () => {
           if (ctaRef.current) ctaRef.current.style.pointerEvents = 'auto'
+          // Phase 5 — infinite gentle float on the queen card
+          gsap.to(endingQueenRef.current, {
+            y: '-=14',
+            duration: 2.2,
+            ease: 'sine.inOut',
+            yoyo: true,
+            repeat: -1,
+          })
         },
       },
       '-=0.35'
@@ -240,12 +248,43 @@ export default function PlayingCard() {
       >
         <div
           ref={endingSpinnerRef}
-          style={{ transformStyle: 'preserve-3d' }}
+          className="relative"
+          style={{
+            transformStyle: 'preserve-3d',
+            boxShadow: [
+              '0 8px 24px rgba(212,175,55,0.25)',
+              '0 24px 60px rgba(212,175,55,0.15)',
+              '0 60px 120px rgba(0,0,0,0.8)',
+            ].join(', '),
+          }}
         >
           <img
             src="/assets/queens/ending queen.png"
             alt="Ending queen"
             className="w-full h-auto block"
+            style={{
+              borderRadius: '12px',
+              filter: [
+                'drop-shadow(0 4px 12px rgba(212,175,55,0.5))',
+                'drop-shadow(0 16px 40px rgba(212,175,55,0.25))',
+                'drop-shadow(0 40px 80px rgba(0,0,0,0.9))',
+              ].join(' '),
+            }}
+          />
+
+          {/* Card edge highlights + directional light sheen */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              borderRadius: '12px',
+              boxShadow: [
+                'inset 0 1px 0 rgba(255,255,255,0.24)',
+                'inset 0 -1px 0 rgba(0,0,0,0.28)',
+                'inset 1px 0 0 rgba(255,255,255,0.14)',
+                'inset -1px 0 0 rgba(0,0,0,0.14)',
+              ].join(', '),
+              background: 'linear-gradient(148deg, rgba(255,255,255,0.13) 0%, rgba(255,255,255,0.03) 30%, transparent 52%, rgba(0,0,0,0.03) 72%, rgba(0,0,0,0.16) 100%)',
+            }}
           />
         </div>
       </div>
@@ -253,7 +292,7 @@ export default function PlayingCard() {
       {/* ── CTA overlay ── */}
       <div
         ref={ctaRef}
-        className="absolute inset-x-0 top-[calc(43%-45px)] flex justify-center pointer-events-none"
+        className="fixed inset-x-0 top-[calc(52%-50px)] z-50 flex justify-center pointer-events-none"
       >
         <Link href="/case-study" className="group flex items-center gap-2 bg-black/90 backdrop-blur-sm text-white font-body text-[13px] font-semibold uppercase tracking-[0.1em] px-6 py-3 rounded-full hover:bg-[#740614] transition-colors duration-200">
           Read Case Study
