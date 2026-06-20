@@ -72,7 +72,7 @@ function InsightCard({ id, label, bullets }: { id: string; label: string; bullet
 export default function CaseStudyContext() {
   return (
     <div
-      className="px-[30px] grid grid-cols-[1fr_2fr] gap-x-6 gap-y-12 pt-20 pb-24"
+      className="px-[30px] grid grid-cols-[1fr_2fr] gap-x-6 gap-y-12 pb-24"
       style={{ background: 'linear-gradient(to right, black calc(33.33%), white calc(33.33%))' }}
     >
 
