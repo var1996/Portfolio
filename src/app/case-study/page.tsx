@@ -28,7 +28,7 @@ const META = [
 
 export default function CaseStudy() {
   return (
-    <div className="col-span-12 overflow-y-auto">
+    <div className="col-span-12 overflow-y-auto overflow-x-hidden">
 
       {/* Featured image with title overlay */}
       <div className="aspect-video w-full relative overflow-hidden">

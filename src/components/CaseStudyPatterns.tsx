@@ -70,7 +70,7 @@ export default function CaseStudyPatterns() {
           <div className="flex flex-col gap-4">
             <div className="flex items-end gap-2">
               <img src="/assets/casestudy_images/tamba t 4.png" alt="Tamba T4" className="w-[65px] h-[70px] object-contain shrink-0" />
-              <img src="/assets/casestudy_images/arrow graphic.png" alt="Arrow graphic" className="w-full h-auto object-contain" />
+              <img src="/assets/casestudy_images/arrow graphic.png" alt="Arrow graphic" className="flex-1 min-w-0 h-auto object-contain" />
             </div>
           </div>
           <div className="flex flex-col gap-4">
@@ -79,7 +79,7 @@ export default function CaseStudyPatterns() {
             </p>
             <div className="flex items-end gap-2">
               <img src="/assets/casestudy_images/tamba t 5.png" alt="Tamba T5" className="w-[65px] h-[70px] object-contain shrink-0" />
-              <img src="/assets/casestudy_images/Artist Frames.png" alt="Artist and player frames" className="w-full h-auto object-contain" />
+              <img src="/assets/casestudy_images/Artist Frames.png" alt="Artist and player frames" className="flex-1 min-w-0 h-auto object-contain" />
             </div>
           </div>
         </div>
