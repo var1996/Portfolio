@@ -32,11 +32,57 @@ export default function CaseStudyBrand() {
             Become a unifying force that takes African talent out of bounds, where rhythm meets the pitch.
           </p>
         </div>
-        <img
-          src="/assets/casestudy_images/3 Vision Explaination.png"
-          alt="Vision explanation"
-          className="w-full h-auto object-contain"
-        />
+        {/* Coded Vision Explanation */}
+        <div className="bg-yellow px-8 py-10 flex flex-col gap-10">
+
+          {/* Line 1 */}
+          <div className="flex flex-col">
+            <p className="font-body font-semibold uppercase text-black text-[15px] leading-tight tracking-wide">
+              BECOME A <span className="text-pink underline decoration-pink decoration-2">UNIFYING FORCE</span> THAT TAKES
+            </p>
+            <div className="flex mt-3 pl-[84px] gap-10">
+              <div className="flex flex-col items-center gap-1">
+                <div className="w-px h-4 bg-black/40" />
+                <p className="font-body text-[8px] font-semibold uppercase tracking-wide text-black/60 text-center">COMMUNITY<br />BRINGING PEOPLE TOGETHER</p>
+              </div>
+              <div className="flex flex-col items-center gap-1">
+                <div className="w-px h-4 bg-black/40" />
+                <p className="font-body text-[8px] font-semibold uppercase tracking-wide text-black/60 text-center">POWERFUL SPIN FORCE<br />FORCE TO BE RECKONED WITH</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Line 2 */}
+          <div className="flex flex-col">
+            <p className="font-body font-semibold uppercase text-black text-[15px] leading-tight tracking-wide">
+              AFRICAN TALENT <span className="text-pink underline decoration-pink decoration-2">OUT OF BOUNDS</span> , WHERE
+            </p>
+            <div className="flex mt-3 pl-[136px]">
+              <div className="flex flex-col items-center gap-1">
+                <div className="w-px h-4 bg-black/40" />
+                <p className="font-body text-[8px] font-semibold uppercase tracking-wide text-black/60 text-center">SCORING HIGH IN CRICKET<br />GOING FURTHER THAN EXPECTED<br />EXPLORING OUTSIDE THE KNOWN</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Line 3 */}
+          <div className="flex flex-col">
+            <p className="font-body font-semibold uppercase text-black text-[15px] leading-tight tracking-wide">
+              WHERE <span className="text-pink underline decoration-pink decoration-2">RHYTHM</span> MEETS THE <span className="text-pink underline decoration-pink decoration-2">PITCH.</span>
+            </p>
+            <div className="flex mt-3 justify-between">
+              <div className="flex flex-col items-center gap-1 ml-[50px]">
+                <div className="w-px h-4 bg-black/40" />
+                <p className="font-body text-[8px] font-semibold uppercase tracking-wide text-black/60 text-center">PACE</p>
+              </div>
+              <div className="flex flex-col items-center gap-1 mr-[10px]">
+                <div className="w-px h-4 bg-black/40" />
+                <p className="font-body text-[8px] font-semibold uppercase tracking-wide text-black/60 text-center">CRICKET PITCH<br />MUSIC PITCH</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
         <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
           The mission fuses both worlds in a single breath sport and sound, ambition and
           identity. It&apos;s not about running a cricket league. It&apos;s about creating a movement.
