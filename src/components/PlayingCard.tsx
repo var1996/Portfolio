@@ -214,7 +214,7 @@ export default function PlayingCard() {
     <div ref={wrapperRef} className="col-start-4 col-span-6 flex flex-col bg-card rounded-t-3xl relative overflow-hidden">
 
       {/* Q-pip — wrapped for GSAP fade */}
-      <div ref={qPipRef} className="absolute top-[10px] left-[13px] z-10">
+      <div ref={qPipRef} className="absolute top-[7px] left-[13px] z-10">
         <Image
           src="/q-pip.png"
           alt="Q pip"
@@ -275,7 +275,7 @@ export default function PlayingCard() {
       {/* ── CTA overlay ── */}
       <div
         ref={ctaRef}
-        className="fixed inset-x-0 top-[calc(52%-65px)] z-50 flex justify-center pointer-events-none"
+        className="fixed inset-x-0 top-[calc(52%-70px)] z-50 flex justify-center pointer-events-none"
       >
         <Link href="/case-study" style={{ position: 'relative', left: '-20px' }} className="group flex items-center gap-2 bg-black/90 backdrop-blur-sm text-white font-body text-[13px] font-semibold uppercase tracking-[0.1em] px-6 py-3 rounded-full hover:bg-[#740614] transition-colors duration-200">
           Read Case Study
