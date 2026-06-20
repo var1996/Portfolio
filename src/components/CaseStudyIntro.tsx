@@ -64,7 +64,7 @@ function Card({ id, label, body, labelColor }: { id: string; label: string; body
 
 export default function CaseStudyIntro() {
   return (
-    <div className="bg-black px-12 grid grid-cols-[1fr_2fr] gap-x-16 gap-y-12 pt-20 pb-24">
+    <div className="bg-black px-6 grid grid-cols-[1fr_2fr] gap-x-6 gap-y-12 pt-20 pb-24">
 
       {/* ── Name Intro ── */}
       <div className="self-start">
@@ -139,7 +139,7 @@ export default function CaseStudyIntro() {
       {/* ── A name that carries its soul ── */}
       <div className="self-start">
         <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
-          A name that carries its soul
+          A name that carries its soul<br />and what shaped it
         </h2>
       </div>
 
@@ -152,7 +152,7 @@ export default function CaseStudyIntro() {
       {/* ── Emotional Responses ── */}
       <div className="self-start">
         <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
-          The Emotional Responses Evoked
+          The feeling behind the brand
         </h2>
       </div>
 
