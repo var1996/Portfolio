@@ -1,7 +1,6 @@
 'use client'
 
 import { useRef, useEffect, useCallback } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import Queens from '@/components/Queens'
 import gsap from 'gsap'
@@ -215,7 +214,7 @@ export default function PlayingCard() {
 
       {/* Q-pip — wrapped for GSAP fade */}
       <div ref={qPipRef} className="absolute top-[7px] left-[13px] z-10">
-        <Image
+        <img
           src="/q-pip.png"
           alt="Q pip"
           width={48}
