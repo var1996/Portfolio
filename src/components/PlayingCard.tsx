@@ -221,12 +221,12 @@ export default function PlayingCard() {
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           mixBlendMode: 'multiply',
-          opacity: 0.35,
+          opacity: 0.8,
         }}
       />
 
       {/* Q-pip — wrapped for GSAP fade */}
-      <div ref={qPipRef} className="absolute top-[4px] left-[13px] z-10">
+      <div ref={qPipRef} className="absolute top-[1px] left-[13px] z-10">
         <img
           src="/q-pip.png"
           alt="Q pip"
@@ -245,7 +245,7 @@ export default function PlayingCard() {
             ref={innerRef}
             className="flex-1 min-h-0 overflow-y-scroll overflow-x-hidden scrollbar-hide"
           >
-            <div ref={contentRef} className="p-8">
+            <div ref={contentRef} className="pt-[22px] px-8 pb-8">
               {SECTIONS.map((text, i) => (
                 <section
                   key={text}
