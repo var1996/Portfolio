@@ -20,7 +20,7 @@ const SERVICES = [
 ]
 
 const META = [
-  { label: 'CLIENT',   value: 'ZIM AFRO' },
+  { label: 'CLIENT',   value: 'ZIM AFRO 10' },
   { label: 'ROLE',     value: 'BRAND DESIGNER' },
   { label: 'TIMELINE', value: '6 WEEKS' },
   { label: 'TOOLS',    value: 'FIGMA & PROCREATE' },
@@ -30,33 +30,24 @@ export default function CaseStudy() {
   return (
     <div className="col-span-12 overflow-y-auto">
 
-      {/* Featured image */}
+      {/* Featured image with title overlay */}
       <div className="mt-8 aspect-video w-full relative overflow-hidden">
         <img
           src="/assets/casestudy_images/Case Study Cover Image.png"
           alt="Tamba 10 case study cover"
           className="w-full h-full object-cover"
         />
+        <div className="absolute top-8 left-8">
+          <h1 className="font-display uppercase text-yellow leading-tight text-[clamp(2rem,4.5vw,5rem)]">
+            REBRANDING<br />OF ZIM AFRO T10
+          </h1>
+        </div>
       </div>
 
       {/* Project info */}
-      <div className="px-12 grid grid-cols-[1fr_2fr] gap-x-16 gap-y-6 mt-10 pb-16">
+      <div className="px-12 grid grid-cols-[2fr_1fr] gap-x-16 gap-y-6 mt-10 pb-16">
 
-        {/* Col 1: metadata */}
-        <div className="flex flex-col gap-4 self-start">
-          {META.map(({ label, value }) => (
-            <div key={label} className="flex flex-col gap-0.5">
-              <span className="font-body text-xs font-semibold uppercase text-pink">
-                {label}
-              </span>
-              <span className="font-body text-xs font-semibold uppercase text-white">
-                {value}
-              </span>
-            </div>
-          ))}
-        </div>
-
-        {/* Col 2: summary + service tags */}
+        {/* Col 1: summary + service tags */}
         <div className="flex flex-col gap-6">
           <p className="font-body text-[25px] leading-[1.3] font-regular text-white">
             Zim Afro T10, rebranded to Tamba 10, was reimagined from a cricket tournament
@@ -75,6 +66,20 @@ export default function CaseStudy() {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Col 2: metadata */}
+        <div className="flex flex-col gap-4 self-start">
+          {META.map(({ label, value }) => (
+            <div key={label} className="flex flex-col gap-0.5">
+              <span className="font-body text-xs font-semibold uppercase text-pink">
+                {label}
+              </span>
+              <span className="font-body text-xs font-semibold uppercase text-white">
+                {value}
+              </span>
+            </div>
+          ))}
         </div>
 
       </div>
