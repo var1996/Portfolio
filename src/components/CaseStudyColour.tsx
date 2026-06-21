@@ -57,62 +57,63 @@ export default function CaseStudyColour() {
   return (
     <div className="bg-black px-[30px] grid grid-cols-[1fr_2fr] gap-x-16 gap-y-12 pt-20 pb-24">
 
-      {/* Col 1 — header */}
+      {/* ── Intro ── */}
       <div className="self-start">
         <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
           The colours that carry the brand
         </h2>
       </div>
 
-      {/* Col 2 — body */}
-      <div className="flex flex-col gap-6 self-start">
-        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
-          COLOUR SYSTEM
-        </p>
-        <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
-          The colour palette was built to balance energy, culture, performance, and premium
-          positioning. The system combines bold signature colours with supporting neutrals,
-          creating flexibility across campaigns, digital platforms, merchandise, and event
-          experiences.
-        </p>
-      </div>
+      <div className="flex flex-col gap-12 self-start">
+        <div className="flex flex-col gap-6">
+          <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
+            COLOUR SYSTEM
+          </p>
+          <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
+            The colour palette was built to balance energy, culture, performance, and premium
+            positioning. The system combines bold signature colours with supporting neutrals,
+            creating flexibility across campaigns, digital platforms, merchandise, and event
+            experiences.
+          </p>
+        </div>
 
-      {/* Full-width row — colour swatches — 3 then 2 */}
-      <div className="col-span-2 grid grid-cols-3 gap-6">
-        {COLOURS.map((c) => (
-          <div key={c.hex} className="flex flex-col gap-4">
-            <div
-              style={{
-                backgroundColor: c.bg,
-                color: c.textColor,
-                border: c.border ? '1px solid rgba(255,255,255,0.15)' : undefined,
-              }}
-              className="aspect-[4/3] rounded-[24px] flex flex-col items-center pt-8 gap-1 px-4"
-            >
-              <p className="font-body text-xs font-semibold uppercase tracking-[0.08em]">
-                {c.category}
+        {/* Colour swatch grid — 3 then 2 */}
+        <div className="grid grid-cols-3 gap-6">
+          {COLOURS.map((c) => (
+            <div key={c.hex} className="flex flex-col gap-4">
+              <div
+                style={{
+                  backgroundColor: c.bg,
+                  color: c.textColor,
+                  border: c.border ? '1px solid rgba(255,255,255,0.15)' : undefined,
+                }}
+                className="aspect-[4/3] rounded-[24px] flex flex-col items-center pt-8 gap-1 px-4"
+              >
+                <p className="font-body text-xs font-semibold uppercase tracking-[0.08em]">
+                  {c.category}
+                </p>
+                <p className="font-body text-sm font-bold">{c.hex}</p>
+                <p className="font-body text-[15px] font-normal">{c.name}</p>
+              </div>
+              <p className="font-body text-[15px] font-normal leading-[1.5] text-white/85">
+                {c.description}
               </p>
-              <p className="font-body text-sm font-bold">{c.hex}</p>
-              <p className="font-body text-[15px] font-normal">{c.name}</p>
             </div>
-            <p className="font-body text-[15px] font-normal leading-[1.5] text-white/85">
-              {c.description}
-            </p>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
 
-      {/* Full-width row — 2×2 palette image grid */}
-      <div className="col-span-2 grid grid-cols-2 gap-[3px]">
-        {PALETTE_IMAGES.map((img) => (
-          <div key={img.src} className="aspect-[4/5] overflow-hidden">
-            <img
-              src={img.src}
-              alt={img.alt}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        ))}
+        {/* 2×2 palette image grid */}
+        <div className="grid grid-cols-2 gap-[3px]">
+          {PALETTE_IMAGES.map((img) => (
+            <div key={img.src} className="aspect-[4/5] overflow-hidden">
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
+        </div>
       </div>
 
     </div>
