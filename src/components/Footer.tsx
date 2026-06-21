@@ -18,7 +18,7 @@ export default function Footer() {
   }
 
   return (
-    <div className="bg-black px-[30px] flex items-end justify-between border-t border-white/10">
+    <div className="bg-black px-[30px] flex items-end justify-between border-t border-[#8C0006]">
 
       {/* Copyright */}
       <p className="pb-10 font-body text-[15px] font-normal text-white/40">
@@ -29,7 +29,7 @@ export default function Footer() {
       <div className="flex gap-6 items-end">
 
         {/* LinkedIn queen */}
-        <div className="group relative w-[200px] h-[245px] overflow-hidden">
+        <div className="group relative w-[200px] h-[180px] overflow-hidden">
           <a
             href="https://www.linkedin.com/in/varsharanee-designer/"
             target="_blank"
@@ -59,7 +59,7 @@ export default function Footer() {
               <div className="w-2 h-2 bg-[#8C0006]/80 border-r border-b border-[#8C0006] rotate-45 -mt-1" />
             </div>
           )}
-          <div className="group relative w-[200px] h-[245px] overflow-hidden">
+          <div className="group relative w-[200px] h-[180px] overflow-hidden">
             <button
               onClick={handleEmailClick}
               aria-label="Show email address"
