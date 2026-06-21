@@ -9,6 +9,7 @@ import CaseStudyArtDirection from '@/components/CaseStudyArtDirection'
 import CaseStudyPatterns from '@/components/CaseStudyPatterns'
 import CaseStudyDigital from '@/components/CaseStudyDigital'
 import CaseStudyPhysical from '@/components/CaseStudyPhysical'
+import CaseStudyClosing from '@/components/CaseStudyClosing'
 import Footer from '@/components/Footer'
 
 const SERVICES = [
@@ -96,6 +97,7 @@ export default function CaseStudy() {
       <CaseStudyPatterns />
       <CaseStudyDigital />
       <CaseStudyPhysical />
+      <CaseStudyClosing />
       <Footer />
     </div>
   )
