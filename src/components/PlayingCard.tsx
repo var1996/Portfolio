@@ -53,7 +53,7 @@ export default function PlayingCard() {
       ease: 'power2.inOut',
       onComplete: () => {
         // Phase 2 — zoom out + panel rises simultaneously
-        gsap.to(endingQueenRef.current, { scale: 0.50, duration: 0.85, ease: 'power2.out', transformOrigin: '50% 0%' })
+        gsap.to(endingQueenRef.current, { scale: 0.47, duration: 0.85, ease: 'power2.out', transformOrigin: '50% 0%' })
         gsap.to(bottomPanelRef.current, {
           y: 0,
           duration: 0.85,
