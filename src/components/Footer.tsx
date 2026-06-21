@@ -18,37 +18,35 @@ export default function Footer() {
   }
 
   return (
-    <div className="bg-black px-[30px] grid grid-cols-[1fr_2fr] gap-x-16 border-t border-white/10 items-end">
+    <div className="bg-black px-[30px] flex items-end justify-between border-t border-white/10">
 
-      {/* Col 1: copyright */}
+      {/* Copyright */}
       <p className="pb-10 font-body text-[15px] font-normal text-white/40">
         © 2026 Varsharanee
       </p>
 
-      {/* Col 2: queens, right-aligned */}
-      <div className="flex justify-end gap-6 items-end">
+      {/* Queens */}
+      <div className="flex gap-6 items-end">
 
         {/* LinkedIn queen */}
-        <div className="self-end w-[140px]">
-          <div className="relative overflow-hidden h-[160px] hover:h-[300px] transition-[height] duration-500 ease-out">
-            <a
-              href="https://www.linkedin.com/in/varsharanee-designer/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn profile"
-              className="absolute inset-0"
-            >
-              <img
-                src="/assets/queens/Linkedin Queen.png"
-                alt="LinkedIn"
-                className="absolute bottom-0 w-full h-auto object-contain"
-              />
-            </a>
-          </div>
+        <div className="group relative w-[140px] h-[200px] overflow-hidden">
+          <a
+            href="https://www.linkedin.com/in/varsharanee-designer/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn profile"
+            className="absolute bottom-0 w-full"
+          >
+            <img
+              src="/assets/queens/Linkedin Queen.png"
+              alt="LinkedIn"
+              className="w-full h-auto block transition-transform duration-500 ease-out group-hover:-translate-y-5"
+            />
+          </a>
         </div>
 
-        {/* Postal queen */}
-        <div className="self-end w-[140px] relative">
+        {/* Postal / email queen */}
+        <div className="relative">
           {emailOpen && (
             <div className="absolute bottom-full mb-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 z-10">
               <button
@@ -61,23 +59,22 @@ export default function Footer() {
               <div className="w-2 h-2 bg-white/10 border-r border-b border-white/15 rotate-45 -mt-1" />
             </div>
           )}
-          <div className="relative overflow-hidden h-[160px] hover:h-[300px] transition-[height] duration-500 ease-out">
+          <div className="group relative w-[140px] h-[200px] overflow-hidden">
             <button
               onClick={handleEmailClick}
               aria-label="Show email address"
-              className="absolute inset-0 w-full focus-visible:outline-none"
+              className="absolute bottom-0 w-full focus-visible:outline-none"
             >
               <img
                 src="/assets/queens/postal queen.png"
                 alt="Email"
-                className="absolute bottom-0 w-full h-auto object-contain"
+                className="w-full h-auto block transition-transform duration-500 ease-out group-hover:-translate-y-5"
               />
             </button>
           </div>
         </div>
 
       </div>
-
     </div>
   )
 }
