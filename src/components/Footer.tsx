@@ -51,12 +51,12 @@ export default function Footer() {
             <div className="absolute bottom-full mb-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 z-10">
               <button
                 onClick={handleCopy}
-                className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-xl px-4 py-2.5 font-body text-[13px] font-normal text-white whitespace-nowrap transition-colors hover:bg-white/20 active:scale-95"
+                className="bg-[#8C0006]/80 backdrop-blur-sm border border-[#8C0006] rounded-xl px-4 py-2.5 font-body text-[13px] font-normal text-white whitespace-nowrap transition-colors hover:bg-[#8C0006] active:scale-95"
                 aria-label="Copy email address"
               >
                 {copied ? '✓ Copied!' : 'varsharanee.roopun@gmail.com'}
               </button>
-              <div className="w-2 h-2 bg-white/10 border-r border-b border-white/15 rotate-45 -mt-1" />
+              <div className="w-2 h-2 bg-[#8C0006]/80 border-r border-b border-[#8C0006] rotate-45 -mt-1" />
             </div>
           )}
           <div className="group relative w-[200px] h-[245px] overflow-hidden">
