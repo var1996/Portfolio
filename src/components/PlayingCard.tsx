@@ -36,7 +36,7 @@ export default function PlayingCard() {
   const cardBoxRef        = useRef<HTMLDivElement>(null)
   const qPipRef           = useRef<HTMLDivElement>(null)
   const endingQueenRef    = useRef<HTMLDivElement>(null)
-  const endingQueenImgRef = useRef<HTMLImageElement>(null)
+
   const bottomPanelRef    = useRef<HTMLDivElement>(null)
   const hasEndingFiredRef = useRef(false)
 
@@ -59,16 +59,8 @@ export default function PlayingCard() {
           duration: 0.85,
           ease: 'power2.out',
           onComplete: () => {
-            // Phase 3 — glow, then float
-            gsap.to(endingQueenImgRef.current, {
-              filter: 'drop-shadow(0 0 8px rgba(212,175,55,0.7)) drop-shadow(0 0 24px rgba(212,175,55,0.4)) drop-shadow(0 0 48px rgba(212,175,55,0.2))',
-              duration: 0.8,
-              ease: 'power2.out',
-              onComplete: () => {
-                if (bottomPanelRef.current) bottomPanelRef.current.style.pointerEvents = 'auto'
-                gsap.to(endingQueenRef.current, { y: '-=12', duration: 2.2, ease: 'sine.inOut', yoyo: true, repeat: -1 })
-              },
-            })
+            if (bottomPanelRef.current) bottomPanelRef.current.style.pointerEvents = 'auto'
+            gsap.to(endingQueenRef.current, { y: '-=12', duration: 2.2, ease: 'sine.inOut', yoyo: true, repeat: -1 })
           },
         })
       },
@@ -123,9 +115,6 @@ export default function PlayingCard() {
 
     gsap.set(endingQueenRef.current,   { opacity: 0, y: 0 })
     gsap.set(bottomPanelRef.current,   { y: '100%' })
-    gsap.set(endingQueenImgRef.current, {
-      filter: 'drop-shadow(0 0 0px rgba(212,175,55,0)) drop-shadow(0 0 0px rgba(212,175,55,0)) drop-shadow(0 0 0px rgba(212,175,55,0))',
-    })
 
     ScrollTrigger.scrollerProxy(el, {
       scrollTop(value) {
@@ -236,7 +225,7 @@ export default function PlayingCard() {
         className="absolute inset-x-0 top-0 pointer-events-none z-10"
       >
         <img
-          ref={endingQueenImgRef}
+
           src="/assets/queens/ending queen.png"
           alt="Ending queen"
           className="w-full h-auto block"
