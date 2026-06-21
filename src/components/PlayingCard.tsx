@@ -227,25 +227,25 @@ export default function PlayingCard() {
         className="absolute inset-x-0 bottom-0 pointer-events-none z-20"
         style={{ backgroundColor: '#000', borderTop: '1px solid rgba(255,255,255,0.1)' }}
       >
-        <div className="flex items-center gap-6 px-7 py-7">
+        <div className="flex items-center gap-4 px-5 py-3">
           <img
             src="/assets/casestudy_images/Case Study Cover Image.png"
             alt="Tamba10"
-            style={{ width: 130, height: 130, objectFit: 'cover', borderRadius: 14, flexShrink: 0 }}
+            style={{ width: 65, height: 65, objectFit: 'cover', borderRadius: 8, flexShrink: 0 }}
           />
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 12, flex: 1, minWidth: 0 }}>
-            <p className="font-body text-[12px] font-semibold uppercase tracking-[0.12em] text-yellow">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 6, flex: 1, minWidth: 0 }}>
+            <p className="font-body text-[10px] font-semibold uppercase tracking-[0.12em] text-yellow">
               Case Study · Tamba10
             </p>
-            <p className="font-body text-white text-[16px] leading-[1.45]">
+            <p className="font-body text-white text-[13px] leading-[1.4]">
               Full brand rebrand for Zimbabwe&apos;s premier T10 cricket festival
             </p>
             <Link
               href="/case-study"
-              className="self-start group flex items-center gap-2 text-white hover:text-black font-body text-[13px] font-semibold uppercase tracking-[0.1em] px-6 py-2.5 rounded-full transition-colors duration-200 bg-white/10 hover:bg-[#DCBE00]"
+              className="self-start group flex items-center gap-2 text-white hover:text-black font-body text-[11px] font-semibold uppercase tracking-[0.1em] px-4 py-1.5 rounded-full transition-colors duration-200 bg-white/10 hover:bg-[#DCBE00]"
             >
               Read Case Study
-              <svg width="12" height="12" viewBox="0 0 13 13" fill="none" className="group-hover:translate-x-0.5 transition-transform duration-200">
+              <svg width="10" height="10" viewBox="0 0 13 13" fill="none" className="group-hover:translate-x-0.5 transition-transform duration-200">
                 <path d="M2.5 6.5h8M6.5 2.5l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </Link>
