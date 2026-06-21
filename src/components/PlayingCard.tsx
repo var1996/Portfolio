@@ -53,7 +53,7 @@ export default function PlayingCard() {
       ease: 'power2.inOut',
       onComplete: () => {
         // Phase 2 — zoom out + panel rises simultaneously
-        gsap.to(endingQueenRef.current, { scale: 0.78, duration: 0.85, ease: 'power2.out', transformOrigin: '50% 0%' })
+        gsap.to(endingQueenRef.current, { scale: 0.65, duration: 0.85, ease: 'power2.out', transformOrigin: '50% 0%' })
         gsap.to(bottomPanelRef.current, {
           y: 0,
           duration: 0.85,
@@ -173,19 +173,6 @@ export default function PlayingCard() {
   return (
     <div ref={wrapperRef} className="col-start-4 col-span-6 flex flex-col bg-card rounded-t-3xl relative overflow-hidden">
 
-      {/* Pattern texture */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: "url('/assets/queens/pattern.png')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          mixBlendMode: 'multiply',
-          opacity: 0.8,
-        }}
-      />
-
       {/* Q-pip */}
       <div ref={qPipRef} className="absolute top-[1px] left-[13px] z-10">
         <img src="/q-pip.png" alt="Q pip" width={48} height={48} />
@@ -239,26 +226,26 @@ export default function PlayingCard() {
         className="absolute inset-x-0 bottom-0 pointer-events-none z-20"
         style={{ backgroundColor: '#000', borderTop: '1px solid rgba(255,255,255,0.1)' }}
       >
-        <div className="flex items-center gap-4 px-5 py-4">
+        <div className="flex items-center gap-5 px-6 py-5">
           <img
             src="/assets/queens/creative.png"
             alt="Tamba10"
-            style={{ width: 72, height: 72, objectFit: 'cover', borderRadius: 10, flexShrink: 0 }}
+            style={{ width: 100, height: 100, objectFit: 'cover', borderRadius: 12, flexShrink: 0 }}
           />
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 8, flex: 1, minWidth: 0 }}>
-            <p className="font-body text-[10px] font-semibold uppercase tracking-[0.12em] text-yellow">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 10, flex: 1, minWidth: 0 }}>
+            <p className="font-body text-[11px] font-semibold uppercase tracking-[0.12em] text-yellow">
               Case Study · Tamba10
             </p>
-            <p className="font-body text-white text-[12px] leading-[1.4]" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+            <p className="font-body text-white text-[14px] leading-[1.4]">
               Full brand identity for Zimbabwe&apos;s premier T10 cricket and culture festival
             </p>
             <Link
               href="/case-study"
-              className="self-start group flex items-center gap-1.5 text-white font-body text-[11px] font-semibold uppercase tracking-[0.1em] px-4 py-1.5 rounded-full transition-colors duration-200"
+              className="self-start group flex items-center gap-2 text-white font-body text-[12px] font-semibold uppercase tracking-[0.1em] px-5 py-2 rounded-full transition-colors duration-200"
               style={{ backgroundColor: 'rgba(255,255,255,0.1)' }}
             >
               Read Case Study
-              <svg width="10" height="10" viewBox="0 0 13 13" fill="none" className="group-hover:translate-x-0.5 transition-transform duration-200">
+              <svg width="11" height="11" viewBox="0 0 13 13" fill="none" className="group-hover:translate-x-0.5 transition-transform duration-200">
                 <path d="M2.5 6.5h8M6.5 2.5l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </Link>
