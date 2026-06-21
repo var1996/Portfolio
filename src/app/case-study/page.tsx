@@ -10,6 +10,7 @@ import CaseStudyPatterns from '@/components/CaseStudyPatterns'
 import CaseStudyDigital from '@/components/CaseStudyDigital'
 import CaseStudyPhysical from '@/components/CaseStudyPhysical'
 import CaseStudyClosing from '@/components/CaseStudyClosing'
+import ScrollToTop from '@/components/ScrollToTop'
 import Footer from '@/components/Footer'
 
 const SERVICES = [
@@ -29,7 +30,7 @@ const META = [
 
 export default function CaseStudy() {
   return (
-    <div className="col-span-12 overflow-y-auto overflow-x-hidden">
+    <div id="case-study-scroll" className="col-span-12 overflow-y-auto overflow-x-hidden">
 
       {/* Featured image with title overlay */}
       <div className="aspect-video w-full relative overflow-hidden">
@@ -98,6 +99,7 @@ export default function CaseStudy() {
       <CaseStudyDigital />
       <CaseStudyPhysical />
       <CaseStudyClosing />
+      <ScrollToTop />
       <Footer />
     </div>
   )
