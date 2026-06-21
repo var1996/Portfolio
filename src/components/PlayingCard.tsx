@@ -209,7 +209,8 @@ export default function PlayingCard() {
       {/* ── Ending queen — fades in at card position, then zooms out ── */}
       <div
         ref={endingQueenRef}
-        className="absolute inset-x-0 top-0 pointer-events-none z-10"
+        className="absolute inset-x-0 pointer-events-none z-10"
+        style={{ top: '-30px' }}
       >
         <img
 
@@ -228,7 +229,7 @@ export default function PlayingCard() {
       >
         <div className="flex items-center gap-6 px-7 py-7">
           <img
-            src="/assets/queens/creative.png"
+            src="/assets/casestudy_images/Case Study Cover Image.png"
             alt="Tamba10"
             style={{ width: 130, height: 130, objectFit: 'cover', borderRadius: 14, flexShrink: 0 }}
           />
@@ -237,12 +238,11 @@ export default function PlayingCard() {
               Case Study · Tamba10
             </p>
             <p className="font-body text-white text-[16px] leading-[1.45]">
-              Full brand identity for Zimbabwe&apos;s premier T10 cricket and culture festival
+              Full brand rebrand for Zimbabwe&apos;s premier T10 cricket festival
             </p>
             <Link
               href="/case-study"
-              className="self-start group flex items-center gap-2 text-white font-body text-[13px] font-semibold uppercase tracking-[0.1em] px-6 py-2.5 rounded-full transition-colors duration-200"
-              style={{ backgroundColor: 'rgba(255,255,255,0.1)' }}
+              className="self-start group flex items-center gap-2 text-white hover:text-black font-body text-[13px] font-semibold uppercase tracking-[0.1em] px-6 py-2.5 rounded-full transition-colors duration-200 bg-white/10 hover:bg-[#DCBE00]"
             >
               Read Case Study
               <svg width="12" height="12" viewBox="0 0 13 13" fill="none" className="group-hover:translate-x-0.5 transition-transform duration-200">
