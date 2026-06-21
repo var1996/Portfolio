@@ -70,10 +70,9 @@ export default function CaseStudyIntro() {
       <div className="self-start">
         <h1 className="font-body text-[38px] font-normal leading-[1.2]">
           <span className="text-white">From Zim Afro T10 to </span>
-          <span className="text-gold">TAMBA10</span>
+          <span className="text-gold">TAMBA</span><span className="text-pink">10</span>
           <span className="text-white">:</span>
-          <br />
-          <span className="text-white">A name that moves</span>
+          <span className="text-white">a name that moves</span>
         </h1>
       </div>
 
@@ -81,9 +80,9 @@ export default function CaseStudyIntro() {
         <p>
           This rebrand required a new name. The old name, Zim Afro T10, was simply
           descriptive and geographic. It told you where the league was from. But it
-          carried no feeling, cultural weight or invitation.
+          carried no feeling, cultural weight or invitation.The rename to Tamba10 was one of the most deliberate decisions in this project.
         </p>
-        <p>The rename to Tamba10 was one of the most deliberate decisions in this project.</p>
+
       </div>
 
       {/* ── Anatomy ── */}
