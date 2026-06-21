@@ -6,7 +6,7 @@ export default function ScrollToTop() {
   }
 
   return (
-    <div className="bg-black flex justify-center py-10 border-t border-white/10">
+    <div className="bg-black flex justify-center py-4 border-t border-white/10">
       <button
         onClick={handleClick}
         aria-label="Back to top"
