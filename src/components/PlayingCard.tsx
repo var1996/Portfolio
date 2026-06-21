@@ -238,7 +238,7 @@ export default function PlayingCard() {
               Case Study · Tamba10
             </p>
             <p className="font-body text-white text-[16px] leading-[1.45]">
-              Full brand rebrand for Zimbabwe&apos;s premier T10 cricket festival
+              Full rebrand for Zimbabwe&apos;s premier T10 cricket festival
             </p>
             <Link
               href="/case-study"
