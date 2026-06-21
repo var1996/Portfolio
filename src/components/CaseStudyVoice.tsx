@@ -95,6 +95,37 @@ function AudienceCard({ caption, title, body }: { caption: string; title: string
   )
 }
 
+const VALUES_CARDS = [
+  {
+    name: 'The Bend Backer',
+    img: '',
+    body: (
+      <>The Bend Backer represents <strong>effort and intensity</strong> — the relentless energy required to create <strong>fast, electric cricket experiences.</strong></>
+    ),
+  },
+  {
+    name: 'The Sweet Spotter',
+    img: '',
+    body: (
+      <>We hit the <strong>sweet spot between music and cricket</strong> and create <strong>opportunity of emerging African talent.</strong></>
+    ),
+  },
+  {
+    name: 'The Fast Bowler',
+    img: '',
+    body: (
+      <>The Fast Bowler represents <strong>momentum</strong> — constantly pushing forward and striving toward <strong>greater potential.</strong></>
+    ),
+  },
+  {
+    name: 'The Crease Popper',
+    img: '',
+    body: (
+      <>Crease Popper represents <strong>boldness</strong> — breaking boundaries and placing <strong>Zimbabwe and African talent</strong> onto the <strong>global stage.</strong></>
+    ),
+  },
+]
+
 const BRAND_VALUES = [
   { id: '01', label: 'THE BACKBENDER', body: 'Effort & intensity, the relentless energy to create fast, electric cricket experiences.' },
   { id: '02', label: 'THE SWEET SPOTTER', body: 'Balance, hitting the sweet spot between music, cricket, and opportunity for emerging talent.' },
@@ -141,6 +172,32 @@ export default function CaseStudyVoice() {
                 {v.id} {v.label}
               </p>
               <p className="font-body text-[18px] font-normal leading-[1.5] text-white">{v.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── Values Module ── */}
+      <div />
+
+      <div className="border border-black">
+        {/* Header bar */}
+        <div className="bg-[#D9B92C] border-b border-black px-4 py-2">
+          <p className="font-body font-bold text-black uppercase text-sm tracking-widest">VALUES</p>
+        </div>
+        {/* 4-column sub-grid */}
+        <div className="bg-[#D9B92C] grid grid-cols-2 md:grid-cols-4 gap-[30px] p-[20px]">
+          {VALUES_CARDS.map((v) => (
+            <div key={v.name} className="flex flex-col border border-black">
+              {/* Image placeholder — swap src when ready */}
+              <div className="aspect-[3/4] bg-black/10 overflow-hidden w-full">
+                {v.img && <img src={v.img} alt={v.name} className="w-full h-full object-cover" />}
+              </div>
+              {/* Text block */}
+              <div className="bg-[#D9B92C] p-4 flex flex-col gap-2">
+                <p className="font-body font-bold text-black text-[15px] leading-tight">{v.name}</p>
+                <p className="font-body text-[11px] text-black leading-[1.5]">{v.body}</p>
+              </div>
             </div>
           ))}
         </div>
