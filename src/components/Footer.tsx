@@ -21,7 +21,7 @@ export default function Footer() {
     <div className="bg-black px-[30px] flex items-end justify-between border-t border-[#8C0006]">
 
       {/* Copyright */}
-      <p className="pb-10 font-body text-[15px] font-normal text-white/40">
+      <p className="pb-10 font-display text-[15px] text-white">
         © 2026 Varsharanee
       </p>
 
