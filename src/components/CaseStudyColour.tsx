@@ -46,6 +46,13 @@ const COLOURS = [
   },
 ]
 
+const PALETTE_IMAGES = [
+  { src: '/assets/queens/Palette 1.png', alt: 'Woman in yellow dress with bananas' },
+  { src: '/assets/queens/palette 2.png', alt: 'Pink salt lake with swimmers' },
+  { src: '/assets/queens/palette 3.png', alt: 'Ornate carved white archway' },
+  { src: '/assets/queens/palette 4.png', alt: 'Woven textile basket columns' },
+]
+
 export default function CaseStudyColour() {
   return (
     <div className="bg-black px-[30px] grid grid-cols-[1fr_2fr] gap-x-16 gap-y-12 pt-20 pb-24">
@@ -63,29 +70,29 @@ export default function CaseStudyColour() {
           COLOUR SYSTEM
         </p>
         <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
-        The colour palette was built to balance energy, culture, performance, and premium
-        positioning. The system combines bold signature colours with supporting neutrals,
-        creating flexibility across campaigns, digital platforms, merchandise, and event
-        experiences.
+          The colour palette was built to balance energy, culture, performance, and premium
+          positioning. The system combines bold signature colours with supporting neutrals,
+          creating flexibility across campaigns, digital platforms, merchandise, and event
+          experiences.
         </p>
       </div>
 
-      {/* Full-width row — colour swatches */}
-      <div className="col-span-2 grid grid-cols-5 gap-6">
+      {/* Full-width row — colour swatches — 3 then 2 */}
+      <div className="col-span-2 grid grid-cols-3 gap-6">
         {COLOURS.map((c) => (
           <div key={c.hex} className="flex flex-col gap-4">
             <div
               style={{
                 backgroundColor: c.bg,
                 color: c.textColor,
-                border: c.border ? '1px solid rgba(255,255,255,0.08)' : undefined,
+                border: c.border ? '1px solid rgba(255,255,255,0.15)' : undefined,
               }}
-              className="h-[210px] rounded-[24px] flex flex-col items-center justify-center gap-2 px-4 text-center"
+              className="aspect-[4/3] rounded-[24px] flex flex-col items-center pt-8 gap-1 px-4"
             >
               <p className="font-body text-xs font-semibold uppercase tracking-[0.08em]">
                 {c.category}
               </p>
-              <p className="font-body text-xs font-semibold">{c.hex}</p>
+              <p className="font-body text-sm font-bold">{c.hex}</p>
               <p className="font-body text-[15px] font-normal">{c.name}</p>
             </div>
             <p className="font-body text-[15px] font-normal leading-[1.5] text-white/85">
@@ -95,13 +102,17 @@ export default function CaseStudyColour() {
         ))}
       </div>
 
-      {/* Full-width row — application imagery */}
-      <div className="col-span-2">
-        <img
-          src="/assets/casestudy_images/Colour images.png"
-          alt="Colour system in application"
-          className="w-full h-auto object-contain"
-        />
+      {/* Full-width row — 2×2 palette image grid */}
+      <div className="col-span-2 grid grid-cols-2 gap-[3px]">
+        {PALETTE_IMAGES.map((img) => (
+          <div key={img.src} className="aspect-[4/5] overflow-hidden">
+            <img
+              src={img.src}
+              alt={img.alt}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ))}
       </div>
 
     </div>
