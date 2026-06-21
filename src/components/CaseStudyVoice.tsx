@@ -98,28 +98,28 @@ function AudienceCard({ caption, title, body }: { caption: string; title: string
 const VALUES_CARDS = [
   {
     name: 'The Bend Backer',
-    img: '',
+    img: '/assets/queens/Back Bender.png',
     body: (
       <>The Bend Backer represents <strong>effort and intensity</strong> — the relentless energy required to create <strong>fast, electric cricket experiences.</strong></>
     ),
   },
   {
     name: 'The Sweet Spotter',
-    img: '',
+    img: '/assets/queens/Sweet Spotter.png',
     body: (
       <>We hit the <strong>sweet spot between music and cricket</strong> and create <strong>opportunity of emerging African talent.</strong></>
     ),
   },
   {
     name: 'The Fast Bowler',
-    img: '',
+    img: '/assets/queens/The fast Bowler.png',
     body: (
       <>The Fast Bowler represents <strong>momentum</strong> — constantly pushing forward and striving toward <strong>greater potential.</strong></>
     ),
   },
   {
     name: 'The Crease Popper',
-    img: '',
+    img: '/assets/queens/Creaser popper.png',
     body: (
       <>Crease Popper represents <strong>boldness</strong> — breaking boundaries and placing <strong>Zimbabwe and African talent</strong> onto the <strong>global stage.</strong></>
     ),
