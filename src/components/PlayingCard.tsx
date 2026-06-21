@@ -171,7 +171,7 @@ export default function PlayingCard() {
   }, [])
 
   return (
-    <div ref={wrapperRef} className="col-start-4 col-span-6 flex flex-col bg-card rounded-t-3xl relative overflow-hidden">
+    <div ref={wrapperRef} className="col-start-4 col-span-6 flex flex-col rounded-t-3xl relative overflow-hidden" style={{ backgroundColor: '#FFF4E5' }}>
 
       {/* Q-pip */}
       <div ref={qPipRef} className="absolute top-[1px] left-[13px] z-10">
@@ -182,7 +182,7 @@ export default function PlayingCard() {
       <div className="flex-1 mt-16 mx-16 flex flex-col min-h-0">
         <div
           ref={cardBoxRef}
-          className="flex-1 relative border-8 border-black border-b-0 rounded-t-2xl overflow-hidden flex flex-col min-h-0 bg-card"
+          className="flex-1 relative border-8 border-black border-b-0 rounded-t-2xl overflow-hidden flex flex-col min-h-0" style={{ backgroundColor: '#FFF4E5' }}
         >
           <div
             ref={innerRef}
