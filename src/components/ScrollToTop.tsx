@@ -6,11 +6,11 @@ export default function ScrollToTop() {
   }
 
   return (
-    <div className="bg-black flex justify-center py-4 border-t border-white/10">
+    <div className="bg-black flex justify-center py-4">
       <button
         onClick={handleClick}
         aria-label="Back to top"
-        className="group flex flex-col items-center gap-2 text-white/30 hover:text-white transition-colors duration-300"
+        className="group flex flex-col items-center gap-2 text-white/30 hover:text-white transition-colors duration-300 cursor-pointer"
       >
         <svg
           width="32"

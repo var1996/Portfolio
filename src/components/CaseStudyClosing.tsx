@@ -43,7 +43,7 @@ export default function CaseStudyClosing() {
       {/* Right: lessons */}
       <div className="flex flex-col">
         {LESSONS.map((lesson) => (
-          <div key={lesson.id} className="border-t border-white/20 py-8 flex flex-col gap-3">
+          <div key={lesson.id} className="border-t border-yellow py-8 flex flex-col gap-3">
             <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink">
               {lesson.id}
             </p>
@@ -55,7 +55,7 @@ export default function CaseStudyClosing() {
             </p>
           </div>
         ))}
-        <div className="border-t border-white/20" />
+        <div className="border-t border-yellow" />
       </div>
 
     </div>
