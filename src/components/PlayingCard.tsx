@@ -210,7 +210,7 @@ export default function PlayingCard() {
       <div
         ref={endingQueenRef}
         className="absolute inset-x-0 pointer-events-none z-10"
-        style={{ top: '-20px' }}
+        style={{ top: '-10px' }}
       >
         <img
 
