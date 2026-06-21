@@ -36,70 +36,43 @@ export default function PlayingCard() {
   const cardBoxRef        = useRef<HTMLDivElement>(null)
   const qPipRef           = useRef<HTMLDivElement>(null)
   const endingQueenRef    = useRef<HTMLDivElement>(null)
-  const endingSpinnerRef  = useRef<HTMLDivElement>(null)
   const endingQueenImgRef = useRef<HTMLImageElement>(null)
-  const ctaRef            = useRef<HTMLDivElement>(null)
+  const bottomPanelRef    = useRef<HTMLDivElement>(null)
   const hasEndingFiredRef = useRef(false)
 
   const triggerEnding = useCallback(() => {
     if (hasEndingFiredRef.current) return
     hasEndingFiredRef.current = true
 
-    const tl = gsap.timeline({ defaults: { ease: 'power2.inOut' } })
-
-    // Phase 1 — fade out card content, border, pip; simultaneously turn card black
-    tl.to([cardBoxRef.current, qPipRef.current], { opacity: 0, duration: 0.9 })
-    tl.to(wrapperRef.current, { backgroundColor: '#000000', duration: 0.9 }, 0)
-
-    // Phase 2 — reveal ending queen rising; rests 20px from top so float never hides behind nav
-    tl.to(
-      endingQueenRef.current,
-      { opacity: 1, y: 40, duration: 0.8, ease: 'power2.out' },
-      '-=0.25'
-    )
-
-    // Phase 3 — scale to half + 360° card-flip spin; transformOrigin keeps head pinned at top
-    tl.to(
-      endingSpinnerRef.current,
-      {
-        scale: 0.5,
-        rotateY: 360,
-        duration: 1.5,
-        ease: 'power3.inOut',
-        transformOrigin: '50% 0%',
+    // Phase 1 — crossfade (all simultaneous)
+    gsap.to([cardBoxRef.current, qPipRef.current], { opacity: 0, duration: 0.45, ease: 'power2.inOut' })
+    gsap.to(wrapperRef.current, { backgroundColor: '#000000', duration: 0.45, ease: 'power2.inOut' })
+    gsap.to(endingQueenRef.current, {
+      opacity: 1,
+      duration: 0.45,
+      ease: 'power2.inOut',
+      onComplete: () => {
+        // Phase 2 — zoom out + panel rises simultaneously
+        gsap.to(endingQueenRef.current, { scale: 0.78, duration: 0.85, ease: 'power2.out', transformOrigin: '50% 0%' })
+        gsap.to(bottomPanelRef.current, {
+          y: 0,
+          duration: 0.85,
+          ease: 'power2.out',
+          onComplete: () => {
+            // Phase 3 — glow, then float
+            gsap.to(endingQueenImgRef.current, {
+              filter: 'drop-shadow(0 0 8px rgba(212,175,55,0.7)) drop-shadow(0 0 24px rgba(212,175,55,0.4)) drop-shadow(0 0 48px rgba(212,175,55,0.2))',
+              duration: 0.8,
+              ease: 'power2.out',
+              onComplete: () => {
+                if (bottomPanelRef.current) bottomPanelRef.current.style.pointerEvents = 'auto'
+                gsap.to(endingQueenRef.current, { y: '-=12', duration: 2.2, ease: 'sine.inOut', yoyo: true, repeat: -1 })
+              },
+            })
+          },
+        })
       },
-      '+=0.1'
-    )
-
-    // Phase 3.5 — glow fades in after flip completes
-    tl.to(endingQueenImgRef.current, {
-      filter: 'drop-shadow(0 0 8px rgba(212,175,55,0.7)) drop-shadow(0 0 24px rgba(212,175,55,0.4)) drop-shadow(0 0 48px rgba(212,175,55,0.2))',
-      duration: 0.8,
-      ease: 'power2.out',
     })
-
-    // Phase 4 — slide CTA up and fade in
-    tl.to(
-      ctaRef.current,
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.65,
-        ease: 'power2.out',
-        onComplete: () => {
-          if (ctaRef.current) ctaRef.current.style.pointerEvents = 'auto'
-          // Phase 5 — infinite gentle float on the queen card
-          gsap.to(endingQueenRef.current, {
-            y: '-=14',
-            duration: 2.2,
-            ease: 'sine.inOut',
-            yoyo: true,
-            repeat: -1,
-          })
-        },
-      },
-      '-=0.35'
-    )
   }, [])
 
   // Wheel + keyboard scroll hijack
@@ -141,16 +114,15 @@ export default function PlayingCard() {
     }
   }, [triggerEnding])
 
-  // GSAP — queen fades
+  // GSAP — queen fades + initial state
   useEffect(() => {
     const el      = innerRef.current
     const content = contentRef.current
     const cardBox = cardBoxRef.current
     if (!el || !content || !cardBox) return
 
-    // Set initial states — queen hidden 96px below its top-anchored resting position
-    gsap.set(endingQueenRef.current, { opacity: 0, y: 96 })
-    gsap.set(ctaRef.current, { opacity: 0, y: 32 })
+    gsap.set(endingQueenRef.current,   { opacity: 0, y: 0 })
+    gsap.set(bottomPanelRef.current,   { y: '100%' })
     gsap.set(endingQueenImgRef.current, {
       filter: 'drop-shadow(0 0 0px rgba(212,175,55,0)) drop-shadow(0 0 0px rgba(212,175,55,0)) drop-shadow(0 0 0px rgba(212,175,55,0))',
     })
@@ -212,7 +184,7 @@ export default function PlayingCard() {
   return (
     <div ref={wrapperRef} className="col-start-4 col-span-6 flex flex-col bg-card rounded-t-3xl relative overflow-hidden">
 
-      {/* Pattern texture — covers outer border area only; cardBoxRef bg-card blocks it inside */}
+      {/* Pattern texture */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -225,14 +197,9 @@ export default function PlayingCard() {
         }}
       />
 
-      {/* Q-pip — wrapped for GSAP fade */}
+      {/* Q-pip */}
       <div ref={qPipRef} className="absolute top-[1px] left-[13px] z-10">
-        <img
-          src="/q-pip.png"
-          alt="Q pip"
-          width={48}
-          height={48}
-        />
+        <img src="/q-pip.png" alt="Q pip" width={48} height={48} />
       </div>
 
       {/* Card layout */}
@@ -263,50 +230,51 @@ export default function PlayingCard() {
         </div>
       </div>
 
-      {/* ── Ending queen — top-anchored so head (image top) appears first ── */}
+      {/* ── Ending queen — fades in at card position, then zooms out ── */}
       <div
         ref={endingQueenRef}
-        className="absolute inset-x-0 top-0 pointer-events-none"
-        style={{ perspective: '900px' }}
+        className="absolute inset-x-0 top-0 pointer-events-none z-10"
       >
-        <div
-          ref={endingSpinnerRef}
-          className="relative"
-          style={{ transformStyle: 'preserve-3d' }}
-        >
-          <img
-            ref={endingQueenImgRef}
-            src="/assets/queens/ending queen.png"
-            alt="Ending queen"
-            className="w-full h-auto block"
-            style={{ borderRadius: '12px' }}
-          />
-        </div>
+        <img
+          ref={endingQueenImgRef}
+          src="/assets/queens/ending queen.png"
+          alt="Ending queen"
+          className="w-full h-auto block"
+          style={{ borderRadius: '12px' }}
+        />
       </div>
 
-      {/* ── CTA overlay ── */}
+      {/* ── Case study panel — rises from below ── */}
       <div
-        ref={ctaRef}
-        className="fixed inset-x-0 top-[calc(52%+20px)] z-50 flex justify-center pointer-events-none"
+        ref={bottomPanelRef}
+        className="absolute inset-x-0 bottom-0 pointer-events-none z-20"
+        style={{ backgroundColor: '#000', borderTop: '1px solid rgba(255,255,255,0.1)' }}
       >
-        <Link href="/case-study" style={{ position: 'relative', left: '-5px' }} className="group flex items-center gap-2 bg-black/90 backdrop-blur-sm text-white font-body text-[13px] font-semibold uppercase tracking-[0.1em] px-6 py-3 rounded-full hover:bg-[#740614] transition-colors duration-200">
-          Read Case Study
-          <svg
-            width="13"
-            height="13"
-            viewBox="0 0 13 13"
-            fill="none"
-            className="group-hover:translate-x-0.5 transition-transform duration-200"
-          >
-            <path
-              d="M2.5 6.5h8M6.5 2.5l4 4-4 4"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </Link>
+        <div className="flex items-center gap-4 px-5 py-4">
+          <img
+            src="/assets/queens/creative.png"
+            alt="Tamba10"
+            style={{ width: 72, height: 72, objectFit: 'cover', borderRadius: 10, flexShrink: 0 }}
+          />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8, flex: 1, minWidth: 0 }}>
+            <p className="font-body text-[10px] font-semibold uppercase tracking-[0.12em] text-yellow">
+              Case Study · Tamba10
+            </p>
+            <p className="font-body text-white text-[12px] leading-[1.4]" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+              Full brand identity for Zimbabwe&apos;s premier T10 cricket and culture festival
+            </p>
+            <Link
+              href="/case-study"
+              className="self-start group flex items-center gap-1.5 text-white font-body text-[11px] font-semibold uppercase tracking-[0.1em] px-4 py-1.5 rounded-full transition-colors duration-200"
+              style={{ backgroundColor: 'rgba(255,255,255,0.1)' }}
+            >
+              Read Case Study
+              <svg width="10" height="10" viewBox="0 0 13 13" fill="none" className="group-hover:translate-x-0.5 transition-transform duration-200">
+                <path d="M2.5 6.5h8M6.5 2.5l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
+          </div>
+        </div>
       </div>
 
     </div>
