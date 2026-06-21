@@ -14,12 +14,6 @@ export default function CaseStudyPatterns() {
           Patterns and graphics bring the brand to life. Inspired by rhythm, movement, and African
           visual language, these elements add energy and flexibility across different touchpoints.
         </p>
-        <div className="grid grid-cols-2 gap-6 items-center">
-          <img
-            src="/assets/casestudy_images/art direction graphic 1.png"
-            alt="Art Direction Graphic 1"
-            className="w-full h-auto object-contain"
-          />
           <p className="font-body text-[18px] font-normal leading-[1.5] text-white/85">
             This illustration captures the fluidity and energy of the sport, while subtly
             incorporating the &ldquo;T&rdquo; form from our custom typeface. The sense of movement
@@ -27,6 +21,13 @@ export default function CaseStudyPatterns() {
             the bat grounds the visual in the sport itself, creating a seamless blend of rhythm and
             play. This can be used in many visual aids both digital and physical.
           </p>
+        <div className="grid grid-cols-2 gap-6 items-center">
+          <img
+            src="/assets/casestudy_images/art direction graphic 1.png"
+            alt="Art Direction Graphic 1"
+            className="w-full h-auto object-contain"
+          />
+      
         </div>
       </div>
 
@@ -45,13 +46,10 @@ export default function CaseStudyPatterns() {
 
         <div className="grid grid-cols-[auto_1fr_1fr_auto] gap-4 items-end">
           <img src="/assets/casestudy_images/tamba-1.png" alt="Tamba T1" className="w-[65px] h-[70px] object-contain" />
-          <img src="/assets/casestudy_images/art direction graphic 2.png" alt="Graphic 2" className="w-full h-auto object-contain" />
-          <img src="/assets/casestudy_images/art direction graphic 3.png" alt="Graphic 3" className="w-full h-auto object-contain" />
-          <img src="/assets/casestudy_images/tamba-2.png" alt="Tamba T2" className="w-[65px] h-[70px] object-contain" />
+
         </div>
 
         <div className="flex flex-col gap-0">
-          <img src="/assets/casestudy_images/tamba-3.png" alt="Tamba T3" className="w-[65px] h-[70px] object-contain" />
           <div className="grid grid-cols-2 gap-6">
             <img src="/assets/casestudy_images/art direction graphic 4.png" alt="Graphic 4" className="w-full h-auto object-contain" />
             <img src="/assets/casestudy_images/graphic 5.png" alt="Graphic 5" className="w-full h-auto object-contain" />

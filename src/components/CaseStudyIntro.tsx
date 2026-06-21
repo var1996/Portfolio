@@ -136,7 +136,7 @@ export default function CaseStudyIntro() {
       {/* ── A name that carries its soul ── */}
       <div className="self-start">
         <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
-          A name that carries its soul<br />and what shaped it
+          A name that carries its soul and what shaped it.
         </h2>
       </div>
 

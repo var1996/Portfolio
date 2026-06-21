@@ -77,8 +77,8 @@ export default function CaseStudyColour() {
           </p>
         </div>
 
-        {/* Colour swatch grid — 3 then 2 */}
-        <div className="grid grid-cols-3 gap-6">
+        {/* Colour swatch grid — 5 in a row */}
+        <div className="grid grid-cols-5 gap-[3px]">
           {COLOURS.map((c) => (
             <div key={c.hex} className="flex flex-col gap-4">
               <div
@@ -87,7 +87,7 @@ export default function CaseStudyColour() {
                   color: c.textColor,
                   border: c.border ? '1px solid rgba(255,255,255,0.15)' : undefined,
                 }}
-                className="aspect-[4/3] rounded-[24px] flex flex-col items-center pt-8 gap-1 px-4"
+                className="aspect-[8/5] rounded-[16px] flex flex-col items-center pt-3 gap-1 px-2"
               >
                 <p className="font-body text-xs font-semibold uppercase tracking-[0.08em]">
                   {c.category}
@@ -95,17 +95,17 @@ export default function CaseStudyColour() {
                 <p className="font-body text-sm font-bold">{c.hex}</p>
                 <p className="font-body text-[15px] font-normal">{c.name}</p>
               </div>
-              <p className="font-body text-[15px] font-normal leading-[1.5] text-white/85">
+              <p className="font-body text-[12px] font-normal leading-[1.5] text-white/85 px-[2px]">
                 {c.description}
               </p>
             </div>
           ))}
         </div>
 
-        {/* 2×2 palette image grid */}
-        <div className="grid grid-cols-2 gap-[3px]">
+        {/* 4-up palette image row */}
+        <div className="grid grid-cols-4 gap-[3px]">
           {PALETTE_IMAGES.map((img) => (
-            <div key={img.src} className="aspect-[4/5] overflow-hidden">
+            <div key={img.src} className="aspect-[4/5] overflow-hidden rounded-[16px]">
               <img
                 src={img.src}
                 alt={img.alt}
