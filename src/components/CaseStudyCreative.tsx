@@ -13,7 +13,7 @@ export default function CaseStudyCreative() {
 
       <div>
         <img
-          src="/assets/casestudy_images/3 Creative Platorm Images.png"
+          src="/assets/queens/creative.png"
           alt="Creative platform"
           className="w-full h-auto object-contain"
         />

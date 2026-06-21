@@ -27,13 +27,13 @@ export default function CaseStudyBrand() {
           creators shaping the continent&apos;s future. And lastly, rhythm, the pace, energy,
           and excitement that define both music and cricket.
         </p>
-        <div className="bg-yellow p-8 flex items-center justify-center">
+        <div className="bg-yellow p-8 flex items-center justify-center rounded-[16px]">
           <p className="font-body font-semibold uppercase text-black text-center leading-tight text-[22px]">
             Become a unifying force that takes African talent out of bounds, where rhythm meets the pitch.
           </p>
         </div>
         {/* Coded Vision Explanation */}
-        <div className="bg-yellow px-8 py-10 flex flex-col gap-10 items-center text-center">
+        <div className="bg-yellow px-8 py-10 flex flex-col gap-10 items-center text-center rounded-[16px]">
 
           {/* Line 1 */}
           <div className="flex flex-col items-center gap-3 w-full">
@@ -113,7 +113,7 @@ export default function CaseStudyBrand() {
           Zimbabwe&apos;s claim on the continental stage, not as a participant, but as the host
           of something the world comes to.
         </p>
-        <div className="bg-yellow p-8 flex items-center justify-center">
+        <div className="bg-yellow p-8 flex items-center justify-center rounded-[16px]">
           <p className="font-body font-semibold uppercase text-black text-center leading-tight text-[22px]">
             To establish Zimbabwe as Africa&apos;s home ground for cricket and culture
           </p>
@@ -132,7 +132,7 @@ export default function CaseStudyBrand() {
         <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
           TAGLINE
         </p>
-        <div className="bg-yellow p-8 flex items-center justify-center">
+        <div className="bg-yellow p-8 flex items-center justify-center rounded-[16px]">
           <p className="font-display uppercase leading-none text-[clamp(3rem,7vw,6rem)] text-center">
             <span className="text-pink">UN</span><span className="text-black">MATCHED</span>
           </p>

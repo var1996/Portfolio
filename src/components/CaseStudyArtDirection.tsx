@@ -19,7 +19,7 @@ export default function CaseStudyArtDirection() {
           stadium.
         </p>
         <img
-          src="/assets/casestudy_images/6 Art Direction Images.png"
+          src="/assets/queens/art direction.png"
           alt="Art direction"
           className="w-full h-auto object-contain"
         />

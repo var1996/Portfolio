@@ -179,7 +179,7 @@ export default function CaseStudyVoice() {
       {/* ── Values Module ── */}
       <div />
 
-      <div className="border border-black">
+      <div className="border border-black rounded-[16px] overflow-hidden">
         {/* Header bar */}
         <div className="bg-[#D9B92C] border-b border-black px-4 py-2">
           <p className="font-body font-bold text-black uppercase text-sm tracking-widest">VALUES</p>
@@ -187,7 +187,7 @@ export default function CaseStudyVoice() {
         {/* 4-column sub-grid */}
         <div className="bg-[#D9B92C] grid grid-cols-2 md:grid-cols-4 gap-[30px] p-[20px]">
           {VALUES_CARDS.map((v) => (
-            <div key={v.name} className="flex flex-col border border-black">
+            <div key={v.name} className="flex flex-col border border-black rounded-[16px] overflow-hidden">
               {/* Image placeholder — swap src when ready */}
               <div className="aspect-[3/4] bg-black/10 overflow-hidden w-full">
                 {v.img && <img src={v.img} alt={v.name} className="w-full h-full object-cover" />}
@@ -243,7 +243,7 @@ export default function CaseStudyVoice() {
         </div>
 
         {/* Audience split module */}
-        <div className="border border-white overflow-hidden flex flex-col md:flex-row">
+        <div className="border border-white overflow-hidden flex flex-col md:flex-row rounded-[16px]">
 
           {/* Left panel */}
           <div className="flex flex-col md:w-[55%] md:border-r md:border-white">
