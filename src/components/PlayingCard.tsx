@@ -182,7 +182,7 @@ export default function PlayingCard() {
       <div className="flex-1 mt-16 mx-16 flex flex-col min-h-0">
         <div
           ref={cardBoxRef}
-          className="flex-1 relative border-8 border-black border-b-0 rounded-t-2xl overflow-hidden flex flex-col min-h-0" style={{ backgroundColor: '#FFF4E5' }}
+          className="flex-1 relative border-[16px] border-black border-b-0 rounded-t-2xl overflow-hidden flex flex-col min-h-0" style={{ backgroundColor: '#FFF4E5' }}
         >
           <div
             ref={innerRef}
