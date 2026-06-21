@@ -118,6 +118,13 @@ const VALUES_CARDS = [
   },
 ]
 
+const AUDIENCE_ROWS = [
+  { white: 'THE CRICKET LOVER',      pink: 'The Core Fan' },
+  { white: 'THE RHYTHM LOVER',       pink: 'The Culture Seeker' },
+  { white: 'THE DISTANT SUPPORTER',  pink: 'The Global African' },
+  { white: 'THE DREAMER',            pink: 'The Future Player' },
+]
+
 const BRAND_VALUES = [
   { id: '01', label: 'THE BACKBENDER', body: 'Effort & intensity, the relentless energy to create fast, electric cricket experiences.' },
   { id: '02', label: 'THE SWEET SPOTTER', body: 'Balance, hitting the sweet spot between music, cricket, and opportunity for emerging talent.' },
@@ -225,18 +232,41 @@ export default function CaseStudyVoice() {
         <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
           The tone shifts in register depending on who&apos;s in the room but the four pillars
           stay constant. Four audience archetypes define who Tamba10 is speaking to at any
-          given moment. Below are the four archetypes.
+          given moment.
         </p>
-        <div className="grid grid-cols-2 gap-6">
-          {AUDIENCE_CARDS.map((c) => (
-            <AudienceCard key={c.caption} {...c} />
-          ))}
+
+        {/* Audience split module */}
+        <div className="border border-white overflow-hidden flex flex-col md:flex-row">
+
+          {/* Left panel */}
+          <div className="flex flex-col md:w-[55%] md:border-r md:border-white">
+            <div className="px-10 py-10">
+              <h3 className="font-body font-bold text-[44px] leading-[1.1]" style={{ color: '#E8B923' }}>
+                Who are we<br />talking to?
+              </h3>
+            </div>
+            <div className="border-t border-white" />
+            {AUDIENCE_ROWS.map((row, i) => (
+              <div
+                key={row.white}
+                className={`px-8 py-7 grid grid-cols-[3fr_2fr] items-center gap-4${i < AUDIENCE_ROWS.length - 1 ? ' border-b border-white' : ''}`}
+              >
+                <span className="font-body font-bold text-white uppercase text-[20px] leading-tight">{row.white}</span>
+                <span className="font-body font-normal text-[15px] leading-tight" style={{ color: '#D6587A' }}>{row.pink}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Right panel — full-bleed image */}
+          <div className="relative min-h-[320px] md:w-[45%]">
+            <img
+              src="/assets/casestudy_images/cricket boy.png"
+              alt="Cricket audience"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </div>
+
         </div>
-        <img
-          src="/assets/casestudy_images/3 Persona Image.png"
-          alt="Audience personas"
-          className="w-full h-auto object-contain"
-        />
       </div>
 
     </div>
