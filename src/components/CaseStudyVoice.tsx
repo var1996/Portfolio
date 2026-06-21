@@ -235,6 +235,13 @@ export default function CaseStudyVoice() {
           given moment.
         </p>
 
+        {/* 4 audience cards */}
+        <div className="grid grid-cols-2 gap-6">
+          {AUDIENCE_CARDS.map((c) => (
+            <AudienceCard key={c.caption} {...c} />
+          ))}
+        </div>
+
         {/* Audience split module */}
         <div className="border border-white overflow-hidden flex flex-col md:flex-row">
 
