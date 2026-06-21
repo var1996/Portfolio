@@ -99,30 +99,22 @@ const VALUES_CARDS = [
   {
     name: 'The Bend Backer',
     img: '/assets/queens/Back Bender.png',
-    body: (
-      <>The Bend Backer represents <strong>effort and intensity</strong> — the relentless energy required to create <strong>fast, electric cricket experiences.</strong></>
-    ),
+    body: 'The Bend Backer represents effort and intensity — the relentless energy required to create fast, electric cricket experiences.',
   },
   {
     name: 'The Sweet Spotter',
     img: '/assets/queens/Sweet Spotter.png',
-    body: (
-      <>We hit the <strong>sweet spot between music and cricket</strong> and create <strong>opportunity of emerging African talent.</strong></>
-    ),
+    body: 'We hit the sweet spot between music and cricket and create opportunity of emerging African talent.',
   },
   {
     name: 'The Fast Bowler',
     img: '/assets/queens/The fast Bowler.png',
-    body: (
-      <>The Fast Bowler represents <strong>momentum</strong> — constantly pushing forward and striving toward <strong>greater potential.</strong></>
-    ),
+    body: 'The Fast Bowler represents momentum — constantly pushing forward and striving toward greater potential.',
   },
   {
     name: 'The Crease Popper',
     img: '/assets/queens/Creaser popper.png',
-    body: (
-      <>Crease Popper represents <strong>boldness</strong> — breaking boundaries and placing <strong>Zimbabwe and African talent</strong> onto the <strong>global stage.</strong></>
-    ),
+    body: 'Crease Popper represents boldness — breaking boundaries and placing Zimbabwe and African talent onto the global stage.',
   },
 ]
 
@@ -196,7 +188,7 @@ export default function CaseStudyVoice() {
               {/* Text block */}
               <div className="bg-[#D9B92C] p-4 flex flex-col gap-2">
                 <p className="font-body font-bold text-black text-[15px] leading-tight">{v.name}</p>
-                <p className="font-body text-[11px] text-black leading-[1.5]">{v.body}</p>
+                <p className="font-body font-normal text-[11px] text-black leading-[1.5]">{v.body}</p>
               </div>
             </div>
           ))}
@@ -219,7 +211,7 @@ export default function CaseStudyVoice() {
 
       {/* ── Quote ── */}
       <p className="col-start-2 font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
-        &ldquo;WHO THE VOICE SPEAKS TO, THE BRAND SPEAKS LOUDLY, MOVES FAST, AND ALWAYS SOUNDS
+        &ldquo;THE BRAND SPEAKS LOUDLY, MOVES FAST, AND ALWAYS SOUNDS
         LIKE IT BELONGS TO THE PEOPLE&rdquo;
       </p>
 
