@@ -5,7 +5,7 @@ export default function CaseStudyPatterns() {
       {/* ── Intro ── */}
       <div className="self-start">
         <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
-          Patterns and graphics
+          The marks we leave
         </h2>
       </div>
 
@@ -49,11 +49,9 @@ export default function CaseStudyPatterns() {
 
         </div>
 
-        <div className="flex flex-col gap-0">
-          <div className="grid grid-cols-2 gap-6">
-            <img src="/assets/casestudy_images/art direction graphic 4.png" alt="Graphic 4" className="w-full h-auto object-contain" />
-            <img src="/assets/casestudy_images/graphic 5.png" alt="Graphic 5" className="w-full h-auto object-contain" />
-          </div>
+        <div className="grid grid-cols-2 gap-6 items-start">
+          <img src="/assets/casestudy_images/art direction graphic 4.png" alt="Graphic 4" className="w-full h-auto object-contain" />
+          <img src="/assets/casestudy_images/graphic 5.png" alt="Graphic 5" className="w-full h-auto object-contain" />
         </div>
       </div>
 
@@ -61,24 +59,24 @@ export default function CaseStudyPatterns() {
       <div />
 
       <div className="flex flex-col gap-6">
-        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
-          ARROWS &amp; WAYFINDING
-        </p>
+        {/* Shared caption row — guarantees both labels are on the same line */}
         <div className="grid grid-cols-2 gap-6">
-          <div className="flex flex-col gap-4">
-            <div className="flex items-end gap-2">
-              <img src="/assets/casestudy_images/tamba t 4.png" alt="Tamba T4" className="w-[65px] h-[70px] object-contain shrink-0" />
-              <img src="/assets/casestudy_images/arrow graphic.png" alt="Arrow graphic" className="flex-1 min-w-0 h-auto object-contain" />
-            </div>
+          <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
+            ARROWS &amp; WAYFINDING
+          </p>
+          <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
+            ARTIST AND PLAYER FRAMES
+          </p>
+        </div>
+        {/* Image row */}
+        <div className="grid grid-cols-2 gap-6 items-start">
+          <div className="flex items-end gap-2">
+            <img src="/assets/casestudy_images/tamba t 4.png" alt="Tamba T4" className="w-[50px] h-[55px] object-contain shrink-0" />
+            <img src="/assets/casestudy_images/arrow graphic.png" alt="Arrow graphic" className="flex-1 min-w-0 max-h-[180px] object-contain" />
           </div>
-          <div className="flex flex-col gap-4">
-            <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
-              ARTIST AND PLAYER FRAMES
-            </p>
-            <div className="flex items-end gap-2">
-              <img src="/assets/casestudy_images/tamba t 5.png" alt="Tamba T5" className="w-[65px] h-[70px] object-contain shrink-0" />
-              <img src="/assets/casestudy_images/Artist Frames.png" alt="Artist and player frames" className="flex-1 min-w-0 h-auto object-contain" />
-            </div>
+          <div className="flex items-end gap-2">
+            <img src="/assets/casestudy_images/tamba t 5.png" alt="Tamba T5" className="w-[50px] h-[55px] object-contain shrink-0" />
+            <img src="/assets/casestudy_images/Artist Frames.png" alt="Artist and player frames" className="flex-1 min-w-0 max-h-[180px] object-contain" />
           </div>
         </div>
       </div>

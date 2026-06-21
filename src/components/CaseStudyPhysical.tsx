@@ -9,8 +9,9 @@ export default function CaseStudyPhysical() {
         </h2>
       </div>
 
-      {/* Col 2 — body + image */}
-      <div className="flex flex-col gap-6">
+      {/* Col 2 — body + merch image */}
+      <div className="flex flex-col gap-8 self-start">
+
         <div className="flex flex-col gap-6 font-body text-[18px] font-normal leading-[1.5] text-white/85">
           <p>
             The physical world. We wanted the brand to show up everywhere — as something people can
@@ -32,11 +33,13 @@ export default function CaseStudyPhysical() {
           </ul>
           <p>This ensures the brand is not just seen but experienced.</p>
         </div>
+
         <img
-          src="/assets/casestudy_images/Group 53.png"
-          alt="Physical applications"
-          className="w-full h-auto object-contain mt-4"
+          src="/assets/queens/Merch.png"
+          alt="Merchandise"
+          className="w-full h-auto object-contain"
         />
+
       </div>
 
     </div>

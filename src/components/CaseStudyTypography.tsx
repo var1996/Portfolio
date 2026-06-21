@@ -1,8 +1,8 @@
 const SPECIMEN = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!?<>,.'
 
 const CAMPINGO = "'Bree Serif', serif"
-const GOTHIQUE = "'Nunito', sans-serif"
-const GEIST    = "'Inter', sans-serif"
+const GOTHIQUE = "'Poppins', sans-serif"
+const GEIST    = "'Geist', sans-serif"
 
 const WEIGHTS = [
   { label: 'light',      w: 300 },
@@ -39,7 +39,7 @@ export default function CaseStudyTypography() {
     <div className="bg-black px-[30px] grid grid-cols-[1fr_2fr] gap-x-16 gap-y-12 pt-20 pb-24">
 
       {/* Fonts */}
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Nunito:wght@100;200;300;400;600;700;800;900&family=Inter:wght@100;300;400;600;700;800;900&display=swap');`}</style>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Poppins:wght@100;300;400;600;700;800&family=Geist:wght@100..900&display=swap');`}</style>
 
       {/* Col 1 */}
       <div className="self-start">
@@ -88,11 +88,11 @@ export default function CaseStudyTypography() {
               <span className="font-body text-white/40 font-normal text-[11px]">Dark Gothique</span>
             </div>
 
-            <div style={{ fontFamily: GOTHIQUE, fontSize: '60px', color: '#ffffff', fontWeight: 400, lineHeight: 1 }}>
+            <div style={{ fontFamily: GOTHIQUE, fontSize: '72px', color: '#ffffff', fontWeight: 700, lineHeight: 1 }}>
               Tt
             </div>
 
-            <div style={{ fontFamily: GOTHIQUE, fontSize: '24px', color: '#ffffff', fontWeight: 400, lineHeight: 1.3, wordBreak: 'break-all' }}>
+            <div style={{ fontFamily: GOTHIQUE, fontSize: '30px', color: '#ffffff', fontWeight: 400, lineHeight: 1.3, wordBreak: 'break-all' }}>
               {SPECIMEN}
             </div>
 
@@ -108,11 +108,11 @@ export default function CaseStudyTypography() {
               <span className="font-body text-white/40 font-normal text-[11px]">Geist</span>
             </div>
 
-            <div style={{ fontFamily: GEIST, fontSize: '60px', color: '#ffffff', fontWeight: 400, lineHeight: 1 }}>
+            <div style={{ fontFamily: GEIST, fontSize: '72px', color: '#ffffff', fontWeight: 700, lineHeight: 1 }}>
               Tt
             </div>
 
-            <div style={{ fontFamily: GEIST, fontSize: '24px', color: '#ffffff', fontWeight: 400, lineHeight: 1.3, wordBreak: 'break-all' }}>
+            <div style={{ fontFamily: GEIST, fontSize: '30px', color: '#ffffff', fontWeight: 400, lineHeight: 1.3, wordBreak: 'break-all' }}>
               {SPECIMEN}
             </div>
 
