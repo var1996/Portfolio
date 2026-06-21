@@ -58,8 +58,8 @@ function InsightCard({ id, label, bullets }: { id: string; label: string; bullet
       </p>
       <ul className="flex flex-col gap-2">
         {bullets.map((b) => (
-          <li key={b} className="flex gap-3 font-body text-[18px] font-normal leading-[1.5] text-black">
-            <span className="shrink-0 mt-[0.55em] w-1 h-1 rounded-full bg-black inline-block" />
+          <li key={b} className="flex gap-3 font-body text-[18px] font-normal leading-[1.5] text-white">
+            <span className="shrink-0 mt-[0.55em] w-1 h-1 rounded-full bg-white inline-block" />
             <span>{b}</span>
           </li>
         ))}
@@ -68,13 +68,9 @@ function InsightCard({ id, label, bullets }: { id: string; label: string; bullet
   )
 }
 
-// col1 = black bg (left 1fr), col2 = white bg (right 2fr)
 export default function CaseStudyContext() {
   return (
-    <div
-      className="px-[30px] grid grid-cols-[1fr_2fr] gap-x-6 gap-y-12 pb-24"
-      style={{ background: 'linear-gradient(to right, black calc(33.33%), white calc(33.33%))' }}
-    >
+    <div className="bg-black px-[30px] grid grid-cols-[1fr_2fr] gap-x-6 gap-y-12 pb-24">
 
       {/* ── Context ── */}
       <div className="self-start">
@@ -83,7 +79,7 @@ export default function CaseStudyContext() {
         </h2>
       </div>
 
-      <div className="flex flex-col gap-6 font-body text-[18px] font-normal leading-[1.5] text-black self-start">
+      <div className="flex flex-col gap-6 font-body text-[18px] font-normal leading-[1.5] text-white self-start">
         <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink mt-[4px]">
           CONTEXT
         </p>
@@ -94,7 +90,7 @@ export default function CaseStudyContext() {
           and was lost among the noise of global franchise leagues. The brand wasn&apos;t
           working hard enough for what the league could become.
         </p>
-        <ol className="list-decimal pl-6 flex flex-col gap-3 marker:text-black">
+        <ol className="list-decimal pl-6 flex flex-col gap-3 marker:text-white">
           {SECTION1_LIST.map((item) => (
             <li key={item}>{item}</li>
           ))}
@@ -112,7 +108,7 @@ export default function CaseStudyContext() {
         <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink">
           PURPOSE
         </p>
-        <p className="font-body text-[18px] font-normal leading-[1.5] text-black">
+        <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
           The rebrands mission was to give Zimbabweans, both at home and in the diaspora
           something powerful to unite around and feel genuinely proud of. The goal was to
           establish Zimbabwe as Africa&apos;s home ground for cricket and culture.
@@ -126,14 +122,14 @@ export default function CaseStudyContext() {
         <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink">
           RESEARCH &amp; MARKET INSIGHTS
         </p>
-        <div className="flex flex-col gap-6 font-body text-[18px] font-normal leading-[1.5] text-black">
+        <div className="flex flex-col gap-6 font-body text-[18px] font-normal leading-[1.5] text-white">
           <p>
             The competitor analysis and market insights converged into three sharp conclusions
             each one a building block for the rebrand strategy. The analysis revealed a
             critical gap: no competitor in Africa was running a hybrid T10 cricket and culture
             format. This creates a powerful opportunity to position the league as something new.
           </p>
-          <ol className="list-decimal pl-6 flex flex-col gap-4 marker:text-black">
+          <ol className="list-decimal pl-6 flex flex-col gap-4 marker:text-white">
             {SECTION3_FINDINGS.map((item) => (
               <li key={item}>{item}</li>
             ))}
