@@ -39,7 +39,7 @@ export default function Footer() {
               className="absolute inset-0"
             >
               <img
-                src="/assets/casestudy_images/Linkedin Queen.png"
+                src="/assets/queens/Linkedin Queen.png"
                 alt="LinkedIn"
                 className="absolute bottom-0 w-full h-auto object-contain"
               />
@@ -68,7 +68,7 @@ export default function Footer() {
               className="absolute inset-0 w-full focus-visible:outline-none"
             >
               <img
-                src="/assets/casestudy_images/Postal Queen.png"
+                src="/assets/queens/postal queen.png"
                 alt="Email"
                 className="absolute bottom-0 w-full h-auto object-contain"
               />
