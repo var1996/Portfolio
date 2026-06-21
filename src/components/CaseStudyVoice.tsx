@@ -248,7 +248,7 @@ export default function CaseStudyVoice() {
           {/* Left panel */}
           <div className="flex flex-col md:w-[55%] md:border-r md:border-white">
             <div className="px-10 py-10">
-              <h3 className="font-body font-bold text-[44px] leading-[1.1]" style={{ color: '#E8B923' }}>
+              <h3 className="font-body font-normal text-[44px] leading-[1.1] text-yellow">
                 Who are we<br />talking to?
               </h3>
             </div>
