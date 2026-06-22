@@ -55,7 +55,7 @@ export default function CaseStudy() {
 
         {/* Top: title */}
         <div className="relative z-10 p-10 pt-10">
-          <h1 className="font-display uppercase text-yellow m-0 leading-[0.95] text-[clamp(3rem,8vw,9rem)]">
+          <h1 className="font-display uppercase text-yellow m-0 leading-[1.1] text-[clamp(3rem,8vw,9rem)]">
             Rebranding<br />of Zim Afro T10
           </h1>
         </div>
@@ -75,7 +75,7 @@ export default function CaseStudy() {
             <ul className="flex flex-wrap gap-2 list-none m-0 p-0">
               {SERVICES.map((tag) => (
                 <li key={tag}>
-                  <span className="border border-white/35 text-white px-4 py-1.5 rounded-full font-body text-[11px] font-semibold tracking-[0.06em] uppercase">
+                  <span className="border border-yellow text-yellow px-4 py-1.5 rounded-full font-body text-[11px] font-semibold tracking-[0.06em] uppercase">
                     {tag}
                   </span>
                 </li>
