@@ -7,7 +7,7 @@ const LESSONS = [
   {
     id: '02',
     title: 'A Name Can Do More Work Than a Logo',
-    body: 'Naming “Tamba10” showed how much strategic weight a single word can carry cultural roots, dual meaning, global pronounceability, emotional ownership all held in one name. It reframed naming as a serious strategic discipline, not just a creative exercise.',
+    body: 'Naming “Tamba10” showed how much strategic weight a single word can carry cultural roots, dual meaning, global pronounceability, emotional ownership nall held in one name. It reframed naming as a serious strategic discipline, not just a creative exercise.',
   },
   {
     id: '03',
@@ -32,11 +32,11 @@ export default function CaseStudyClosing() {
 
       {/* Left: section heading */}
       <div className="self-start">
-        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow mb-4">
-          Closing the Loop
+        <p className="font-body text-xs font-semibold tracking-[0.08em] text-yellow mb-4">
+          Closing the loop
         </p>
         <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
-          What This Project Taught Us
+          Learning from this project
         </h2>
       </div>
 
