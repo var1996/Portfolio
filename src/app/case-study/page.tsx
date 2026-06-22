@@ -61,7 +61,7 @@ export default function CaseStudy() {
         </div>
 
         {/* Bottom: info panel */}
-        <div className="relative z-10 px-10 pb-10 flex justify-between items-end gap-8">
+        <div className="relative z-10 pl-0 pr-10 pb-10 flex justify-between items-end gap-8">
 
           {/* Left: description + tags */}
           <div style={{ maxWidth: '60ch' }}>
@@ -75,7 +75,7 @@ export default function CaseStudy() {
             <ul className="flex flex-wrap gap-2 list-none m-0 p-0">
               {SERVICES.map((tag) => (
                 <li key={tag}>
-                  <span className="border border-yellow text-yellow px-4 py-1.5 rounded-full font-body text-[11px] font-semibold tracking-[0.06em] uppercase">
+                  <span className="border border-yellow text-yellow w-[160px] inline-flex items-center justify-center py-1.5 rounded-full font-body text-[11px] font-semibold tracking-[0.06em] uppercase">
                     {tag}
                   </span>
                 </li>
