@@ -61,7 +61,7 @@ export default function CaseStudy() {
         </div>
 
         {/* Bottom: info panel */}
-        <div className="relative z-10 pl-0 pr-10 pb-10 flex justify-between items-end gap-8">
+        <div className="relative z-10 pl-0 pr-10 pb-10 flex justify-between items-start gap-8">
 
           {/* Left: description + tags */}
           <div style={{ maxWidth: '60ch' }}>
