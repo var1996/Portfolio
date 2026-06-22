@@ -55,7 +55,7 @@ export default function CaseStudy() {
 
         {/* Top: title */}
         <div className="relative z-10 p-10 pt-10">
-          <h1 className="font-display uppercase text-yellow m-0 leading-[1.1] text-[clamp(3rem,8vw,9rem)]">
+          <h1 className="font-display uppercase text-yellow m-0 leading-[1.15] text-[clamp(3rem,8vw,9rem)]">
             Rebranding<br />of Zim Afro T10
           </h1>
         </div>
