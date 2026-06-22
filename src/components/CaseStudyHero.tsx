@@ -17,7 +17,7 @@ export default function CaseStudyHero() {
   return (
     <section
       aria-label="Project hero"
-      className="relative mx-[30px] flex flex-col justify-between overflow-hidden rounded-2xl"
+      className="relative mx-[20px] flex flex-col justify-between overflow-hidden rounded-2xl"
       style={{ minHeight: '100svh' }}
     >
       {/* Background image — no animation */}
@@ -48,11 +48,7 @@ export default function CaseStudyHero() {
         {/* Left: description + tags */}
         <div style={{ maxWidth: '60ch' }} className="-mt-[10px]">
           <p className="font-body text-white text-[18px] leading-[1.65] mb-6">
-            Zim Afro T10, rebranded to Tamba 10, was reimagined from a cricket tournament
-            into a full-scale sports and music festival. The rebrand built a new visual
-            language, brand architecture, campaign assets, and a scalable design system 
-            transforming the cricket league into both a sporting event and a cultural festival platform
-            built to engage a new generation of fans and bring together old ones.
+           Reimagining of a cricket tournament into a full-scale sports and music festival. Positioning the event as a cultural platform, engineered to captivate a new generation of fans while uniting those who came before.
           </p>
           <ul className="flex flex-wrap gap-2 list-none m-0 p-0">
             {SERVICES.map((tag) => (
