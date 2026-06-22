@@ -69,10 +69,9 @@ export default function CaseStudyIntro() {
       {/* ── Name Intro ── */}
       <div className="self-start">
         <h1 className="font-body text-[38px] font-normal leading-[1.2]">
-          <span className="text-white">From Zim Afro T10 to </span>
           <span className="text-gold">TAMBA</span><span className="text-pink">10</span>
           <span className="text-white">:</span>
-          <span className="text-white">a name that moves</span>
+          <span className="text-white">a new name that moves</span>
         </h1>
       </div>
 
@@ -135,7 +134,7 @@ export default function CaseStudyIntro() {
       {/* ── A name that carries its soul ── */}
       <div className="self-start">
         <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
-          A name that carries its soul and what shaped it.
+         Carrying the soul of the brand and what shaped it
         </h2>
       </div>
 
@@ -148,7 +147,7 @@ export default function CaseStudyIntro() {
       {/* ── Emotional Responses ── */}
       <div className="self-start">
         <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
-          The feeling behind the brand
+          What it means to people who rally behind it
         </h2>
       </div>
 

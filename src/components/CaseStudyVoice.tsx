@@ -125,12 +125,6 @@ const AUDIENCE_ROWS = [
   { white: 'THE DREAMER',            pink: 'The Future Player' },
 ]
 
-const BRAND_VALUES = [
-  { id: '01', label: 'THE BACKBENDER', body: 'Effort & intensity, the relentless energy to create fast, electric cricket experiences.' },
-  { id: '02', label: 'THE SWEET SPOTTER', body: 'Balance, hitting the sweet spot between music, cricket, and opportunity for emerging talent.' },
-  { id: '03', label: 'THE FAST BOWLER', body: 'Momentum, using music, sport, and culture into one continental force, constantly running toward potential.' },
-  { id: '04', label: 'THE CREASE POPPER', body: 'Boldness, breaking boundaries and raising Zimbabwe and Africa onto the global stage.' },
-]
 
 export default function CaseStudyVoice() {
   return (
@@ -150,31 +144,6 @@ export default function CaseStudyVoice() {
         specific people it&apos;s for. This section covers the four voice pillars, the audience
         it speaks to, the visual content direction, and the rules that keep the voice consistent.
       </p>
-
-      {/* ── Brand Values ── */}
-      <div />
-
-      <div className="flex flex-col gap-6">
-        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
-          BRAND VALUES
-        </p>
-        <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
-          The brand values weren&apos;t listed as abstract nouns. They were given characters,
-          each one drawn from a cricket term and translated into a human archetype. This was
-          a deliberate creative decision: the language of the sport becomes the language of
-          the brand.
-        </p>
-        <div className="flex flex-col">
-          {BRAND_VALUES.map((v) => (
-            <div key={v.id} className="border-t border-white/20 py-5 flex flex-col gap-2">
-              <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink">
-                {v.id} {v.label}
-              </p>
-              <p className="font-body text-[18px] font-normal leading-[1.5] text-white">{v.body}</p>
-            </div>
-          ))}
-        </div>
-      </div>
 
       {/* ── Values Module ── */}
       <div />
@@ -258,7 +227,7 @@ export default function CaseStudyVoice() {
                 key={row.white}
                 className={`px-8 py-7 grid grid-cols-[3fr_2fr] items-center gap-4${i < AUDIENCE_ROWS.length - 1 ? ' border-b border-white' : ''}`}
               >
-                <span className="font-body font-bold text-white uppercase text-[20px] leading-tight">{row.white}</span>
+                <span className="font-body font-normal text-white uppercase text-[20px] leading-tight">{row.white}</span>
                 <span className="font-body font-normal text-[15px] leading-tight" style={{ color: '#D6587A' }}>{row.pink}</span>
               </div>
             ))}

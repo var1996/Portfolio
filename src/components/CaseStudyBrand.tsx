@@ -15,9 +15,9 @@ export default function CaseStudyBrand() {
       </p>
 
       {/* ── Vision ── */}
-      <div />
+      <div className="-mt-6" />
 
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-6 -mt-6">
         <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
           VISION
         </p>

@@ -7,7 +7,7 @@ export default function CaseStudyCreative() {
       {/* ── Creative Platform ── */}
       <div className="self-start">
         <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
-          Turning Strategy Into a Look and Feel
+          Turning strategy into a look and feel
         </h2>
       </div>
 
