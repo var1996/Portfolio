@@ -32,60 +32,69 @@ export default function CaseStudy() {
   return (
     <div id="case-study-scroll" className="col-span-12 overflow-y-auto overflow-x-hidden">
 
-      {/* Featured image with title overlay */}
-      <div className="aspect-video w-full relative overflow-hidden">
+      {/* Hero */}
+      <section
+        aria-label="Project hero"
+        className="relative mx-[30px] flex flex-col justify-between overflow-hidden rounded-2xl"
+        style={{ minHeight: '100svh' }}
+      >
+        {/* Background image — no animation */}
         <img
           src="/assets/casestudy_images/Case Study Cover Image.png"
-          alt="Tamba 10 case study cover"
-          className="w-full h-full object-cover"
-          style={{ animation: 'kenBurns 18s ease-in-out infinite alternate' }}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 flex items-center justify-center text-center px-8">
-          <h1 className="font-display uppercase text-yellow leading-tight text-[clamp(2.5rem,6vw,6rem)]">
-            REBRANDING<br />OF ZIM AFRO T10
+
+        {/* Gradient overlay */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.75) 60%, rgba(0,0,0,0.96) 100%)' }}
+        />
+
+        {/* Top: title */}
+        <div className="relative z-10 p-10 pt-10">
+          <h1 className="font-display uppercase text-yellow m-0 leading-[0.95] text-[clamp(3rem,8vw,9rem)]">
+            Rebranding<br />of Zim Afro T10
           </h1>
         </div>
-      </div>
 
-      {/* Project info */}
-      <div className="px-[30px] grid grid-cols-[2fr_1fr] gap-x-16 gap-y-6 mt-10 pb-16">
+        {/* Bottom: info panel */}
+        <div className="relative z-10 px-10 pb-10 flex justify-between items-end gap-8">
 
-        {/* Col 1: summary + service tags */}
-        <div className="flex flex-col gap-6">
-          <p className="font-body text-[25px] leading-[1.3] font-regular text-white">
-            Zim Afro T10, rebranded to Tamba 10, was reimagined from a cricket tournament
-            into a full-scale sports and music festival. The rebrand built a new visual
-            language, brand architecture, motion principles, campaign assets, and a scalable
-            design system to hold it all together — transforming Tamba 10 from a sporting
-            event into a cultural festival platform built to engage a new generation of fans.
-          </p>
-          <div className="flex gap-3 flex-wrap">
-            {SERVICES.map((tag) => (
-              <div
-                key={tag}
-                className="h-[33px] min-w-[151px] px-4 flex items-center justify-center font-body text-xs font-semibold uppercase tracking-wide text-white border border-yellow bg-yellow/30 rounded-[40px] whitespace-nowrap"
-              >
-                {tag}
+          {/* Left: description + tags */}
+          <div style={{ maxWidth: '60ch' }}>
+            <p className="font-body text-white text-[18px] leading-[1.65] mb-6">
+              Zim Afro T10, rebranded to Tamba 10, was reimagined from a cricket tournament
+              into a full-scale sports and music festival. The rebrand built a new visual
+              language, brand architecture, campaign assets, and a scalable design system —
+              transforming Tamba 10 from a sporting event into a cultural festival platform
+              built to engage a new generation of fans.
+            </p>
+            <ul className="flex flex-wrap gap-2 list-none m-0 p-0">
+              {SERVICES.map((tag) => (
+                <li key={tag}>
+                  <span className="border border-white/35 text-white px-4 py-1.5 rounded-full font-body text-[11px] font-semibold tracking-[0.06em] uppercase">
+                    {tag}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Right: metadata */}
+          <div className="flex flex-col gap-3 text-left shrink-0">
+            {META.map(({ label, value }) => (
+              <div key={label}>
+                <p className="font-body text-[11px] font-semibold uppercase tracking-[0.08em] text-pink m-0">{label}</p>
+                <p className="font-body text-[13px] text-white m-0">{value}</p>
               </div>
             ))}
           </div>
-        </div>
 
-        {/* Col 2: metadata */}
-        <div className="flex flex-col gap-4 self-start">
-          {META.map(({ label, value }) => (
-            <div key={label} className="flex flex-col gap-0.5">
-              <span className="font-body text-xs font-semibold uppercase text-pink">
-                {label}
-              </span>
-              <span className="font-body text-xs font-semibold uppercase text-white">
-                {value}
-              </span>
-            </div>
-          ))}
         </div>
-
-      </div>
+      </section>
 
       <CaseStudyIntro />
       <CaseStudyContext />
