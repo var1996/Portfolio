@@ -263,20 +263,17 @@ export default function PlayingCard() {
       <div
         ref={bottomPanelRef}
         className="absolute inset-x-0 bottom-0 pointer-events-none z-20"
-        style={{ backgroundColor: 'rgba(0,0,0,0.78)', borderTop: '1px solid rgba(255,255,255,0.1)' }}
+        style={{ backgroundColor: 'rgba(0,0,0,0.78)' }}
       >
-        <div className="flex items-center gap-8 px-8 py-8">
+        <div className="flex items-center gap-8 px-8 pb-8 pt-0">
           <img
             src="/assets/casestudy_images/Case Study Cover Image.png"
             alt="Tamba10"
             style={{ width: 360, height: 180, objectFit: 'cover', borderRadius: 16, flexShrink: 0 }}
           />
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16, flex: 1, minWidth: 0 }}>
-            <p className="font-body text-[13px] font-semibold uppercase tracking-[0.12em] text-yellow">
-              Case Study · Tamba10
-            </p>
-            <p className="font-body text-white text-[22px] leading-[1.35]">
-              Full rebrand for Zimbabwe&apos;s premier T10 cricket festival
+<p className="font-body text-white text-[22px] leading-[1.35]">
+              Full rebrand of Zimbabwe&apos;s<br />T10 cricket festival
             </p>
             <Link
               href="/case-study"
