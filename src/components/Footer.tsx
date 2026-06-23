@@ -29,7 +29,7 @@ export default function Footer() {
       <div className="flex gap-6 items-end">
 
         {/* LinkedIn queen */}
-        <div className="group relative w-[200px] h-[180px] overflow-hidden">
+        <div className="group relative w-[200px] h-[170px] overflow-hidden">
           <a
             href="https://www.linkedin.com/in/varsharanee-designer/"
             target="_blank"
@@ -59,7 +59,7 @@ export default function Footer() {
               <div className="w-2 h-2 bg-[#8C0006]/80 border-r border-b border-[#8C0006] rotate-45 -mt-1" />
             </div>
           )}
-          <div className="group relative w-[200px] h-[180px] overflow-hidden">
+          <div className="group relative w-[200px] h-[170px] overflow-hidden">
             <button
               onClick={handleEmailClick}
               aria-label="Show email address"
