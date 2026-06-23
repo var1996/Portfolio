@@ -85,13 +85,13 @@ export default function PlayingCard() {
       //           footer rises from below simultaneously
       .to([fanBackRef.current, fanCaseRef.current], { opacity: 1, duration: 0.2 })
       .to(fanBackRef.current, {
-        rotation: -22, duration: 0.8, ease: 'power2.out', transformOrigin: '50% 100%',
+        rotation: -22, scale: 0.6, duration: 0.8, ease: 'power2.out', transformOrigin: '50% 100%',
       }, '<')
       .to(backCardRef.current, {
-        rotation: -6, duration: 0.8, ease: 'power2.out', transformOrigin: '50% 100%',
+        rotation: -6, scale: 0.6, duration: 0.8, ease: 'power2.out', transformOrigin: '50% 100%',
       }, '<')
       .to(fanCaseRef.current, {
-        rotation: 18, duration: 0.8, ease: 'power2.out', transformOrigin: '50% 100%',
+        rotation: 18, scale: 0.6, duration: 0.8, ease: 'power2.out', transformOrigin: '50% 100%',
       }, '<')
       .to(footerRef.current, { y: '0%', duration: 0.8, ease: 'power2.out' }, '<')
 
