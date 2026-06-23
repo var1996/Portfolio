@@ -4,14 +4,13 @@ export default function CaseStudyPhysical() {
 
       {/* Col 1 — header */}
       <div className="self-start">
-        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
+        <h2 className="font-body text-[28px] font-normal leading-[1.1] text-white uppercase">
           Physical Applications. How we show up in the world
         </h2>
       </div>
 
-      {/* Col 2 — body + merch image */}
+      {/* Col 2 — body */}
       <div className="flex flex-col gap-8 self-start">
-
         <div className="flex flex-col gap-6 font-body text-[18px] font-normal leading-[1.5] text-white/85">
           <p>
             The physical world. We wanted the brand to show up everywhere — as something people can
@@ -33,13 +32,15 @@ export default function CaseStudyPhysical() {
           </ul>
           <p>This ensures the brand is not just seen but experienced.</p>
         </div>
+      </div>
 
+      {/* Image — spans both columns */}
+      <div className="col-span-2">
         <img
-          src="/assets/queens/Merch.png"
+          src="/assets/merch.png"
           alt="Merchandise"
           className="w-full h-auto object-contain"
         />
-
       </div>
 
     </div>

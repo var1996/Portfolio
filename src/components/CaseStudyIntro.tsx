@@ -19,17 +19,7 @@ const FEATURE_CARDS = [
   {
     id: '04',
     label: 'RALLYING POINT',
-    body: "Tamba gives people something to chant, wear, and own. It's a word you can feel proud to say out loud.",
-  },
-  {
-    id: '05',
-    label: 'FORMAT FUSED',
-    body: 'Punchy, it has natural momentum that compliments the T10 format.',
-  },
-  {
-    id: '06',
-    label: 'BUILT FOR ENERGY',
-    body: 'By merging "tamba" and "10" into one word, the format becomes inseparable from the brand.',
+    body: 'Tamba gives people something to chant, wear, and own. It\'s a word you can feel proud to say out loud. By merging "tamba" and "10" into one word, the format becomes inseparable from the brand.',
   },
 ]
 
@@ -51,11 +41,11 @@ const RESPONSE_CARDS = [
   },
 ]
 
-function Card({ id, label, body, labelColor }: { id: string; label: string; body: string; labelColor: string }) {
+function Card({ id, label, body, labelColor, isFirst }: { id: string; label: string; body: string; labelColor: string; isFirst?: boolean }) {
   return (
-    <div className="border-t border-white/20 pt-6 flex flex-col gap-4">
+    <div className={`${isFirst ? '' : 'border-t border-gray-500 pt-6'} flex flex-col gap-4`}>
       <p className={`font-body text-xs font-semibold uppercase tracking-[0.08em] ${labelColor}`}>
-        {id} {label}
+        {label}
       </p>
       <p className="font-body text-[18px] font-normal leading-[1.6] text-white">{body}</p>
     </div>
@@ -64,11 +54,11 @@ function Card({ id, label, body, labelColor }: { id: string; label: string; body
 
 export default function CaseStudyIntro() {
   return (
-    <div className="bg-black px-[30px] grid grid-cols-[1fr_2fr] gap-x-6 gap-y-12 pt-12 pb-12">
+    <div className="bg-black px-[30px] grid grid-cols-[1fr_2fr] gap-x-6 gap-y-12 pt-12 pb-12 mt-[80px]">
 
       {/* ── Name Intro ── */}
       <div className="self-start">
-        <h1 className="font-body text-[38px] font-normal leading-[1.2]">
+        <h1 className="font-body text-[28px] font-normal leading-[1.2] uppercase">
           <span className="text-gold">TAMBA</span><span className="text-pink">10</span>
           <span className="text-white">:</span>
           <span className="text-white">a new name that moves</span>
@@ -85,13 +75,13 @@ export default function CaseStudyIntro() {
       </div>
 
       {/* ── Anatomy ── */}
-      <div className="self-start">
-        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
+      <div className="self-start mt-[25px]">
+        <h2 className="font-body text-[28px] font-normal leading-[1.1] text-white uppercase">
           Anatomy of the name
         </h2>
       </div>
 
-      <div className="flex flex-col gap-8 self-start">
+      <div className="flex flex-col gap-8 self-start mt-[25px]">
         <div>
           <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-rose mb-3">
             Tamba: To play. To dance.
@@ -115,7 +105,9 @@ export default function CaseStudyIntro() {
       </div>
 
       {/* ── Quote + Logo ── */}
-      <div className="col-start-2 flex flex-col gap-8">
+      <div />
+
+      <div className="flex flex-col gap-8">
         <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-gold">
           &ldquo;TAMBA&rdquo; CAPTURES MOVEMENT, RHYTHM, AND JOY — THE TWO WORLDS BEING BROUGHT
           TOGETHER IN A SINGLE WORD.
@@ -132,28 +124,28 @@ export default function CaseStudyIntro() {
       </div>
 
       {/* ── A name that carries its soul ── */}
-      <div className="self-start">
-        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
+      <div className="self-start mt-[30px]">
+        <h2 className="font-body text-[28px] font-normal leading-[1.1] text-white uppercase">
          Carrying the soul of the brand and what shaped it
         </h2>
       </div>
 
-      <div className="grid grid-cols-2 gap-6">
-        {FEATURE_CARDS.map((card) => (
-          <Card key={card.id} {...card} labelColor="text-rose" />
+      <div className="flex flex-col gap-6 mt-[30px]">
+        {FEATURE_CARDS.map((card, i) => (
+          <Card key={card.id} {...card} labelColor="text-rose" isFirst={i === 0} />
         ))}
       </div>
 
       {/* ── Emotional Responses ── */}
-      <div className="self-start">
-        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
+      <div className="self-start mt-[30px]">
+        <h2 className="font-body text-[28px] font-normal leading-[1.1] text-white uppercase">
           What it means to people who rally behind it
         </h2>
       </div>
 
-      <div className="grid grid-cols-2 gap-6">
-        {RESPONSE_CARDS.map((card) => (
-          <Card key={card.id} {...card} labelColor="text-gold" />
+      <div className="flex flex-col gap-6 mt-[30px]">
+        {RESPONSE_CARDS.map((card, i) => (
+          <Card key={card.id} {...card} labelColor="text-gold" isFirst={i === 0} />
         ))}
       </div>
 

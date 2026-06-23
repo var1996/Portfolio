@@ -1,10 +1,8 @@
 'use client'
 
-import { useRef, useEffect, useCallback, useState } from 'react'
-import { createPortal } from 'react-dom'
+import { useRef, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import Queens from '@/components/Queens'
-import Footer from '@/components/Footer'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -40,19 +38,13 @@ export default function PlayingCard() {
   // the card that slides up and flips
   const backCardRef       = useRef<HTMLDivElement>(null)
   const flipCardRef       = useRef<HTMLDivElement>(null)
-  // three faces on the same flip card
+  // two faces on the flip card
   const backFaceRef       = useRef<HTMLDivElement>(null)   // back pattern — visible at 0°
-  const endingFaceRef     = useRef<HTMLDivElement>(null)   // ending queen — visible at 180°
-  const caseStudyFaceRef  = useRef<HTMLDivElement>(null)   // case study — visible at 360°
-  // footer portal
-  const footerRef         = useRef<HTMLDivElement>(null)
+  const caseStudyFaceRef  = useRef<HTMLDivElement>(null)   // case study — visible at 180°
 
   const hasEndingFiredRef = useRef(false)
   const isEndingActiveRef = useRef(false)
   const endingTl          = useRef<gsap.core.Timeline | null>(null)
-
-  const [mounted, setMounted] = useState(false)
-  useEffect(() => { setMounted(true) }, [])
 
   const triggerEnding = useCallback(() => {
     if (hasEndingFiredRef.current) return
@@ -70,14 +62,8 @@ export default function PlayingCard() {
       .to([cardBoxRef.current, qPipRef.current], { opacity: 0, duration: 0.35, ease: 'power2.out' })
       .to(backCardRef.current, { y: '0%', duration: 0.7, ease: 'power2.out' }, '<')
       .to(wrapperRef.current, { backgroundColor: '#000000', duration: 0.7 }, '<')
-      // Phase 2 — first flip 0°→180°: back pattern → ending queen
+      // Phase 2 — single flip 0°→180°: back pattern → case study
       .to(flipCardRef.current, { rotationY: 180, duration: 0.65, ease: 'power2.inOut' })
-      // Both at 180° — hide back face, arm case study face (neither is visible right now)
-      .set(backFaceRef.current, { opacity: 0 })
-      .set(caseStudyFaceRef.current, { opacity: 1 })
-      // Phase 3 — second flip 180°→360°: ending queen → case study + footer rises
-      .to(flipCardRef.current, { rotationY: 360, duration: 0.65, ease: 'power2.inOut' }, '+=0.4')
-      .to(footerRef.current, { y: '0%', duration: 0.8, ease: 'power2.out' }, '<')
 
     endingTl.current = tl
   }, [])
@@ -146,11 +132,7 @@ export default function PlayingCard() {
     gsap.set(backCardRef.current,      { y: '100%', transformStyle: 'preserve-3d' })
     gsap.set(flipCardRef.current,      { rotationY: 0, transformStyle: 'preserve-3d' })
     gsap.set(backFaceRef.current,      { backfaceVisibility: 'hidden' })
-    gsap.set(endingFaceRef.current,    { rotationY: 180, backfaceVisibility: 'hidden' })
-    // caseStudy sits at rotationY:0 (same face as back), hidden by opacity until armed
-    gsap.set(caseStudyFaceRef.current, { opacity: 0, backfaceVisibility: 'hidden' })
-
-    if (footerRef.current) gsap.set(footerRef.current, { y: '100%' })
+    gsap.set(caseStudyFaceRef.current, { rotationY: 180, backfaceVisibility: 'hidden' })
 
     ScrollTrigger.scrollerProxy(el, {
       scrollTop(value) {
@@ -200,14 +182,7 @@ export default function PlayingCard() {
     }
   }, [])
 
-  useEffect(() => {
-    if (mounted && footerRef.current) {
-      gsap.set(footerRef.current, { y: '100%' })
-    }
-  }, [mounted])
-
   return (
-    <>
       <div
         ref={wrapperRef}
         className="col-start-4 col-span-6 flex flex-col rounded-t-3xl relative overflow-hidden"
@@ -240,7 +215,7 @@ export default function PlayingCard() {
           </div>
         </div>
 
-        {/* Flip card — one card, three faces */}
+        {/* Flip card — one card, two faces */}
         <div className="absolute inset-0 z-[11] pointer-events-none" style={{ perspective: '1200px' }}>
           <div ref={backCardRef} className="absolute inset-0">
             <div ref={flipCardRef} className="absolute inset-0">
@@ -251,18 +226,12 @@ export default function PlayingCard() {
                   style={{ aspectRatio: '2642/3386', objectFit: 'cover', objectPosition: 'top' }} />
               </div>
 
-              {/* Face 2 — ending queen, visible at 180° */}
-              <div ref={endingFaceRef} className="absolute inset-x-0 top-0">
-                <img src="/assets/queens/ending queen.png" alt="Ending queen" className="w-full block"
-                  style={{ aspectRatio: '2642/3386', objectFit: 'cover', objectPosition: 'top' }} />
-              </div>
-
-              {/* Face 3 — case study, visible at 360° (same face-direction as back, armed by opacity) */}
+              {/* Face 2 — case study, visible at 180° */}
               <div ref={caseStudyFaceRef} className="absolute inset-x-0 top-0 pointer-events-none">
                 <div className="relative">
-                  <img src="/Case Study card.png" alt="Case Study" className="w-full block"
+                  <img src="/assets/final case study card.png" alt="Case Study" className="w-full block"
                     style={{ aspectRatio: '2642/3386', objectFit: 'cover', objectPosition: 'top' }} />
-                  <div className="absolute inset-x-0 flex justify-center" style={{ top: 'calc(63% - 20px)' }}>
+                  <div className="absolute inset-x-0 flex justify-center" style={{ top: 'calc(63% + 60px)' }}>
                     <Link
                       href="/case-study"
                       className="bg-black text-white font-display uppercase tracking-widest text-[13px] px-7 py-3 rounded-full border border-white/30 hover:bg-[#740614] hover:text-white transition-colors duration-200"
@@ -277,13 +246,5 @@ export default function PlayingCard() {
           </div>
         </div>
       </div>
-
-      {mounted && createPortal(
-        <div ref={footerRef} style={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 50 }}>
-          <Footer />
-        </div>,
-        document.body
-      )}
-    </>
   )
 }

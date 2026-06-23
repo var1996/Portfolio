@@ -18,7 +18,7 @@ export default function CaseStudyHero() {
     <section
       aria-label="Project hero"
       className="relative mx-[20px] flex flex-col justify-between overflow-hidden rounded-2xl"
-      style={{ minHeight: '100svh' }}
+      style={{ minHeight: 'calc(100svh - 30px)' }}
     >
       {/* Background image — no animation */}
       <img
@@ -36,14 +36,14 @@ export default function CaseStudyHero() {
       />
 
       {/* Top: title */}
-      <div className="relative z-10 p-10 pt-10">
+      <div className="relative z-10 p-10 pt-10" style={{ transform: 'translateY(-25px)' }}>
         <h1 className="font-display uppercase text-yellow m-0 leading-[1.21] text-[clamp(2rem,7vw,8rem)]">
           Rebranding<br />of Zim Afro T10
         </h1>
       </div>
 
       {/* Bottom: info panel */}
-      <div className="relative z-10 pl-0 pr-10 pb-[25px] flex justify-between items-start gap-8">
+      <div className="relative z-10 pl-0 pr-10 pb-[25px] flex justify-between items-start gap-8" style={{ transform: 'translateY(-40px)' }}>
 
         {/* Left: description + tags */}
         <div style={{ maxWidth: '60ch' }} className="-mt-[10px]">

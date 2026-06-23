@@ -52,9 +52,9 @@ const INSIGHTS = [
 
 function InsightCard({ id, label, bullets }: { id: string; label: string; bullets: string[] }) {
   return (
-    <div className="border-t border-yellow pt-6 flex flex-col gap-4">
+    <div className="border-t border-gray-500 pt-6 flex flex-col gap-4">
       <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink">
-        {id} {label}
+        {label}
       </p>
       <ul className="flex flex-col gap-2">
         {bullets.map((b) => (
@@ -74,7 +74,7 @@ export default function CaseStudyContext() {
 
       {/* ── Context ── */}
       <div className="self-start">
-        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
+        <h2 className="font-body text-[28px] font-normal leading-[1.1] text-white uppercase">
           A League that lost it&apos;s roar
         </h2>
       </div>
@@ -98,13 +98,13 @@ export default function CaseStudyContext() {
       </div>
 
       {/* ── Purpose ── */}
-      <div className="self-start">
-        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
+      <div className="self-start mt-[15px]">
+        <h2 className="font-body text-[28px] font-normal leading-[1.1] text-white uppercase">
           Reading the playing<br />field
         </h2>
       </div>
 
-      <div className="flex flex-col gap-6 self-start">
+      <div className="flex flex-col gap-6 self-start mt-[15px]">
         <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink">
           PURPOSE
         </p>
@@ -140,7 +140,7 @@ export default function CaseStudyContext() {
             brand strategy.
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-x-6 gap-y-10 mt-4">
+        <div className="flex flex-col gap-10 mt-4">
           {INSIGHTS.map((insight) => (
             <InsightCard key={insight.id} {...insight} />
           ))}

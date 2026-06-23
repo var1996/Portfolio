@@ -6,14 +6,14 @@ export default function CaseStudyCreative() {
 
       {/* ── Creative Platform ── */}
       <div className="self-start">
-        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
+        <h2 className="font-body text-[28px] font-normal leading-[1.1] text-white uppercase">
           Turning strategy into a look and feel
         </h2>
       </div>
 
-      <div>
+      <div className="col-span-2">
         <img
-          src="/assets/queens/creative.png"
+          src="/assets/creative.png"
           alt="Creative platform"
           className="w-full h-auto object-contain"
         />

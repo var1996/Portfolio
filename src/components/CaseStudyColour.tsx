@@ -59,7 +59,7 @@ export default function CaseStudyColour() {
 
       {/* ── Intro ── */}
       <div className="self-start">
-        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
+        <h2 className="font-body text-[28px] font-normal leading-[1.1] text-white uppercase">
           The colours that carry the brand
         </h2>
       </div>

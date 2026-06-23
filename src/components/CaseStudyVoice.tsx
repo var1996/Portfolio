@@ -66,9 +66,9 @@ const AUDIENCE_CARDS = [
 
 function PillarCard({ id, label, body, bullets }: { id: string; label: string; body: string; bullets: string[] }) {
   return (
-    <div className="border-t border-white/20 pt-6 flex flex-col gap-4">
+    <div className="border-t border-gray-500 pt-6 flex flex-col gap-4">
       <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink">
-        {id} {label}
+        {label}
       </p>
       <p className="font-body text-[18px] font-normal leading-[1.5] text-white">{body}</p>
       <ul className="flex flex-col gap-2">
@@ -132,7 +132,7 @@ export default function CaseStudyVoice() {
 
       {/* ── Brand Voice Intro ── */}
       <div className="self-start">
-        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
+        <h2 className="font-body text-[28px] font-normal leading-[1.1] text-white uppercase">
           The brand speaks. Here is how it sounds
         </h2>
       </div>
@@ -150,7 +150,7 @@ export default function CaseStudyVoice() {
 
       <div className="border border-black rounded-[16px] overflow-hidden">
         {/* Header bar */}
-        <div className="bg-[#D9B92C] border-b border-black px-4 py-2">
+        <div className="bg-[#D9B92C] border-b border-gray-500 px-4 py-2">
           <p className="font-body font-bold text-black uppercase text-sm tracking-widest">VALUES</p>
         </div>
         {/* 4-column sub-grid */}
@@ -178,7 +178,7 @@ export default function CaseStudyVoice() {
         <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
           THE FOUR VOICE PILLARS
         </p>
-        <div className="grid grid-cols-2 gap-x-6 gap-y-10">
+        <div className="flex flex-col gap-10">
           {PILLARS.map((p) => (
             <PillarCard key={p.id} {...p} />
           ))}
@@ -215,17 +215,17 @@ export default function CaseStudyVoice() {
         <div className="border border-white overflow-hidden flex flex-col md:flex-row rounded-[16px]">
 
           {/* Left panel */}
-          <div className="flex flex-col md:w-[55%] md:border-r md:border-white">
+          <div className="flex flex-col md:w-[55%] md:border-r md:border-gray-500">
             <div className="px-10 py-10">
-              <h3 className="font-body font-normal text-[44px] leading-[1.1] text-yellow">
+              <h3 className="font-body font-normal text-[34px] leading-[1.1] text-yellow uppercase">
                 Who are we<br />talking to?
               </h3>
             </div>
-            <div className="border-t border-white" />
+            <div className="border-t border-gray-500" />
             {AUDIENCE_ROWS.map((row, i) => (
               <div
                 key={row.white}
-                className={`px-8 py-7 grid grid-cols-[3fr_2fr] items-center gap-4${i < AUDIENCE_ROWS.length - 1 ? ' border-b border-white' : ''}`}
+                className={`px-8 py-7 grid grid-cols-[3fr_2fr] items-center gap-4${i < AUDIENCE_ROWS.length - 1 ? ' border-b border-gray-500' : ''}`}
               >
                 <span className="font-body font-normal text-white uppercase text-[20px] leading-tight">{row.white}</span>
                 <span className="font-body font-normal text-[15px] leading-tight" style={{ color: '#D6587A' }}>{row.pink}</span>

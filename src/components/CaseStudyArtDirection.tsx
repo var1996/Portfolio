@@ -4,12 +4,12 @@ export default function CaseStudyArtDirection() {
 
       {/* Col 1 — header */}
       <div className="self-start">
-        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
+        <h2 className="font-body text-[28px] font-normal leading-[1.1] text-white uppercase">
           Built for the stands and the streets
         </h2>
       </div>
 
-      {/* Col 2 — body + image */}
+      {/* Col 2 — body */}
       <div className="flex flex-col gap-8">
         <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
           The art direction embraced collision, between sport and sound, between global and
@@ -18,8 +18,12 @@ export default function CaseStudyArtDirection() {
           positioning Tamba10 as a brand that belongs as much to the festival as to the
           stadium.
         </p>
+      </div>
+
+      {/* Image — spans both columns */}
+      <div className="col-span-2">
         <img
-          src="/assets/queens/art direction.png"
+          src="/assets/art direction.png"
           alt="Art direction"
           className="w-full h-auto object-contain"
         />

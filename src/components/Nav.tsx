@@ -16,7 +16,7 @@ export default function Nav() {
           src="/assets/casestudy_images/case study button.png"
           alt="Return home"
           height={58}
-          className="cursor-pointer opacity-90 hover:opacity-100 transition-opacity duration-200 h-[58px] w-auto"
+          className="cursor-pointer opacity-90 hover:opacity-100 brightness-100 hover:brightness-125 transition-all duration-200 h-[58px] w-auto"
         />
       </Link>
     </nav>

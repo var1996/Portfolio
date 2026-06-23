@@ -43,7 +43,7 @@ export default function CaseStudyTypography() {
 
       {/* Col 1 */}
       <div className="self-start">
-        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
+        <h2 className="font-body text-[28px] font-normal leading-[1.1] text-white uppercase">
           Type that plays both roles
         </h2>
       </div>

@@ -35,7 +35,7 @@ export default function CaseStudyClosing() {
         <p className="font-body text-xs font-semibold tracking-[0.08em] text-yellow mb-4">
           Closing the loop
         </p>
-        <h2 className="font-body text-[38px] font-normal leading-[1.1] text-white">
+        <h2 className="font-body text-[28px] font-normal leading-[1.1] text-white uppercase">
           Learning from this project
         </h2>
       </div>
@@ -43,10 +43,7 @@ export default function CaseStudyClosing() {
       {/* Right: lessons */}
       <div className="flex flex-col">
         {LESSONS.map((lesson) => (
-          <div key={lesson.id} className="border-t border-yellow py-8 flex flex-col gap-3">
-            <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink">
-              {lesson.id}
-            </p>
+          <div key={lesson.id} className="border-t border-gray-500 py-8 flex flex-col gap-3">
             <p className="font-body text-[22px] font-normal leading-[1.2] text-white">
               {lesson.title}
             </p>
@@ -55,7 +52,7 @@ export default function CaseStudyClosing() {
             </p>
           </div>
         ))}
-        <div className="border-t border-yellow" />
+        <div className="border-t border-gray-500" />
       </div>
 
     </div>
