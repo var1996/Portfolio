@@ -83,14 +83,13 @@ function PillarCard({ id, label, body, bullets }: { id: string; label: string; b
   )
 }
 
-function AudienceCard({ caption, title, body }: { caption: string; title: string; body: string }) {
+function AudienceCard({ caption, title }: { caption: string; title: string }) {
   return (
     <div className="bg-yellow rounded-[30px] p-6 flex flex-col gap-2">
       <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-white">
         {caption}
       </p>
       <p className="font-body text-[18px] font-normal text-black">{title}</p>
-      <p className="font-body text-[15px] font-normal leading-[1.4] text-white mt-1">{body}</p>
     </div>
   )
 }
@@ -207,7 +206,12 @@ export default function CaseStudyVoice() {
         {/* 4 audience cards */}
         <div className="flex flex-col gap-6">
           {AUDIENCE_CARDS.map((c) => (
-            <AudienceCard key={c.caption} {...c} />
+            <div key={c.caption} className="flex flex-col gap-4">
+              <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
+                {c.body}
+              </p>
+              <AudienceCard caption={c.caption} title={c.title} />
+            </div>
           ))}
         </div>
 
