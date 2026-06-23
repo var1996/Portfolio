@@ -15,55 +15,32 @@ const INSIGHTS = [
   {
     id: '01',
     label: 'ATTENTION SPANS ARE SHRINKING',
-    bullets: [
-      'Modern audiences prefer shorter, high-intensity entertainment',
-      'Fans want big moments quickly — not long sessions',
-      "People don't just want sport; they want an experience",
-    ],
+    body: 'Modern audiences crave shorter, high-intensity entertainment, expecting big moments to arrive quickly rather than unfolding over long sessions. Beyond the action itself, fans want a full experience, one that engages, excites, and entertains from start to finish.',
   },
   {
     id: '02',
     label: 'SPORT IS CHANGING ENTERTAINMENT',
-    bullets: [
-      'The biggest sporting events now combine sport, music, and culture',
-      'Indian Premier League mixes cricket with celebrity culture and music',
-      'Basketball Africa League blends basketball with entertainment and lifestyle',
-    ],
+    body: 'The biggest sporting events have evolved into cultural spectacles, blending sport with music and lifestyle. The Indian Premier League, for example, weaves cricket together with celebrity culture and live music, while the Basketball Africa League fuses basketball with broader entertainment and lifestyle elements, proving that modern sports properties are as much about the overall experience as they are about what happens on the field or court.',
   },
   {
     id: '03',
     label: "AFRICA'S YOUTH MARKET IS MASSIVE",
-    bullets: [
-      'Africa has one of the youngest populations in the world',
-      'The majority of the population is under 25',
-      'Young audiences engage heavily with music, sport, and digital culture',
-    ],
+    body: 'Africa has one of the youngest populations in the world, with the majority of its people under the age of 25. This generation engages deeply with music, sport, and digital culture, making the continent a uniquely dynamic market for entertainment experiences that speak to all three.',
   },
   {
     id: '04',
     label: 'AFRICAN MUSIC IS GOING GLOBAL',
-    bullets: [
-      'Afrobeats and Amapiano are dominating global culture',
-      'Burna Boy, Wizkid, Davido, Tyla are selling out arenas worldwide',
-      'African culture is no longer niche — it is a global export',
-    ],
+    body: 'Afrobeats and Amapiano are dominating global culture, with artists like Burna Boy, Wizkid, Davido, and Tyla selling out arenas worldwide. African culture is no longer niche — it is a global export, reshaping entertainment and lifestyle on the world stage.',
   },
 ]
 
-function InsightCard({ id, label, bullets }: { id: string; label: string; bullets: string[] }) {
+function InsightCard({ id, label, body }: { id: string; label: string; body: string }) {
   return (
     <div className="border-t border-gray-500 pt-6 flex flex-col gap-4">
       <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink">
         {label}
       </p>
-      <ul className="flex flex-col gap-2">
-        {bullets.map((b) => (
-          <li key={b} className="flex gap-3 font-body text-[18px] font-normal leading-[1.5] text-white">
-            <span className="shrink-0 mt-[0.55em] w-1 h-1 rounded-full bg-white inline-block" />
-            <span>{b}</span>
-          </li>
-        ))}
-      </ul>
+      <p className="font-body text-[18px] font-normal leading-[1.5] text-white">{body}</p>
     </div>
   )
 }
