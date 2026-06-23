@@ -34,9 +34,9 @@ const INSIGHTS = [
   },
 ]
 
-function InsightCard({ id, label, body }: { id: string; label: string; body: string }) {
+function InsightCard({ id, label, body, isFirst }: { id: string; label: string; body: string; isFirst?: boolean }) {
   return (
-    <div className="border-t border-gray-500 pt-6 flex flex-col gap-4">
+    <div className={`${isFirst ? '' : 'border-t border-gray-500 pt-6'} flex flex-col gap-4`}>
       <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink">
         {label}
       </p>
@@ -118,8 +118,8 @@ export default function CaseStudyContext() {
           </p>
         </div>
         <div className="flex flex-col gap-10 mt-4">
-          {INSIGHTS.map((insight) => (
-            <InsightCard key={insight.id} {...insight} />
+          {INSIGHTS.map((insight, i) => (
+            <InsightCard key={insight.id} {...insight} isFirst={i === 0} />
           ))}
         </div>
       </div>
