@@ -9,11 +9,6 @@ export default function CaseStudyBrand() {
         </h2>
       </div>
 
-      <p className="font-body text-[18px] font-normal leading-[1.5] text-white self-start mt-[15px]">
-        The mission, the vision, and the tagline are the skeleton of the brand.
-        Everything else is built on top of them.
-      </p>
-
       {/* ── Vision ── */}
       <div />
 
