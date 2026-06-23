@@ -118,10 +118,10 @@ const VALUES_CARDS = [
 ]
 
 const AUDIENCE_ROWS = [
-  { white: 'THE CRICKET LOVER',      pink: 'The Core Fan' },
-  { white: 'THE RHYTHM LOVER',       pink: 'The Culture Seeker' },
-  { white: 'THE DISTANT SUPPORTER',  pink: 'The Global African' },
-  { white: 'THE DREAMER',            pink: 'The Future Player' },
+  { white: 'THE CRICKET LOVER', pink: 'The Core Fan', body: 'Speaks cricket. Lives for the stats, the players, the rivalries. The voice earns their respect through knowledge and energy.' },
+  { white: 'THE RHYTHM LOVER', pink: 'The Culture Seeker', body: 'Here for the music, the fashion, the vibe. Drawn in by culture and then surprised by how much they love the game.' },
+  { white: 'THE DISTANT SUPPORTER', pink: 'The Global African', body: 'Diaspora. Far from home but deeply connected. The voice gives them something to belong to, wherever they are.' },
+  { white: 'THE DREAMER', pink: 'The Future Player', body: 'Young, ambitious, watching from the boundary. The voice signals that the stage is being built for them.' },
 ]
 
 
@@ -227,12 +227,14 @@ export default function CaseStudyVoice() {
             </div>
             <div className="border-t border-gray-500" />
             {AUDIENCE_ROWS.map((row, i) => (
-              <div
-                key={row.white}
-                className={`px-8 py-7 grid grid-cols-[3fr_2fr] items-center gap-4${i < AUDIENCE_ROWS.length - 1 ? ' border-b border-gray-500' : ''}`}
-              >
-                <span className="font-body font-normal text-white uppercase text-[20px] leading-tight">{row.white}</span>
-                <span className="font-body font-normal text-[15px] leading-tight" style={{ color: '#D6587A' }}>{row.pink}</span>
+              <div key={row.white} className={`flex flex-col${i < AUDIENCE_ROWS.length - 1 ? ' border-b border-gray-500' : ''}`}>
+                <div className="px-8 py-7 grid grid-cols-[3fr_2fr] items-center gap-4">
+                  <span className="font-body font-normal text-white uppercase text-[20px] leading-tight">{row.white}</span>
+                  <span className="font-body font-normal text-[15px] leading-tight" style={{ color: '#D6587A' }}>{row.pink}</span>
+                </div>
+                <div className="px-8 pb-7 pt-0">
+                  <p className="font-body font-normal text-white text-[15px] leading-[1.5]">{row.body}</p>
+                </div>
               </div>
             ))}
           </div>
