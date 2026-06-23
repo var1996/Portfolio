@@ -3,16 +3,13 @@ export default function CaseStudyBrand() {
     <div className="bg-black px-[30px] grid grid-cols-[1fr_2fr] gap-x-16 gap-y-12 pt-12 pb-12">
 
       {/* ── Intro ── */}
-      <div className="self-start mt-[15px]">
-        <h2 className="font-body text-[28px] font-normal leading-[1.1] text-white uppercase">
-          The words that lay the foundation of the brand
-        </h2>
-      </div>
-
-      {/* ── Vision ── */}
       <div />
 
+      {/* ── Vision ── */}
       <div className="flex flex-col gap-6">
+        <h2 className="font-body text-[28px] font-normal leading-[1.1] text-white uppercase mt-[15px]">
+          The words that lay the foundation of the brand
+        </h2>
         <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
           VISION
         </p>
