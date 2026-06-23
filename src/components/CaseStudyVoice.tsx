@@ -2,7 +2,7 @@ const PILLARS = [
   {
     id: '01',
     label: 'ENERGETIC',
-    body: 'The brand never whispers. It commands the room. Every word should feel like it belongs on a big screen, punchy, fast-paced, built for momentum.',
+    body: 'The brand never whispers; it owns the room. Every word should land with impact, carrying the energy of a headline on a giant screen, bold, immediate, and impossible to ignore. The voice is sharp, confident, and driven by momentum, moving with the speed and intensity of the game itself. Sentences are concise. Verbs do the heavy lifting. Every line pushes forward, creating a sense of action and anticipation. There is no room for passive language, corporate jargon, or empty filler. The tone is dynamic, commanding, and cinematic, built to capture attention instantly and keep it.',
     bullets: [
       'Short sentences. Strong verbs. No passive voice.',
       'Language that moves like the game itself',
