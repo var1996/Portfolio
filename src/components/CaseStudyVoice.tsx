@@ -205,7 +205,7 @@ export default function CaseStudyVoice() {
         </p>
 
         {/* 4 audience cards */}
-        <div className="grid grid-cols-2 gap-6">
+        <div className="flex flex-col gap-6">
           {AUDIENCE_CARDS.map((c) => (
             <AudienceCard key={c.caption} {...c} />
           ))}
