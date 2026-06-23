@@ -3,21 +3,21 @@ export default function CaseStudyBrand() {
     <div className="bg-black px-[30px] grid grid-cols-[1fr_2fr] gap-x-16 gap-y-12 pt-12 pb-12">
 
       {/* ── Intro ── */}
-      <div className="self-start">
+      <div className="self-start mt-[15px]">
         <h2 className="font-body text-[28px] font-normal leading-[1.1] text-white uppercase">
           The words that lay the foundation of the brand
         </h2>
       </div>
 
-      <p className="font-body text-[18px] font-normal leading-[1.5] text-white self-start">
+      <p className="font-body text-[18px] font-normal leading-[1.5] text-white self-start mt-[15px]">
         The mission, the vision, and the tagline are the skeleton of the brand.
         Everything else is built on top of them.
       </p>
 
       {/* ── Vision ── */}
-      <div className="-mt-6" />
+      <div />
 
-      <div className="flex flex-col gap-6 -mt-6">
+      <div className="flex flex-col gap-6">
         <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
           VISION
         </p>
