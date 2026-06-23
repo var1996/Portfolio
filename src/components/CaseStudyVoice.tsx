@@ -199,18 +199,6 @@ export default function CaseStudyVoice() {
           given moment.
         </p>
 
-        {/* 4 audience cards */}
-        <div className="flex flex-col gap-6">
-          {AUDIENCE_CARDS.map((c) => (
-            <div key={c.caption} className="flex flex-col gap-4">
-              <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
-                {c.body}
-              </p>
-              <AudienceCard caption={c.caption} title={c.title} />
-            </div>
-          ))}
-        </div>
-
         {/* Audience split module */}
         <div className="border border-white overflow-hidden flex flex-col md:flex-row rounded-[16px]">
 
@@ -224,7 +212,7 @@ export default function CaseStudyVoice() {
             <div className="border-t border-gray-500" />
             {AUDIENCE_ROWS.map((row, i) => (
               <div key={row.white} className={`flex flex-col${i < AUDIENCE_ROWS.length - 1 ? ' border-b border-gray-500' : ''}`}>
-                <div className="px-8 py-7 grid grid-cols-[3fr_2fr] items-center gap-4">
+                <div className="px-8 py-7 flex flex-col gap-2">
                   <span className="font-body font-normal text-white uppercase text-[20px] leading-tight">{row.white}</span>
                   <span className="font-body font-normal text-[15px] leading-tight" style={{ color: '#D6587A' }}>{row.pink}</span>
                 </div>
@@ -236,7 +224,7 @@ export default function CaseStudyVoice() {
           </div>
 
           {/* Right panel — full-bleed image */}
-          <div className="relative min-h-[320px] md:w-[45%]">
+          <div className="relative min-h-[500px] md:w-[45%]">
             <img
               src="/assets/casestudy_images/cricket boy.png"
               alt="Cricket audience"
