@@ -50,13 +50,13 @@ export default function CaseStudyContext() {
     <div className="bg-black px-[30px] grid grid-cols-[1fr_2fr] gap-x-6 gap-y-12 pt-12 pb-12">
 
       {/* ── Context ── */}
-      <div className="self-start mt-[20px]">
+      <div className="self-start mt-[30px]">
         <h2 className="font-body text-[28px] font-normal leading-[1.1] text-white uppercase">
           A League that lost it&apos;s roar
         </h2>
       </div>
 
-      <div className="flex flex-col gap-6 font-body text-[18px] font-normal leading-[1.5] text-white self-start mt-[20px]">
+      <div className="flex flex-col gap-6 font-body text-[18px] font-normal leading-[1.5] text-white self-start mt-[30px]">
         <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink mt-[4px]">
           CONTEXT
         </p>

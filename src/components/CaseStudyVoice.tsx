@@ -85,7 +85,7 @@ function PillarCard({ id, label, body, bullets }: { id: string; label: string; b
 
 function AudienceCard({ caption, title, body }: { caption: string; title: string; body: string }) {
   return (
-    <div className="bg-yellow rounded-[30px] p-6 min-h-[210px] flex flex-col gap-2">
+    <div className="bg-yellow rounded-[30px] p-6 flex flex-col gap-2">
       <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-white">
         {caption}
       </p>
