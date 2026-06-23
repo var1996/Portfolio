@@ -32,28 +32,25 @@ const SECTIONS = [
 ]
 
 export default function PlayingCard() {
-  const wrapperRef     = useRef<HTMLDivElement>(null)
-  const innerRef       = useRef<HTMLDivElement>(null)
-  const contentRef     = useRef<HTMLDivElement>(null)
-  const cardBoxRef     = useRef<HTMLDivElement>(null)
-  const qPipRef        = useRef<HTMLDivElement>(null)
-  // outer: slides up, becomes the ending queen card in the fan
-  const backCardRef    = useRef<HTMLDivElement>(null)
-  // inner: rotates 0→180° to reveal the ending queen face
-  const flipCardRef    = useRef<HTMLDivElement>(null)
-  const backFaceRef    = useRef<HTMLDivElement>(null)
-  const endingFaceRef  = useRef<HTMLDivElement>(null)
-  // fan elements that appear after the flip
-  const fanBackRef     = useRef<HTMLDivElement>(null)   // back card fans left
-  const fanCaseRef     = useRef<HTMLDivElement>(null)   // case study card fans right
+  const wrapperRef        = useRef<HTMLDivElement>(null)
+  const innerRef          = useRef<HTMLDivElement>(null)
+  const contentRef        = useRef<HTMLDivElement>(null)
+  const cardBoxRef        = useRef<HTMLDivElement>(null)
+  const qPipRef           = useRef<HTMLDivElement>(null)
+  // the card that slides up and flips
+  const backCardRef       = useRef<HTMLDivElement>(null)
+  const flipCardRef       = useRef<HTMLDivElement>(null)
+  // three faces on the same flip card
+  const backFaceRef       = useRef<HTMLDivElement>(null)   // back pattern — visible at 0°
+  const endingFaceRef     = useRef<HTMLDivElement>(null)   // ending queen — visible at 180°
+  const caseStudyFaceRef  = useRef<HTMLDivElement>(null)   // case study — visible at 360°
   // footer portal
-  const footerRef      = useRef<HTMLDivElement>(null)
+  const footerRef         = useRef<HTMLDivElement>(null)
 
   const hasEndingFiredRef = useRef(false)
   const isEndingActiveRef = useRef(false)
   const endingTl          = useRef<gsap.core.Timeline | null>(null)
 
-  // Portal needs to mount client-side
   const [mounted, setMounted] = useState(false)
   useEffect(() => { setMounted(true) }, [])
 
@@ -62,37 +59,24 @@ export default function PlayingCard() {
     hasEndingFiredRef.current = true
     isEndingActiveRef.current = true
 
-    // backCardRef starts at y:'100%' which puts it at/below the viewport bottom,
-    // so overflow:visible won't leak anything before the slide-up begins.
-    // We set it here so the fan (Phase 3) can extend beyond the card bounds.
-    if (wrapperRef.current) wrapperRef.current.style.overflow = 'visible'
-
     const tl = gsap.timeline({
       onComplete: () => {
-        // Allow clicks on the case study card
-        if (fanCaseRef.current) fanCaseRef.current.style.pointerEvents = 'auto'
+        if (caseStudyFaceRef.current) caseStudyFaceRef.current.style.pointerEvents = 'auto'
       },
     })
 
     tl
-      // Phase 1 — original card fades, back card slides up, bg goes black
+      // Phase 1 — content fades, card slides up, bg goes black
       .to([cardBoxRef.current, qPipRef.current], { opacity: 0, duration: 0.35, ease: 'power2.out' })
       .to(backCardRef.current, { y: '0%', duration: 0.7, ease: 'power2.out' }, '<')
       .to(wrapperRef.current, { backgroundColor: '#000000', duration: 0.7 }, '<')
-      // Phase 2 — seamless 180° flip reveals ending queen
+      // Phase 2 — first flip 0°→180°: back pattern → ending queen
       .to(flipCardRef.current, { rotationY: 180, duration: 0.65, ease: 'power2.inOut' })
-      // Phase 3 — fan: back card and case study card appear, all three spread open
-      //           footer rises from below simultaneously
-      .to([fanBackRef.current, fanCaseRef.current], { opacity: 1, duration: 0.2 })
-      .to(fanBackRef.current, {
-        rotation: -22, scale: 0.6, y: -200, duration: 0.8, ease: 'power2.out', transformOrigin: '50% 100%',
-      }, '<')
-      .to(backCardRef.current, {
-        rotation: -6, scale: 0.6, y: -200, duration: 0.8, ease: 'power2.out', transformOrigin: '50% 100%',
-      }, '<')
-      .to(fanCaseRef.current, {
-        rotation: 18, scale: 0.6, y: -200, duration: 0.8, ease: 'power2.out', transformOrigin: '50% 100%',
-      }, '<')
+      // Both at 180° — hide back face, arm case study face (neither is visible right now)
+      .set(backFaceRef.current, { opacity: 0 })
+      .set(caseStudyFaceRef.current, { opacity: 1 })
+      // Phase 3 — second flip 180°→360°: ending queen → case study + footer rises
+      .to(flipCardRef.current, { rotationY: 360, duration: 0.65, ease: 'power2.inOut' }, '+=0.4')
       .to(footerRef.current, { y: '0%', duration: 0.8, ease: 'power2.out' }, '<')
 
     endingTl.current = tl
@@ -103,14 +87,8 @@ export default function PlayingCard() {
     isEndingActiveRef.current = false
     hasEndingFiredRef.current = false
 
-    if (fanCaseRef.current) fanCaseRef.current.style.pointerEvents = 'none'
-
+    if (caseStudyFaceRef.current) caseStudyFaceRef.current.style.pointerEvents = 'none'
     endingTl.current?.reverse()
-    // Restore clipping once the reverse completes so the back card
-    // can't be seen below the card on future forward plays.
-    endingTl.current?.eventCallback('onReverseComplete', () => {
-      if (wrapperRef.current) wrapperRef.current.style.overflow = 'hidden'
-    })
   }, [])
 
   // Wheel + keyboard scroll hijack
@@ -158,21 +136,20 @@ export default function PlayingCard() {
     }
   }, [triggerEnding, triggerReverse])
 
-  // GSAP — initial states + queen scroll fades
+  // GSAP initial states + queen scroll fades
   useEffect(() => {
     const el      = innerRef.current
     const content = contentRef.current
     const cardBox = cardBoxRef.current
     if (!el || !content || !cardBox) return
 
-    gsap.set(backCardRef.current,    { y: '100%', transformStyle: 'preserve-3d' })
-    gsap.set(flipCardRef.current,    { rotationY: 0, transformStyle: 'preserve-3d' })
-    gsap.set(backFaceRef.current,    { backfaceVisibility: 'hidden' })
-    gsap.set(endingFaceRef.current,  { rotationY: 180, backfaceVisibility: 'hidden' })
-    // Fan elements start hidden, stacked at card position
-    gsap.set(fanBackRef.current,     { opacity: 0, rotation: 0, y: 0 })
-    gsap.set(fanCaseRef.current,     { opacity: 0, rotation: 0, y: 0 })
-    // Footer starts below viewport
+    gsap.set(backCardRef.current,      { y: '100%', transformStyle: 'preserve-3d' })
+    gsap.set(flipCardRef.current,      { rotationY: 0, transformStyle: 'preserve-3d' })
+    gsap.set(backFaceRef.current,      { backfaceVisibility: 'hidden' })
+    gsap.set(endingFaceRef.current,    { rotationY: 180, backfaceVisibility: 'hidden' })
+    // caseStudy sits at rotationY:0 (same face as back), hidden by opacity until armed
+    gsap.set(caseStudyFaceRef.current, { opacity: 0, backfaceVisibility: 'hidden' })
+
     if (footerRef.current) gsap.set(footerRef.current, { y: '100%' })
 
     ScrollTrigger.scrollerProxy(el, {
@@ -223,7 +200,6 @@ export default function PlayingCard() {
     }
   }, [])
 
-  // Sync footer initial state once portal mounts
   useEffect(() => {
     if (mounted && footerRef.current) {
       gsap.set(footerRef.current, { y: '100%' })
@@ -253,7 +229,7 @@ export default function PlayingCard() {
               <div ref={contentRef} className="pt-[22px] px-8 pb-8">
                 {SECTIONS.map((text, i) => (
                   <section key={text} className={i === SECTIONS.length - 1 ? 'mb-140' : 'mb-48'}>
-                    <h2 className="font-abril leading-[1.1] text-center uppercase text-[84px] text-black">
+                    <h2 className="font-abril leading-[0.9] text-center uppercase text-[84px] text-black">
                       {text}
                     </h2>
                   </section>
@@ -264,42 +240,46 @@ export default function PlayingCard() {
           </div>
         </div>
 
-        {/*
-          Flip card — slides up then spins 180°.
-          After the flip it becomes the "ending queen" card in the fan (z-[11]).
-        */}
+        {/* Flip card — one card, three faces */}
         <div className="absolute inset-0 z-[11] pointer-events-none" style={{ perspective: '1200px' }}>
           <div ref={backCardRef} className="absolute inset-0">
             <div ref={flipCardRef} className="absolute inset-0">
+
+              {/* Face 1 — back pattern, visible at 0° */}
               <div ref={backFaceRef} className="absolute inset-x-0 top-0">
-                <img src="/assets/back card.png" alt="" className="w-full h-auto block" />
+                <img src="/assets/back card.png" alt="" className="w-full block"
+                  style={{ aspectRatio: '2642/3386', objectFit: 'cover', objectPosition: 'top' }} />
               </div>
+
+              {/* Face 2 — ending queen, visible at 180° */}
               <div ref={endingFaceRef} className="absolute inset-x-0 top-0">
-                <img src="/assets/queens/ending queen.png" alt="Ending queen" className="w-full h-auto block" />
+                <img src="/assets/queens/ending queen.png" alt="Ending queen" className="w-full block"
+                  style={{ aspectRatio: '2642/3386', objectFit: 'cover', objectPosition: 'top' }} />
               </div>
+
+              {/* Face 3 — case study, visible at 360° (same face-direction as back, armed by opacity) */}
+              <div ref={caseStudyFaceRef} className="absolute inset-x-0 top-0 pointer-events-none">
+                <div className="relative">
+                  <img src="/Case Study card.png" alt="Case Study" className="w-full block"
+                    style={{ aspectRatio: '2642/3386', objectFit: 'cover', objectPosition: 'top' }} />
+                  <div className="absolute inset-x-0 flex justify-center" style={{ top: 'calc(63% - 20px)' }}>
+                    <Link
+                      href="/case-study"
+                      className="bg-black text-white font-display uppercase tracking-widest text-[13px] px-7 py-3 rounded-full border border-white/30 hover:bg-[#740614] hover:text-white transition-colors duration-200"
+                    >
+                      Read Case Study
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
-
-        {/* Fan — back card (fans left, behind) */}
-        <div ref={fanBackRef} className="absolute inset-0 z-[10] pointer-events-none">
-          <img src="/assets/back card.png" alt="" className="w-full h-auto block" />
-        </div>
-
-        {/* Fan — case study card (fans right, in front) */}
-        <div ref={fanCaseRef} className="absolute inset-0 z-[13] pointer-events-none">
-          <Link href="/case-study" className="block">
-            <img src="/Case Study card.png" alt="Case Study" className="w-full h-auto block" />
-          </Link>
-        </div>
       </div>
 
-      {/* Footer portal — renders at body level so overflow:hidden on the card doesn't clip it */}
       {mounted && createPortal(
-        <div
-          ref={footerRef}
-          style={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 50 }}
-        >
+        <div ref={footerRef} style={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 50 }}>
           <Footer />
         </div>,
         document.body
