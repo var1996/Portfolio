@@ -60,9 +60,9 @@ const AUDIENCE_CARDS = [
   },
 ]
 
-function PillarCard({ id, label, body, bullets }: { id: string; label: string; body: string; bullets: string[] }) {
+function PillarCard({ id, label, body, bullets, isFirst }: { id: string; label: string; body: string; bullets: string[]; isFirst?: boolean }) {
   return (
-    <div className="border-t border-gray-500 pt-6 flex flex-col gap-4">
+    <div className={`${isFirst ? '' : 'border-t border-gray-500 pt-6'} flex flex-col gap-4`}>
       <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink">
         {label}
       </p>
@@ -174,8 +174,8 @@ export default function CaseStudyVoice() {
           THE FOUR VOICE PILLARS
         </p>
         <div className="flex flex-col gap-10">
-          {PILLARS.map((p) => (
-            <PillarCard key={p.id} {...p} />
+          {PILLARS.map((p, i) => (
+            <PillarCard key={p.id} {...p} isFirst={i === 0} />
           ))}
         </div>
       </div>
