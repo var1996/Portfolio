@@ -56,24 +56,6 @@ export default function CaseStudyIntro() {
   return (
     <div className="bg-black px-[30px] grid grid-cols-[1fr_2fr] gap-x-6 gap-y-12 pt-12 pb-12 mt-[80px]">
 
-      {/* ── Name Intro ── */}
-      <div className="self-start">
-        <h1 className="font-body text-[28px] font-normal leading-[1.2] uppercase">
-          <span className="text-gold">TAMBA</span><span className="text-pink">10</span>
-          <span className="text-white">:</span>
-          <span className="text-white">a new name that moves</span>
-        </h1>
-      </div>
-
-      <div className="flex flex-col gap-5 font-body text-[18px] font-normal leading-[1.6] text-white self-start">
-        <p>
-          This rebrand required a new name. The old name, Zim Afro T10, was simply
-          descriptive and geographic. It told you where the league was from. But it
-          carried no feeling, cultural weight or invitation.The rename to Tamba10 was one of the most deliberate decisions in this project.
-        </p>
-
-      </div>
-
       {/* ── Anatomy ── */}
       <div className="self-start mt-[25px]">
         <h2 className="font-body text-[28px] font-normal leading-[1.1] text-white uppercase">
@@ -82,6 +64,11 @@ export default function CaseStudyIntro() {
       </div>
 
       <div className="flex flex-col gap-8 self-start mt-[25px]">
+        <p className="font-body text-[18px] font-normal leading-[1.6] text-white">
+          This rebrand required a new name. The old name, Zim Afro T10, was simply
+          descriptive and geographic. It told you where the league was from. But it
+          carried no feeling, cultural weight or invitation.The rename to Tamba10 was one of the most deliberate decisions in this project.
+        </p>
         <div>
           <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-rose mb-3">
             Tamba: To play. To dance.
