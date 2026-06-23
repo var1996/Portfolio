@@ -58,8 +58,8 @@ export default function CaseStudyIntro() {
 
       {/* ── Anatomy ── */}
       <div className="self-start mt-[25px]">
-        <h2 className="font-body text-[28px] font-normal leading-[1.1] uppercase">
-          Anatomy of the name: <span className="text-gold">tamba</span><span className="text-pink">10</span>
+        <h2 className="font-body text-[28px] font-normal leading-[1.1] text-white uppercase">
+          Anatomy of the name
         </h2>
       </div>
 
