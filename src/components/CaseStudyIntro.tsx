@@ -15,8 +15,7 @@ export default function CaseStudyIntro() {
         <p className="font-body text-[18px] font-normal leading-[1.6] text-white">
           This rebrand required a new name. The old name, Zim Afro T10, was simply
           descriptive and geographic. It told you where the league was from. But it
-          carried no feeling, cultural weight or invitation. The rename to Tamba10 was one
-          of the most deliberate decisions in this project. Drawn from local Zimbabwean
+          carried no feeling, cultural weight or invitation. Drawn from local Zimbabwean
           language, tamba captures the dual soul of this league. The athletic play on the
           pitch and the rhythmic, joyful movement that fills the stands. It&apos;s a word
           that belongs to the people the brand is for. T10 is the cricket format. Fast,
