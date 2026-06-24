@@ -80,7 +80,9 @@ export default function PlayingCard() {
     const el = innerRef.current
     const lastSection = lastSectionRef.current
     if (el && lastSection) {
-      el.scrollTop = lastSection.offsetTop
+      const elRect      = el.getBoundingClientRect()
+      const sectionRect = lastSection.getBoundingClientRect()
+      el.scrollTop += sectionRect.top - elRect.top
       ScrollTrigger.update()
     }
   }, [])
