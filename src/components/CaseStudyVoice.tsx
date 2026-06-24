@@ -121,8 +121,7 @@ export default function CaseStudyVoice() {
           Africa. And it is &ldquo;empowering&rdquo;, using language that is intentionally
           inclusive, leaning into &ldquo;we&rdquo; and &ldquo;our&rdquo; to reflect a
           collective movement where everyone, whether in Harare or London, feels genuine
-          ownership and belonging. Together, these four tones define not just how Tamba10
-          speaks, but what it stands for.
+          ownership and belonging.
         </p>
       </div>
 
