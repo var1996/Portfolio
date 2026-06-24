@@ -78,13 +78,7 @@ export default function CaseStudyContext() {
         </h2>
       </div>
 
-      <div className="flex flex-col gap-6 self-start mt-[65px]">
-        <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
-          The rebrands mission was to give Zimbabweans, both at home and in the diaspora
-          something powerful to unite around and feel genuinely proud of. The goal was to
-          establish Zimbabwe as Africa&apos;s home ground for cricket and culture.
-        </p>
-      </div>
+      <div className="self-start mt-[65px]" />
 
       {/* ── Research ── */}
       <div className="self-start" />
