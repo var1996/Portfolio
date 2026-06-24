@@ -1,30 +1,3 @@
-const PILLARS = [
-  {
-    id: '01',
-    label: 'ENERGETIC',
-    body: 'The brand never whispers; it owns the room. Every word should land with impact, carrying the energy of a headline on a giant screen, bold, immediate, and impossible to ignore. The voice is sharp, confident, and driven by momentum, moving with the speed and intensity of the game itself. Sentences are concise. Verbs do the heavy lifting. Every line pushes forward, creating a sense of action and anticipation. There is no room for passive language, corporate jargon, or empty filler. The tone is dynamic, commanding, and cinematic, built to capture attention instantly and keep it.',
-    bullets: [],
-  },
-  {
-    id: '02',
-    label: 'INSPIRING',
-    body: 'Tamba10 exists to lift people, young dreamers, diaspora fans, future athletes and everything it does is shaped by that purpose. The voice consistently signals that something bigger is possible, speaking to potential rather than just performance, celebrating people rather than just results, and connecting sport to a deep sense of pride and possibility.',
-    bullets: [],
-  },
-  {
-    id: '03',
-    label: 'PROGRESSIVE',
-    body: 'The brand looks forward, championing African talent, embracing new formats, and refusing to be defined by how things have always been done. The language is never nostalgic; it champions what is emerging, celebrates what is next, and actively challenges the outdated narratives that have long defined how the world sees Zimbabwe and Africa.',
-    bullets: [],
-  },
-  {
-    id: '04',
-    label: 'EMPOWERING',
-    body: "Tamba10 gives its audience a genuine sense of ownership and belonging, whether you're in Harare or London. The voice is intentionally inclusive, leaning into \"we\" and \"our\" to reflect a collective movement rather than a distant brand. Community is celebrated just as much as excellence, and everyone, wherever they are in the world, is made to feel like they are part of something that truly belongs to them.",
-    bullets: [],
-  },
-]
-
 const AUDIENCE_CARDS = [
   {
     caption: 'THE CORE FAN',
@@ -47,25 +20,6 @@ const AUDIENCE_CARDS = [
     body: 'Young, ambitious, watching from the boundary. The voice signals that the stage is being built for them.',
   },
 ]
-
-function PillarCard({ id, label, body, bullets }: { id: string; label: string; body: string; bullets: string[]; isFirst?: boolean }) {
-  return (
-    <div className="flex flex-col gap-4">
-      <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink">
-        {label}
-      </p>
-      <p className="font-body text-[18px] font-normal leading-[1.5] text-white">{body}</p>
-      <ul className="flex flex-col gap-2">
-        {bullets.map((b) => (
-          <li key={b} className="flex gap-3 font-body text-[18px] font-normal leading-[1.5] text-white">
-            <span className="shrink-0 mt-[0.3em]">•</span>
-            <span>{b}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  )
-}
 
 function AudienceCard({ caption, title }: { caption: string; title: string }) {
   return (
@@ -154,11 +108,22 @@ export default function CaseStudyVoice() {
       <div />
 
       <div className="flex flex-col gap-6">
-        <div className="flex flex-col gap-10">
-          {PILLARS.map((p, i) => (
-            <PillarCard key={p.id} {...p} isFirst={i === 0} />
-          ))}
-        </div>
+        <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
+          Tamba10&apos;s voice is built on four defining tones that work together to create
+          a brand unlike anything else in African sport. It is &ldquo;energetic&rdquo;
+          never whispering, always commanding, with sharp, momentum-driven language that
+          moves at the speed of the game itself. It is &ldquo;inspiring&rdquo; consistently
+          signalling that something bigger is possible, celebrating people and potential as
+          much as performance, and connecting sport to a deep sense of pride and
+          possibility. It is &ldquo;progressive&rdquo;, always looking forward, championing
+          emerging African talent, embracing new formats, and actively challenging the
+          outdated narratives that have long defined how the world sees Zimbabwe and
+          Africa. And it is &ldquo;empowering&rdquo;, using language that is intentionally
+          inclusive, leaning into &ldquo;we&rdquo; and &ldquo;our&rdquo; to reflect a
+          collective movement where everyone, whether in Harare or London, feels genuine
+          ownership and belonging. Together, these four tones define not just how Tamba10
+          speaks, but what it stands for.
+        </p>
       </div>
 
       {/* ── Quote ── */}
