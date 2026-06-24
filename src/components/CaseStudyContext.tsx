@@ -32,13 +32,13 @@ export default function CaseStudyContext() {
       </div>
 
       {/* ── Purpose / Research ── */}
-      <div className="self-start mt-[65px]">
+      <div className="self-start mt-[70px]">
         <h2 className="font-body text-[28px] font-normal leading-[1.1] text-white uppercase">
           Reading the playing<br />field
         </h2>
       </div>
 
-      <div className="flex flex-col gap-6 self-start mt-[65px]">
+      <div className="flex flex-col gap-6 self-start mt-[70px]">
         <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
           The competitor analysis and market insights converged into three sharp conclusions
           each one a building block for the rebrand strategy. The analysis revealed a
