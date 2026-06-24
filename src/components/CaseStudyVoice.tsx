@@ -48,9 +48,9 @@ const AUDIENCE_CARDS = [
   },
 ]
 
-function PillarCard({ id, label, body, bullets, isFirst }: { id: string; label: string; body: string; bullets: string[]; isFirst?: boolean }) {
+function PillarCard({ id, label, body, bullets }: { id: string; label: string; body: string; bullets: string[]; isFirst?: boolean }) {
   return (
-    <div className={`${isFirst ? '' : 'border-t border-gray-500 pt-6'} flex flex-col gap-4`}>
+    <div className="flex flex-col gap-4">
       <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink">
         {label}
       </p>
