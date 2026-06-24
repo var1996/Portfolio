@@ -67,28 +67,15 @@ export default function CaseStudyIntro() {
         <p className="font-body text-[18px] font-normal leading-[1.6] text-white">
           This rebrand required a new name. The old name, Zim Afro T10, was simply
           descriptive and geographic. It told you where the league was from. But it
-          carried no feeling, cultural weight or invitation.The rename to Tamba10 was one of the most deliberate decisions in this project.
+          carried no feeling, cultural weight or invitation. The rename to Tamba10 was one
+          of the most deliberate decisions in this project. Drawn from local Zimbabwean
+          language, tamba captures the dual soul of this league. The athletic play on the
+          pitch and the rhythmic, joyful movement that fills the stands. It&apos;s a word
+          that belongs to the people the brand is for. T10 is the cricket format. Fast,
+          electrifying, and built for a generation with an appetite for high-intensity
+          entertainment. Fused into the name itself, 10 isn&apos;t a category label
+          anymore; it becomes part of the brand&apos;s identity.
         </p>
-        <div>
-          <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-rose mb-3">
-            Tamba: To play. To dance.
-          </p>
-          <p className="font-body text-[18px] font-normal leading-[1.6] text-white">
-            Drawn from local Zimbabwean language, tamba captures the dual soul of this
-            league. The athletic play on the pitch and the rhythmic, joyful movement that
-            fills the stands. It&apos;s a word that belongs to the people the brand is for.
-          </p>
-        </div>
-        <div>
-          <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-rose mb-3">
-            10: The format. The pulse.
-          </p>
-          <p className="font-body text-[18px] font-normal leading-[1.6] text-white">
-            T10 is the cricket format. Fast, electrifying, and built for a generation with
-            an appetite for high-intensity entertainment. Fused into the name itself, 10
-            isn&apos;t a category label anymore; it becomes part of the brand&apos;s identity.
-          </p>
-        </div>
       </div>
 
       {/* ── Quote + Logo ── */}
