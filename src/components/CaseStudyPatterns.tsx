@@ -35,9 +35,6 @@ export default function CaseStudyPatterns() {
       <div />
 
       <div className="flex flex-col gap-6">
-        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
-          T PATTERNS
-        </p>
         <p className="font-body text-[18px] font-normal leading-[1.5] text-white/85">
           The following patterns are built from the custom &ldquo;T&rdquo; form within the Tamba10
           typeface, transforming a single typographic element into a bold, expressive visual system.
@@ -59,15 +56,6 @@ export default function CaseStudyPatterns() {
       <div />
 
       <div className="flex flex-col gap-6">
-        {/* Shared caption row — guarantees both labels are on the same line */}
-        <div className="grid grid-cols-2 gap-6">
-          <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
-            ARROWS &amp; WAYFINDING
-          </p>
-          <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
-            ARTIST AND PLAYER FRAMES
-          </p>
-        </div>
         {/* Image row */}
         <div className="grid grid-cols-2 gap-6 items-start">
           <div className="flex items-end gap-2">

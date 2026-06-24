@@ -32,9 +32,6 @@ export default function CaseStudyClosing() {
 
       {/* Left: section heading */}
       <div className="self-start">
-        <p className="font-body text-xs font-semibold tracking-[0.08em] text-yellow mb-4">
-          Closing the loop
-        </p>
         <h2 className="font-body text-[28px] font-normal leading-[1.1] text-white uppercase">
           Learning from this project
         </h2>

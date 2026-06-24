@@ -11,9 +11,6 @@ export default function CaseStudyBrand() {
 
       {/* ── Vision ── */}
       <div className="flex flex-col gap-6 mt-[15px]">
-        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
-          VISION
-        </p>
         <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
           This vision reflects three ideas. First, unity, bringing people together through
           sport and music. Second, African talent, celebrating the players, artists, and
@@ -97,9 +94,6 @@ export default function CaseStudyBrand() {
       <div />
 
       <div className="flex flex-col gap-6">
-        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
-          MISSION
-        </p>
         <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
           The goal is not just to host matches, but to create a destination, a place where
           sport, entertainment, and community come together, a homeground. This vision stakes
@@ -122,9 +116,6 @@ export default function CaseStudyBrand() {
           phrase that could carry the whole brand on a stadium screen, on a t-shirt, and in
           a conversation. It had to land in two places at once.
         </p>
-        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
-          TAGLINE
-        </p>
         <div className="bg-yellow p-8 flex items-center justify-center rounded-[16px]">
           <p className="font-display uppercase leading-none text-[clamp(3rem,7vw,6rem)] text-center">
             <span className="text-pink">UN</span><span className="text-black">MATCHED</span>
@@ -137,9 +128,6 @@ export default function CaseStudyBrand() {
 
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-4">
-          <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
-            CULTURAL MEANING
-          </p>
           <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
             In everyday language, unmatched means without rival, without comparison, in a
             league of its own. It&apos;s a declaration of ambition for everything Tamba10
@@ -147,9 +135,6 @@ export default function CaseStudyBrand() {
           </p>
         </div>
         <div className="flex flex-col gap-4">
-          <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
-            CRICKET MEANING
-          </p>
           <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
             In cricket, a match is the game itself the competition, the contest, the moment
             everything is on the line. UNMATCHED says this league and the experience it

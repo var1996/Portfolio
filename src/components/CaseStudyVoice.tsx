@@ -132,10 +132,6 @@ export default function CaseStudyVoice() {
       <div />
 
       <div className="border border-black rounded-[16px] overflow-hidden">
-        {/* Header bar */}
-        <div className="bg-[#D9B92C] px-4 py-2">
-          <p className="font-body font-bold text-black uppercase text-sm tracking-widest">VALUES</p>
-        </div>
         {/* 4-column sub-grid */}
         <div className="bg-[#D9B92C] grid grid-cols-2 md:grid-cols-4 gap-[30px] p-[20px]">
           {VALUES_CARDS.map((v) => (
@@ -158,9 +154,6 @@ export default function CaseStudyVoice() {
       <div />
 
       <div className="flex flex-col gap-6">
-        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
-          THE FOUR VOICE PILLARS
-        </p>
         <div className="flex flex-col gap-10">
           {PILLARS.map((p, i) => (
             <PillarCard key={p.id} {...p} isFirst={i === 0} />
@@ -178,9 +171,6 @@ export default function CaseStudyVoice() {
       <div />
 
       <div className="flex flex-col gap-8">
-        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
-          WHO THE VOICE SPEAKS TO
-        </p>
         <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
           The tone shifts in register depending on who&apos;s in the room but the four pillars
           stay constant. Four audience archetypes define who Tamba10 is speaking to at any

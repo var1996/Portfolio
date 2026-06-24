@@ -57,9 +57,6 @@ export default function CaseStudyContext() {
       </div>
 
       <div className="flex flex-col gap-6 font-body text-[18px] font-normal leading-[1.5] text-white self-start mt-[30px]">
-        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink mt-[4px]">
-          CONTEXT
-        </p>
         <p>
           A league with a hybrid format that blends cricket with the energy of African
           festival culture. Despite its potential, the league had struggled to hold its
@@ -82,9 +79,6 @@ export default function CaseStudyContext() {
       </div>
 
       <div className="flex flex-col gap-6 self-start mt-[15px]">
-        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink">
-          PURPOSE
-        </p>
         <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
           The rebrands mission was to give Zimbabweans, both at home and in the diaspora
           something powerful to unite around and feel genuinely proud of. The goal was to
@@ -96,9 +90,6 @@ export default function CaseStudyContext() {
       <div className="self-start" />
 
       <div className="flex flex-col gap-6 self-start">
-        <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink">
-          RESEARCH &amp; MARKET INSIGHTS
-        </p>
         <div className="flex flex-col gap-6 font-body text-[18px] font-normal leading-[1.5] text-white">
           <p>
             The competitor analysis and market insights converged into three sharp conclusions

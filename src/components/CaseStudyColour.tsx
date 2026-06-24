@@ -66,9 +66,6 @@ export default function CaseStudyColour() {
 
       <div className="flex flex-col gap-12 self-start">
         <div className="flex flex-col gap-6">
-          <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-yellow">
-            COLOUR SYSTEM
-          </p>
           <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
             The colour palette was built to balance energy, culture, performance, and premium
             positioning. The system combines bold signature colours with supporting neutrals,
