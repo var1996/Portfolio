@@ -72,13 +72,13 @@ export default function CaseStudyContext() {
       </div>
 
       {/* ── Purpose ── */}
-      <div className="self-start mt-[55px]">
+      <div className="self-start mt-[65px]">
         <h2 className="font-body text-[28px] font-normal leading-[1.1] text-white uppercase">
           Reading the playing<br />field
         </h2>
       </div>
 
-      <div className="flex flex-col gap-6 self-start mt-[55px]">
+      <div className="flex flex-col gap-6 self-start mt-[65px]">
         <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
           The rebrands mission was to give Zimbabweans, both at home and in the diaspora
           something powerful to unite around and feel genuinely proud of. The goal was to
@@ -89,7 +89,7 @@ export default function CaseStudyContext() {
       {/* ── Research ── */}
       <div className="self-start" />
 
-      <div className="flex flex-col gap-6 self-start mt-[40px]">
+      <div className="flex flex-col gap-6 self-start mt-[50px]">
         <div className="flex flex-col gap-6 font-body text-[18px] font-normal leading-[1.5] text-white">
           <p>
             The competitor analysis and market insights converged into three sharp conclusions
