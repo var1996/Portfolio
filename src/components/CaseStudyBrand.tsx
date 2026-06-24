@@ -3,14 +3,14 @@ export default function CaseStudyBrand() {
     <div className="bg-black px-[30px] grid grid-cols-[1fr_2fr] gap-x-6 gap-y-12 pt-12 pb-12">
 
       {/* ── Intro ── */}
-      <div className="self-start mt-[15px]">
+      <div className="self-start mt-[20px]">
         <h2 className="font-body text-[28px] font-normal leading-[1.1] text-white uppercase">
           The words that lay the foundation of the brand
         </h2>
       </div>
 
       {/* ── Vision ── */}
-      <div className="flex flex-col gap-6 mt-[15px]">
+      <div className="flex flex-col gap-6 mt-[20px]">
         <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
           This vision reflects three ideas. First, unity, bringing people together through
           sport and music. Second, African talent, celebrating the players, artists, and
