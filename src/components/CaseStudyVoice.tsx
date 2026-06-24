@@ -126,44 +126,46 @@ export default function CaseStudyVoice() {
       {/* ── Audience ── */}
       <div />
 
-      <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
-        The tone shifts in register depending on who&apos;s in the room but the four pillars
-        stay constant. Four audience archetypes define who Tamba10 is speaking to at any
-        given moment.
-      </p>
+      <div className="flex flex-col gap-8">
+        <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
+          The tone shifts in register depending on who&apos;s in the room but the four pillars
+          stay constant. Four audience archetypes define who Tamba10 is speaking to at any
+          given moment.
+        </p>
 
-      {/* Audience split module — spans both columns */}
-      <div className="col-span-2 border border-white overflow-hidden flex flex-col md:flex-row rounded-[16px]">
+        {/* Audience split module */}
+        <div className="border border-white overflow-hidden flex flex-col md:flex-row rounded-[16px]">
 
-        {/* Left panel — full-bleed image, matches right panel's height */}
-        <div className="relative md:w-[45%] md:border-r md:border-gray-500">
-          <img
-            src="/assets/casestudy_images/cricket boy.png"
-            alt="Cricket audience"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-        </div>
-
-        {/* Right panel */}
-        <div className="flex flex-col md:w-[55%]">
-          <div className="px-8 py-6">
-            <h3 className="font-body font-normal text-[34px] leading-[1.1] text-yellow uppercase whitespace-nowrap">
-              Who are we talking to?
-            </h3>
+          {/* Left panel — full-bleed image, matches right panel's height */}
+          <div className="relative md:w-[45%] md:border-r md:border-gray-500">
+            <img
+              src="/assets/casestudy_images/cricket boy.png"
+              alt="Cricket audience"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
           </div>
-          <div className="border-t border-gray-500" />
-          {AUDIENCE_ROWS.map((row, i) => (
-            <div key={row.white} className={`flex flex-col${i < AUDIENCE_ROWS.length - 1 ? ' border-b border-gray-500' : ''}`}>
-              <div className="px-8 pt-4 pb-1 flex flex-col gap-1">
-                <span className="font-body font-normal text-white uppercase text-[20px] leading-tight">{row.white}</span>
-              </div>
-              <div className="px-8 pb-4 pt-0">
-                <p className="font-body font-normal text-white text-[15px] leading-[1.4]">{row.body}</p>
-              </div>
-            </div>
-          ))}
-        </div>
 
+          {/* Right panel */}
+          <div className="flex flex-col md:w-[55%]">
+            <div className="px-8 py-6">
+              <h3 className="font-body font-normal text-[34px] leading-[1.1] text-yellow uppercase whitespace-nowrap">
+                Who are we talking to?
+              </h3>
+            </div>
+            <div className="border-t border-gray-500" />
+            {AUDIENCE_ROWS.map((row, i) => (
+              <div key={row.white} className={`flex flex-col${i < AUDIENCE_ROWS.length - 1 ? ' border-b border-gray-500' : ''}`}>
+                <div className="px-8 pt-4 pb-1 flex flex-col gap-1">
+                  <span className="font-body font-normal text-white uppercase text-[20px] leading-tight">{row.white}</span>
+                </div>
+                <div className="px-8 pb-4 pt-0">
+                  <p className="font-body font-normal text-white text-[15px] leading-[1.4]">{row.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
       </div>
 
     </div>
