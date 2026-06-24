@@ -75,13 +75,13 @@ export default function CaseStudyIntro() {
       </div>
 
       {/* ── A name that carries its soul ── */}
-      <div className="self-start mt-[45px]">
+      <div className="self-start mt-[60px]">
         <h2 className="font-body text-[28px] font-normal leading-[1.1] text-white uppercase">
          Carrying the soul of the brand and what shaped it
         </h2>
       </div>
 
-      <div className="flex flex-col gap-6 mt-[45px]">
+      <div className="flex flex-col gap-6 mt-[60px]">
         <p className="font-body text-[18px] font-normal leading-[1.6] text-white">
           Drawn from the local language. It signals this is a brand that belongs to
           Zimbabwe and Africa, not one imposed from outside. Short, rhythmic, and easy to
