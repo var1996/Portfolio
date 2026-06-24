@@ -35,7 +35,7 @@ export default function PlayingCard() {
   const contentRef        = useRef<HTMLDivElement>(null)
   const cardBoxRef        = useRef<HTMLDivElement>(null)
   const qPipRef           = useRef<HTMLDivElement>(null)
-  const lastSectionRef    = useRef<HTMLDivElement>(null)
+  const savedScrollRef    = useRef(0)
   // the card that slides up and flips
   const backCardRef       = useRef<HTMLDivElement>(null)
   const flipCardRef       = useRef<HTMLDivElement>(null)
@@ -51,6 +51,7 @@ export default function PlayingCard() {
     if (hasEndingFiredRef.current) return
     hasEndingFiredRef.current = true
     isEndingActiveRef.current = true
+    if (innerRef.current) savedScrollRef.current = innerRef.current.scrollTop
 
     const tl = gsap.timeline({
       onComplete: () => {
@@ -77,12 +78,8 @@ export default function PlayingCard() {
     if (caseStudyFaceRef.current) caseStudyFaceRef.current.style.pointerEvents = 'none'
     endingTl.current?.reverse()
 
-    const el = innerRef.current
-    const lastSection = lastSectionRef.current
-    if (el && lastSection) {
-      const elRect      = el.getBoundingClientRect()
-      const sectionRect = lastSection.getBoundingClientRect()
-      el.scrollTop += sectionRect.top - elRect.top
+    if (innerRef.current) {
+      innerRef.current.scrollTop = savedScrollRef.current
       ScrollTrigger.update()
     }
   }, [])
@@ -212,20 +209,13 @@ export default function PlayingCard() {
           >
             <div ref={innerRef} className="flex-1 min-h-0 overflow-y-scroll overflow-x-hidden scrollbar-hide">
               <div ref={contentRef} className="pt-[22px] px-8 pb-8">
-                {SECTIONS.map((text, i) => {
-                  const isLast = i === SECTIONS.length - 1
-                  return (
-                    <section
-                      key={text}
-                      ref={isLast ? lastSectionRef : undefined}
-                      className={isLast ? 'mb-140' : 'mb-48'}
-                    >
-                      <h2 className="font-abril leading-[0.9] text-center uppercase text-[84px] text-black">
-                        {text}
-                      </h2>
-                    </section>
-                  )
-                })}
+                {SECTIONS.map((text, i) => (
+                  <section key={text} className={i === SECTIONS.length - 1 ? 'mb-140' : 'mb-48'}>
+                    <h2 className="font-abril leading-[0.9] text-center uppercase text-[84px] text-black">
+                      {text}
+                    </h2>
+                  </section>
+                ))}
               </div>
             </div>
             <Queens />
