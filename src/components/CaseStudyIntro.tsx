@@ -59,8 +59,6 @@ export default function CaseStudyIntro() {
           world. &quot;Play&quot; speaks to cricket. &quot;Dance&quot; speaks to culture.
           Both meanings are true at the same time. The name is a foundational layer within
           the brand strategy. Tamba gives people something to chant, wear, and own.
-          It&apos;s a word you can feel proud to say out loud. By merging &quot;tamba&quot;
-          and &quot;10&quot; into one word, the format becomes inseparable from the brand.
         </p>
       </div>
 
