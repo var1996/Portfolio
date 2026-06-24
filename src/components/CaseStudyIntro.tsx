@@ -29,7 +29,7 @@ export default function CaseStudyIntro() {
       {/* ── Quote + Logo ── */}
       <div />
 
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-8 -mt-[10px]">
         <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-gold">
           &ldquo;TAMBA&rdquo; CAPTURES MOVEMENT, RHYTHM, AND JOY — THE TWO WORLDS BEING BROUGHT
           TOGETHER IN A SINGLE WORD.
