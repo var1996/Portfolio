@@ -55,9 +55,7 @@ export default function CaseStudyContext() {
           high-intensity entertainment with big moments and full experiences, a shift
           reflected in properties like the IPL and Basketball Africa League, which blend
           sport with celebrity, live music, and lifestyle. Africa is primed to lead this
-          evolution: Afrobeats and Amapiano are reshaping global culture, with artists like
-          Burna Boy, Wizkid, and Tyla selling out arenas worldwide, proving that African
-          culture is no longer niche, it is a powerful global export.
+          evolution: Afrobeats and Amapiano are reshaping global culture.
         </p>
       </div>
 
