@@ -3,13 +3,13 @@ export default function CaseStudyPatterns() {
     <div className="bg-black px-[30px] grid grid-cols-[1fr_2fr] gap-x-16 gap-y-12 pt-12 pb-12">
 
       {/* ── Intro ── */}
-      <div className="self-start mt-[40px]">
+      <div className="self-start mt-[55px]">
         <h2 className="font-body text-[28px] font-normal leading-[1.1] text-white uppercase">
           The marks we leave
         </h2>
       </div>
 
-      <div className="flex flex-col gap-8 mt-[40px]">
+      <div className="flex flex-col gap-8 mt-[55px]">
         <p className="font-body text-[18px] font-normal leading-[1.5] text-white/85">
           Patterns and graphics bring the brand to life. Inspired by rhythm, movement, and African
           visual language, these elements add energy and flexibility across different touchpoints.
