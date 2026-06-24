@@ -45,6 +45,7 @@ export default function PlayingCard() {
 
   const hasEndingFiredRef = useRef(false)
   const isEndingActiveRef = useRef(false)
+  const isReversingRef    = useRef(false)
   const endingTl          = useRef<gsap.core.Timeline | null>(null)
 
   const triggerEnding = useCallback(() => {
@@ -55,6 +56,9 @@ export default function PlayingCard() {
     const tl = gsap.timeline({
       onComplete: () => {
         if (caseStudyFaceRef.current) caseStudyFaceRef.current.style.pointerEvents = 'auto'
+      },
+      onReverseComplete: () => {
+        isReversingRef.current = false
       },
     })
 
@@ -70,9 +74,10 @@ export default function PlayingCard() {
   }, [])
 
   const triggerReverse = useCallback(() => {
-    if (!isEndingActiveRef.current) return
+    if (!isEndingActiveRef.current || isReversingRef.current) return
     isEndingActiveRef.current = false
     hasEndingFiredRef.current = false
+    isReversingRef.current = true
 
     if (caseStudyFaceRef.current) caseStudyFaceRef.current.style.pointerEvents = 'none'
     endingTl.current?.reverse()
@@ -100,7 +105,7 @@ export default function PlayingCard() {
 
     const onWheel = (e: WheelEvent) => {
       e.preventDefault()
-      if (isEndingActiveRef.current) {
+      if (isEndingActiveRef.current || isReversingRef.current) {
         if (e.deltaY < 0) triggerReverse()
         return
       }
@@ -110,7 +115,7 @@ export default function PlayingCard() {
     }
 
     const onKeyDown = (e: KeyboardEvent) => {
-      if (isEndingActiveRef.current) {
+      if (isEndingActiveRef.current || isReversingRef.current) {
         if (e.key === 'ArrowUp' || e.key === 'PageUp') triggerReverse()
         return
       }
