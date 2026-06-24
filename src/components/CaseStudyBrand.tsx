@@ -86,7 +86,11 @@ export default function CaseStudyBrand() {
         </div>
         <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
           The mission fuses both worlds in a single breath sport and sound, ambition and
-          identity. It&apos;s not about running a cricket league. It&apos;s about creating a movement.
+          identity. It&apos;s not about running a cricket league. It&apos;s about creating a
+          movement. The goal is not just to host matches, but to create a destination, a
+          place where sport, entertainment, and community come together, a homeground. This
+          vision stakes Zimbabwe&apos;s claim on the continental stage, not as a
+          participant, but as the host of something the world comes to.
         </p>
       </div>
 
@@ -94,12 +98,6 @@ export default function CaseStudyBrand() {
       <div />
 
       <div className="flex flex-col gap-6">
-        <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
-          The goal is not just to host matches, but to create a destination, a place where
-          sport, entertainment, and community come together, a homeground. This vision stakes
-          Zimbabwe&apos;s claim on the continental stage, not as a participant, but as the host
-          of something the world comes to.
-        </p>
         <div className="bg-yellow p-8 flex items-center justify-center rounded-[16px]">
           <p className="font-body font-semibold uppercase text-black text-center leading-tight text-[22px]">
             To establish Zimbabwe as Africa&apos;s home ground for cricket and culture
