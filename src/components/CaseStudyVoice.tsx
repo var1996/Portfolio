@@ -109,19 +109,17 @@ export default function CaseStudyVoice() {
 
       <div className="flex flex-col gap-6">
         <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
-          Tamba10&apos;s voice is built on four defining tones that work together to create
-          a brand unlike anything else in African sport. It is &ldquo;energetic&rdquo;
-          never whispering, always commanding, with sharp, momentum-driven language that
-          moves at the speed of the game itself. It is &ldquo;inspiring&rdquo; consistently
-          signalling that something bigger is possible, celebrating people and potential as
-          much as performance, and connecting sport to a deep sense of pride and
-          possibility. It is &ldquo;progressive&rdquo;, always looking forward, championing
-          emerging African talent, embracing new formats, and actively challenging the
-          outdated narratives that have long defined how the world sees Zimbabwe and
-          Africa. And it is &ldquo;empowering&rdquo;, using language that is intentionally
-          inclusive, leaning into &ldquo;we&rdquo; and &ldquo;our&rdquo; to reflect a
-          collective movement where everyone, whether in Harare or London, feels genuine
-          ownership and belonging.
+          It is &ldquo;energetic&rdquo; never whispering, always commanding, with sharp,
+          momentum-driven language that moves at the speed of the game itself. It is
+          &ldquo;inspiring&rdquo; consistently signalling that something bigger is
+          possible, celebrating people and potential as much as performance, and
+          connecting sport to a deep sense of pride and possibility. It is
+          &ldquo;progressive&rdquo;, always looking forward, championing emerging African
+          talent, embracing new formats, and actively challenging the outdated narratives
+          that have long defined how the world sees Zimbabwe and Africa. And it is
+          &ldquo;empowering&rdquo;, using language that is intentionally inclusive, leaning
+          into &ldquo;we&rdquo; and &ldquo;our&rdquo; to reflect a collective movement where
+          everyone feels genuine ownership and belonging.
         </p>
       </div>
 
