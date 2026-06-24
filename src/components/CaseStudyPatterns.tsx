@@ -47,23 +47,6 @@ export default function CaseStudyPatterns() {
         </div>
       </div>
 
-      {/* ── Arrows + Artist Frames ── */}
-      <div />
-
-      <div className="flex flex-col gap-6">
-        {/* Image row */}
-        <div className="grid grid-cols-2 gap-6 items-start">
-          <div className="flex items-end gap-2">
-            <img src="/assets/casestudy_images/tamba t 4.png" alt="Tamba T4" className="w-[50px] h-[55px] object-contain shrink-0" />
-            <img src="/assets/casestudy_images/arrow graphic.png" alt="Arrow graphic" className="flex-1 min-w-0 max-h-[180px] object-contain" />
-          </div>
-          <div className="flex items-end gap-2">
-            <img src="/assets/casestudy_images/tamba t 5.png" alt="Tamba T5" className="w-[50px] h-[55px] object-contain shrink-0" />
-            <img src="/assets/casestudy_images/Artist Frames.png" alt="Artist and player frames" className="flex-1 min-w-0 max-h-[180px] object-contain" />
-          </div>
-        </div>
-      </div>
-
     </div>
   )
 }
