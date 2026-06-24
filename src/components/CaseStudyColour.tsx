@@ -58,13 +58,13 @@ export default function CaseStudyColour() {
     <div className="bg-black px-[30px] grid grid-cols-[1fr_2fr] gap-x-16 gap-y-12 pt-12 pb-12">
 
       {/* ── Intro ── */}
-      <div className="self-start mt-[60px]">
+      <div className="self-start mt-[70px]">
         <h2 className="font-body text-[28px] font-normal leading-[1.1] text-white uppercase">
           The colours that carry the brand
         </h2>
       </div>
 
-      <div className="flex flex-col gap-12 self-start mt-[60px]">
+      <div className="flex flex-col gap-12 self-start mt-[70px]">
         <div className="flex flex-col gap-6">
           <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
             The colour palette was built to balance energy, culture, and performance. The
