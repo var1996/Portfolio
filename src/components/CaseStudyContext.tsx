@@ -39,19 +39,15 @@ export default function CaseStudyContext() {
       </div>
 
       <div className="flex flex-col gap-6 self-start mt-[65px]">
-        <div className="flex flex-col gap-6 font-body text-[18px] font-normal leading-[1.5] text-white">
-          <p>
-            The competitor analysis and market insights converged into three sharp conclusions
-            each one a building block for the rebrand strategy. The analysis revealed a
-            critical gap: no competitor in Africa was running a hybrid T10 cricket and culture
-            format. This creates a powerful opportunity to position the league as something new.
-          </p>
-          <p>
-            Beyond competitors, the research surfaced four macro forces shaping the
-            entertainment and sport landscape. Together, they made the case for Tamba10&apos;s
-            brand strategy.
-          </p>
-        </div>
+        <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
+          The competitor analysis and market insights converged into three sharp conclusions
+          each one a building block for the rebrand strategy. The analysis revealed a
+          critical gap: no competitor in Africa was running a hybrid T10 cricket and culture
+          format. This creates a powerful opportunity to position the league as something
+          new. Beyond competitors, the research surfaced four macro forces shaping the
+          entertainment and sport landscape. Together, they made the case for Tamba10&apos;s
+          brand strategy.
+        </p>
         <p className="font-body text-[18px] font-normal leading-[1.5] text-white mt-4">
           Africa&apos;s youngest-in-the-world population, with most people under 25,
           represents a uniquely dynamic market shaped by music, sport, and digital culture
