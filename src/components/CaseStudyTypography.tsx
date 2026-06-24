@@ -59,7 +59,7 @@ export default function CaseStudyTypography() {
         </p>
 
         {/* ── Specimen card ── */}
-        <div style={{ border: '14px solid #D9B92C', padding: '44px 44px', borderRadius: '16px' }} className="bg-black overflow-hidden">
+        <div style={{ border: '9px solid #D9B92C', padding: '44px 44px', borderRadius: '16px' }} className="bg-black overflow-hidden">
 
           {/* ─ Row 1: Title / Campingo ─ */}
           <div className="grid grid-cols-[80px_110px_1fr_90px] gap-x-4 items-start">
