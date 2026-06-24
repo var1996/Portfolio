@@ -65,22 +65,6 @@ export default function CaseStudyIntro() {
         </p>
       </div>
 
-      {/* ── Emotional Responses ── */}
-      <div className="self-start mt-[30px]">
-        <h2 className="font-body text-[28px] font-normal leading-[1.1] text-white uppercase">
-          What it means to people who rally behind it
-        </h2>
-      </div>
-
-      <div className="flex flex-col gap-6 mt-[30px]">
-        <p className="font-body text-[18px] font-normal leading-[1.6] text-white">
-          Fans feel proud to associate with Tamba10, to wear it, share it, and call it
-          their own. Whether you&apos;re in Harare, London, or Brisbane, the name creates a
-          shared identity across the diaspora. For young Zimbabweans, it signals
-          opportunity and progress, a modern, ambitious version of home.
-        </p>
-      </div>
-
     </div>
   )
 }
