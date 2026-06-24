@@ -147,8 +147,8 @@ export default function CaseStudyVoice() {
         {/* Right panel */}
         <div className="flex flex-col md:w-[55%]">
           <div className="px-10 py-10">
-            <h3 className="font-body font-normal text-[34px] leading-[1.1] text-yellow uppercase">
-              Who are we<br />talking to?
+            <h3 className="font-body font-normal text-[34px] leading-[1.1] text-yellow uppercase whitespace-nowrap">
+              Who are we talking to?
             </h3>
           </div>
           <div className="border-t border-gray-500" />
