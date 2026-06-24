@@ -11,40 +11,6 @@ const SECTION3_FINDINGS = [
   'A hybrid sport + culture format in Africa is an untapped opportunity gap. No one is doing both well, in one event, with one brand.',
 ]
 
-const INSIGHTS = [
-  {
-    id: '01',
-    label: 'ATTENTION SPANS ARE SHRINKING',
-    body: 'Modern audiences crave shorter, high-intensity entertainment, expecting big moments to arrive quickly rather than unfolding over long sessions. Beyond the action itself, fans want a full experience, one that engages, excites, and entertains from start to finish.',
-  },
-  {
-    id: '02',
-    label: 'SPORT IS CHANGING ENTERTAINMENT',
-    body: 'The biggest sporting events have evolved into cultural spectacles, blending sport with music and lifestyle. The Indian Premier League, for example, weaves cricket together with celebrity culture and live music, while the Basketball Africa League fuses basketball with broader entertainment and lifestyle elements, proving that modern sports properties are as much about the overall experience as they are about what happens on the field or court.',
-  },
-  {
-    id: '03',
-    label: "AFRICA'S YOUTH MARKET IS MASSIVE",
-    body: 'Africa has one of the youngest populations in the world, with the majority of its people under the age of 25. This generation engages deeply with music, sport, and digital culture, making the continent a uniquely dynamic market for entertainment experiences that speak to all three.',
-  },
-  {
-    id: '04',
-    label: 'AFRICAN MUSIC IS GOING GLOBAL',
-    body: 'Afrobeats and Amapiano are dominating global culture, with artists like Burna Boy, Wizkid, Davido, and Tyla selling out arenas worldwide. African culture is no longer niche — it is a global export, reshaping entertainment and lifestyle on the world stage.',
-  },
-]
-
-function InsightCard({ id, label, body }: { id: string; label: string; body: string; isFirst?: boolean }) {
-  return (
-    <div className="flex flex-col gap-4">
-      <p className="font-body text-xs font-semibold uppercase tracking-[0.08em] text-pink">
-        {label}
-      </p>
-      <p className="font-body text-[18px] font-normal leading-[1.5] text-white">{body}</p>
-    </div>
-  )
-}
-
 export default function CaseStudyContext() {
   return (
     <div className="bg-black px-[30px] grid grid-cols-[1fr_2fr] gap-x-6 gap-y-12 pt-12 pb-12">
@@ -97,11 +63,17 @@ export default function CaseStudyContext() {
             brand strategy.
           </p>
         </div>
-        <div className="flex flex-col gap-10 mt-4">
-          {INSIGHTS.map((insight, i) => (
-            <InsightCard key={insight.id} {...insight} isFirst={i === 0} />
-          ))}
-        </div>
+        <p className="font-body text-[18px] font-normal leading-[1.5] text-white mt-4">
+          Africa&apos;s youngest-in-the-world population, with most people under 25,
+          represents a uniquely dynamic market shaped by music, sport, and digital culture
+          and the world is already feeling its influence. Modern audiences crave shorter,
+          high-intensity entertainment with big moments and full experiences, a shift
+          reflected in properties like the IPL and Basketball Africa League, which blend
+          sport with celebrity, live music, and lifestyle. Africa is primed to lead this
+          evolution: Afrobeats and Amapiano are reshaping global culture, with artists like
+          Burna Boy, Wizkid, and Tyla selling out arenas worldwide, proving that African
+          culture is no longer niche, it is a powerful global export.
+        </p>
       </div>
 
     </div>
