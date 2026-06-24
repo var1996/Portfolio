@@ -83,25 +83,19 @@ export default function CaseStudyVoice() {
       </p>
 
       {/* ── Values Module ── */}
-      <div />
-
-      <div className="border border-black rounded-[16px] overflow-hidden">
-        {/* 4-column sub-grid */}
-        <div className="bg-[#D9B92C] grid grid-cols-2 md:grid-cols-4 gap-[30px] p-[20px]">
-          {VALUES_CARDS.map((v) => (
-            <div key={v.name} className="flex flex-col border border-black rounded-[16px] overflow-hidden">
-              {/* Image placeholder — swap src when ready */}
-              <div className="aspect-[3/4] bg-black/10 overflow-hidden w-full">
-                {v.img && <img src={v.img} alt={v.name} className="w-full h-full object-cover" />}
-              </div>
-              {/* Text block */}
-              <div className="bg-[#D9B92C] p-4 flex flex-col gap-2">
-                <p className="font-body font-bold text-black text-[15px] leading-tight">{v.name}</p>
-                <p className="font-body font-normal text-[11px] text-black leading-[1.5]">{v.body}</p>
-              </div>
+      <div className="col-span-2 grid grid-cols-2 md:grid-cols-4 gap-[30px]">
+        {VALUES_CARDS.map((v) => (
+          <div key={v.name} className="flex flex-col border border-black rounded-[16px] overflow-hidden">
+            <div className="aspect-[3/4] bg-black/10 overflow-hidden w-full">
+              {v.img && <img src={v.img} alt={v.name} className="w-full h-full object-cover" />}
             </div>
-          ))}
-        </div>
+            {/* Text block */}
+            <div className="bg-[#D9B92C] p-4 flex flex-col gap-2">
+              <p className="font-body font-bold text-black text-[15px] leading-tight">{v.name}</p>
+              <p className="font-body font-normal text-[11px] text-black leading-[1.5]">{v.body}</p>
+            </div>
+          </div>
+        ))}
       </div>
 
       {/* ── Voice Pillars ── */}
