@@ -133,7 +133,7 @@ export default function CaseStudyVoice() {
 
       <div className="border border-black rounded-[16px] overflow-hidden">
         {/* Header bar */}
-        <div className="bg-[#D9B92C] border-b border-gray-500 px-4 py-2">
+        <div className="bg-[#D9B92C] px-4 py-2">
           <p className="font-body font-bold text-black uppercase text-sm tracking-widest">VALUES</p>
         </div>
         {/* 4-column sub-grid */}

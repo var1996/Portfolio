@@ -41,9 +41,9 @@ const RESPONSE_CARDS = [
   },
 ]
 
-function Card({ id, label, body, labelColor, isFirst }: { id: string; label: string; body: string; labelColor: string; isFirst?: boolean }) {
+function Card({ id, label, body, labelColor }: { id: string; label: string; body: string; labelColor: string; isFirst?: boolean }) {
   return (
-    <div className={`${isFirst ? '' : 'border-t border-gray-500 pt-6'} flex flex-col gap-4`}>
+    <div className="flex flex-col gap-4">
       <p className={`font-body text-xs font-semibold uppercase tracking-[0.08em] ${labelColor}`}>
         {label}
       </p>
