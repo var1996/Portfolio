@@ -1,28 +1,5 @@
 import Image from 'next/image'
 
-const FEATURE_CARDS = [
-  {
-    id: '01',
-    label: 'CULTURALLY ROOTED',
-    body: 'Drawn from the local language. It signals this is a brand that belongs to Zimbabwe and Africa, not one imposed from outside.',
-  },
-  {
-    id: '02',
-    label: 'GLOBALLY LEGIBLE',
-    body: 'Short, rhythmic, and easy to say in any language it travels well for diaspora audiences in other parts of the world.',
-  },
-  {
-    id: '03',
-    label: 'DUAL MEANING',
-    body: '"Play" speaks to cricket. "Dance" speaks to culture. Both meanings are true at the same time. The name is a foundational layer within the brand strategy.',
-  },
-  {
-    id: '04',
-    label: 'RALLYING POINT',
-    body: 'Tamba gives people something to chant, wear, and own. It\'s a word you can feel proud to say out loud. By merging "tamba" and "10" into one word, the format becomes inseparable from the brand.',
-  },
-]
-
 const RESPONSE_CARDS = [
   {
     id: '01',
@@ -105,9 +82,16 @@ export default function CaseStudyIntro() {
       </div>
 
       <div className="flex flex-col gap-6 mt-[30px]">
-        {FEATURE_CARDS.map((card, i) => (
-          <Card key={card.id} {...card} labelColor="text-rose" isFirst={i === 0} />
-        ))}
+        <p className="font-body text-[18px] font-normal leading-[1.6] text-white">
+          Drawn from the local language. It signals this is a brand that belongs to
+          Zimbabwe and Africa, not one imposed from outside. Short, rhythmic, and easy to
+          say in any language it travels well for diaspora audiences in other parts of the
+          world. &quot;Play&quot; speaks to cricket. &quot;Dance&quot; speaks to culture.
+          Both meanings are true at the same time. The name is a foundational layer within
+          the brand strategy. Tamba gives people something to chant, wear, and own.
+          It&apos;s a word you can feel proud to say out loud. By merging &quot;tamba&quot;
+          and &quot;10&quot; into one word, the format becomes inseparable from the brand.
+        </p>
       </div>
 
       {/* ── Emotional Responses ── */}
