@@ -8,12 +8,8 @@ const PILLARS = [
   {
     id: '02',
     label: 'INSPIRING',
-    body: 'Tamba10 exists to lift people, young dreamers, diaspora fans, future athletes. The voice should consistently signal that something bigger is possible.',
-    bullets: [
-      'Speak to potential, not just performance',
-      'Celebrate people, not just results',
-      'Connect sport to a sense of pride and possibility',
-    ],
+    body: 'Tamba10 exists to lift people, young dreamers, diaspora fans, future athletes and everything it does is shaped by that purpose. The voice consistently signals that something bigger is possible, speaking to potential rather than just performance, celebrating people rather than just results, and connecting sport to a deep sense of pride and possibility.',
+    bullets: [],
   },
   {
     id: '03',
