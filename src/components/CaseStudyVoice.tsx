@@ -146,7 +146,7 @@ export default function CaseStudyVoice() {
 
         {/* Right panel */}
         <div className="flex flex-col md:w-[55%]">
-          <div className="px-10 py-10">
+          <div className="px-8 py-6">
             <h3 className="font-body font-normal text-[34px] leading-[1.1] text-yellow uppercase whitespace-nowrap">
               Who are we talking to?
             </h3>
@@ -154,11 +154,11 @@ export default function CaseStudyVoice() {
           <div className="border-t border-gray-500" />
           {AUDIENCE_ROWS.map((row, i) => (
             <div key={row.white} className={`flex flex-col${i < AUDIENCE_ROWS.length - 1 ? ' border-b border-gray-500' : ''}`}>
-              <div className="px-8 py-7 flex flex-col gap-2">
+              <div className="px-8 pt-4 pb-1 flex flex-col gap-1">
                 <span className="font-body font-normal text-white uppercase text-[20px] leading-tight">{row.white}</span>
               </div>
-              <div className="px-8 pb-7 pt-0">
-                <p className="font-body font-normal text-white text-[15px] leading-[1.5]">{row.body}</p>
+              <div className="px-8 pb-4 pt-0">
+                <p className="font-body font-normal text-white text-[15px] leading-[1.4]">{row.body}</p>
               </div>
             </div>
           ))}
