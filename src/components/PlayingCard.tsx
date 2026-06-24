@@ -26,7 +26,7 @@ const SECTIONS = [
   'my name means queen of rain',
   'Born and raised in Zimbabwe',
   'At 18, moved to Australia',
-  'Currently based in Thailand',
+  'Currently in Bangkok',
 ]
 
 export default function PlayingCard() {
@@ -35,6 +35,7 @@ export default function PlayingCard() {
   const contentRef        = useRef<HTMLDivElement>(null)
   const cardBoxRef        = useRef<HTMLDivElement>(null)
   const qPipRef           = useRef<HTMLDivElement>(null)
+  const lastSectionRef    = useRef<HTMLDivElement>(null)
   // the card that slides up and flips
   const backCardRef       = useRef<HTMLDivElement>(null)
   const flipCardRef       = useRef<HTMLDivElement>(null)
@@ -75,6 +76,13 @@ export default function PlayingCard() {
 
     if (caseStudyFaceRef.current) caseStudyFaceRef.current.style.pointerEvents = 'none'
     endingTl.current?.reverse()
+
+    const el = innerRef.current
+    const lastSection = lastSectionRef.current
+    if (el && lastSection) {
+      el.scrollTop = lastSection.offsetTop
+      ScrollTrigger.update()
+    }
   }, [])
 
   // Wheel + keyboard scroll hijack
@@ -202,13 +210,20 @@ export default function PlayingCard() {
           >
             <div ref={innerRef} className="flex-1 min-h-0 overflow-y-scroll overflow-x-hidden scrollbar-hide">
               <div ref={contentRef} className="pt-[22px] px-8 pb-8">
-                {SECTIONS.map((text, i) => (
-                  <section key={text} className={i === SECTIONS.length - 1 ? 'mb-140' : 'mb-48'}>
-                    <h2 className="font-abril leading-[0.9] text-center uppercase text-[84px] text-black">
-                      {text}
-                    </h2>
-                  </section>
-                ))}
+                {SECTIONS.map((text, i) => {
+                  const isLast = i === SECTIONS.length - 1
+                  return (
+                    <section
+                      key={text}
+                      ref={isLast ? lastSectionRef : undefined}
+                      className={isLast ? 'mb-140' : 'mb-48'}
+                    >
+                      <h2 className="font-abril leading-[0.9] text-center uppercase text-[84px] text-black">
+                        {text}
+                      </h2>
+                    </section>
+                  )
+                })}
               </div>
             </div>
             <Queens />
