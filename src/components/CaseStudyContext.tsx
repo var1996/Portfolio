@@ -40,22 +40,17 @@ export default function CaseStudyContext() {
 
       <div className="flex flex-col gap-6 self-start mt-[70px]">
         <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
-          The competitor analysis and market insights converged into three sharp conclusions
-          each one a building block for the rebrand strategy. The analysis revealed a
-          critical gap: no competitor in Africa was running a hybrid T10 cricket and culture
-          format. This creates a powerful opportunity to position the league as something
-          new. Beyond competitors, the research surfaced four macro forces shaping the
-          entertainment and sport landscape. Together, they made the case for Tamba10&apos;s
-          brand strategy.
-        </p>
-        <p className="font-body text-[18px] font-normal leading-[1.5] text-white mt-4">
-          Africa&apos;s youngest-in-the-world population, with most people under 25,
-          represents a uniquely dynamic market shaped by music, sport, and digital culture
-          and the world is already feeling its influence. Modern audiences crave shorter,
-          high-intensity entertainment with big moments and full experiences, a shift
-          reflected in properties like the IPL and Basketball Africa League, which blend
-          sport with celebrity, live music, and lifestyle. Africa is primed to lead this
-          evolution: Afrobeats and Amapiano are reshaping global culture.
+          The competitor analysis and market insights converged on a clear conclusion: no
+          competitor in Africa is running a hybrid T10 cricket and culture format, creating
+          a powerful opening for Tamba10 to own an entirely new space. Beyond the
+          competitive gap, four macro forces reinforce the opportunity Africa&apos;s
+          youngest-in-the-world population is deeply engaged with music, sport, and digital
+          culture; modern audiences demand shorter, high-intensity entertainment with big
+          moments and full experiences; properties like the IPL and Basketball Africa
+          League prove that blending sport with lifestyle drives deeper engagement; and
+          Afrobeats and Amapiano are reshaping global culture, signalling that Africa is no
+          longer a niche market but a powerful cultural export primed to lead the next
+          evolution in entertainment.
         </p>
       </div>
 
