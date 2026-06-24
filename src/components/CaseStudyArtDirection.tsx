@@ -3,14 +3,14 @@ export default function CaseStudyArtDirection() {
     <div className="bg-black px-[30px] grid grid-cols-[1fr_2fr] gap-x-16 gap-y-12 pt-12 pb-12 mt-[10px]">
 
       {/* Col 1 — header */}
-      <div className="self-start mt-[50px]">
+      <div className="self-start mt-[55px]">
         <h2 className="font-body text-[28px] font-normal leading-[1.1] text-white uppercase">
           Built for the stands and the streets
         </h2>
       </div>
 
       {/* Col 2 — body */}
-      <div className="flex flex-col gap-8 mt-[50px]">
+      <div className="flex flex-col gap-8 mt-[55px]">
         <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
           The art direction embraced collision, between sport and sound, between global and
           proudly African, between high energy and rich culture. The mood board drew from
