@@ -5,12 +5,6 @@ const SECTION1_LIST = [
   'No tournament in two years',
 ]
 
-const SECTION3_FINDINGS = [
-  "Competitors in both sport and culture hold events annually, Tamba10 didn't. Consistency is a competitive advantage waiting to be claimed.",
-  'There is no competitor running the exact T10 format in Africa. The category is wide open on the continent.',
-  'A hybrid sport + culture format in Africa is an untapped opportunity gap. No one is doing both well, in one event, with one brand.',
-]
-
 export default function CaseStudyContext() {
   return (
     <div className="bg-black px-[30px] grid grid-cols-[1fr_2fr] gap-x-6 gap-y-12 pt-12 pb-12">
@@ -52,11 +46,6 @@ export default function CaseStudyContext() {
             critical gap: no competitor in Africa was running a hybrid T10 cricket and culture
             format. This creates a powerful opportunity to position the league as something new.
           </p>
-          <ol className="list-decimal pl-6 flex flex-col gap-4 marker:text-white">
-            {SECTION3_FINDINGS.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ol>
           <p>
             Beyond competitors, the research surfaced four macro forces shaping the
             entertainment and sport landscape. Together, they made the case for Tamba10&apos;s
