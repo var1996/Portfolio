@@ -68,13 +68,13 @@ export default function CaseStudyVoice() {
     <div className="bg-black px-[30px] grid grid-cols-[1fr_2fr] gap-x-16 gap-y-12 pt-12 pb-12">
 
       {/* ── Brand Voice Intro ── */}
-      <div className="self-start mt-[55px]">
+      <div className="self-start mt-[65px]">
         <h2 className="font-body text-[28px] font-normal leading-[1.1] text-white uppercase">
           The brand speaks. Here is how it sounds
         </h2>
       </div>
 
-      <p className="font-body text-[18px] font-normal leading-[1.5] text-white self-start mt-[55px]">
+      <p className="font-body text-[18px] font-normal leading-[1.5] text-white self-start mt-[65px]">
         A brand identity isn&apos;t only what you see, it&apos;s what you hear, read, and feel
         when the brand communicates. Tamba10&apos;s tone of voice was built to be as distinctive
         as its visual system: culturally grounded, high-energy, and always speaking to the
