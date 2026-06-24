@@ -41,11 +41,6 @@ export default function CaseStudyPatterns() {
           Repeated, rotated, and layered, the forms create a sense of rhythm and movement.
         </p>
 
-        <div className="grid grid-cols-[auto_1fr_1fr_auto] gap-4 items-end">
-          <img src="/assets/casestudy_images/tamba-1.png" alt="Tamba T1" className="w-[65px] h-[70px] object-contain" />
-
-        </div>
-
         <div className="grid grid-cols-2 gap-6 items-start">
           <img src="/assets/casestudy_images/art direction graphic 4.png" alt="Graphic 4" className="w-full h-auto object-contain" />
           <img src="/assets/casestudy_images/graphic 5.png" alt="Graphic 5" className="w-full h-auto object-contain" />
