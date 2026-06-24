@@ -30,7 +30,6 @@ export default function CaseStudyPhysical() {
               <span>Everyday touchpoints like tickets, posters, and packaging</span>
             </li>
           </ul>
-          <p>This ensures the brand is not just seen but experienced.</p>
         </div>
       </div>
 
