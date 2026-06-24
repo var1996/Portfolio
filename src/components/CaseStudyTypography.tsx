@@ -42,14 +42,14 @@ export default function CaseStudyTypography() {
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Poppins:wght@100;300;400;600;700;800&family=Geist:wght@100..900&display=swap');`}</style>
 
       {/* Col 1 */}
-      <div className="self-start">
+      <div className="self-start mt-[35px]">
         <h2 className="font-body text-[28px] font-normal leading-[1.1] text-white uppercase">
           Type that plays both roles
         </h2>
       </div>
 
       {/* Col 2 */}
-      <div className="flex flex-col gap-8 self-start">
+      <div className="flex flex-col gap-8 self-start mt-[35px]">
         <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
           The typography system was built to balance personality with readability across
           all contexts. Campingo carries the expressive weight of headlines. Dark Gothique
