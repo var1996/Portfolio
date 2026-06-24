@@ -135,8 +135,8 @@ export default function CaseStudyVoice() {
       {/* Audience split module — spans both columns */}
       <div className="col-span-2 border border-white overflow-hidden flex flex-col md:flex-row rounded-[16px]">
 
-        {/* Left panel — full-bleed image */}
-        <div className="relative min-h-[500px] md:w-[45%] md:border-r md:border-gray-500">
+        {/* Left panel — full-bleed image, matches right panel's height */}
+        <div className="relative md:w-[45%] md:border-r md:border-gray-500">
           <img
             src="/assets/casestudy_images/cricket boy.png"
             alt="Cricket audience"
