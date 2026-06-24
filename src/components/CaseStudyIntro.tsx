@@ -1,34 +1,5 @@
 import Image from 'next/image'
 
-const RESPONSE_CARDS = [
-  {
-    id: '01',
-    label: 'PRIDE',
-    body: 'Fans feel proud to associate with Tamba10, to wear it, share it, and call it their own.',
-  },
-  {
-    id: '02',
-    label: 'BELONGING',
-    body: "Whether you're in Harare, London, or Brisbane. The name creates a shared identity across the diaspora.",
-  },
-  {
-    id: '03',
-    label: 'HOPE',
-    body: 'For young Zimbabweans, it signals opportunity and progress. A modern, ambitious version of home.',
-  },
-]
-
-function Card({ id, label, body, labelColor }: { id: string; label: string; body: string; labelColor: string; isFirst?: boolean }) {
-  return (
-    <div className="flex flex-col gap-4">
-      <p className={`font-body text-xs font-semibold uppercase tracking-[0.08em] ${labelColor}`}>
-        {label}
-      </p>
-      <p className="font-body text-[18px] font-normal leading-[1.6] text-white">{body}</p>
-    </div>
-  )
-}
-
 export default function CaseStudyIntro() {
   return (
     <div className="bg-black px-[30px] grid grid-cols-[1fr_2fr] gap-x-6 gap-y-12 pt-12 pb-12 mt-[80px]">
@@ -102,9 +73,12 @@ export default function CaseStudyIntro() {
       </div>
 
       <div className="flex flex-col gap-6 mt-[30px]">
-        {RESPONSE_CARDS.map((card, i) => (
-          <Card key={card.id} {...card} labelColor="text-gold" isFirst={i === 0} />
-        ))}
+        <p className="font-body text-[18px] font-normal leading-[1.6] text-white">
+          Fans feel proud to associate with Tamba10, to wear it, share it, and call it
+          their own. Whether you&apos;re in Harare, London, or Brisbane, the name creates a
+          shared identity across the diaspora. For young Zimbabweans, it signals
+          opportunity and progress, a modern, ambitious version of home.
+        </p>
       </div>
 
     </div>
