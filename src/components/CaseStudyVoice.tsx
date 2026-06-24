@@ -20,12 +20,8 @@ const PILLARS = [
   {
     id: '04',
     label: 'EMPOWERING',
-    body: "The brand gives its audience a sense of ownership and belonging. Whether you're in Harare or London, Tamba10 is yours. The voice reflects that.",
-    bullets: [
-      '"We" and "our" — inclusive, collective',
-      'Celebrate community as much as excellence',
-      'Make everyone feel like they belong to the movement',
-    ],
+    body: "Tamba10 gives its audience a genuine sense of ownership and belonging, whether you're in Harare or London. The voice is intentionally inclusive, leaning into \"we\" and \"our\" to reflect a collective movement rather than a distant brand. Community is celebrated just as much as excellence, and everyone, wherever they are in the world, is made to feel like they are part of something that truly belongs to them.",
+    bullets: [],
   },
 ]
 
