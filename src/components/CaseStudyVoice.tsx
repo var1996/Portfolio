@@ -142,8 +142,17 @@ export default function CaseStudyVoice() {
         {/* Audience split module */}
         <div className="border border-white overflow-hidden flex flex-col md:flex-row rounded-[16px]">
 
-          {/* Left panel */}
-          <div className="flex flex-col md:w-[55%] md:border-r md:border-gray-500">
+          {/* Left panel — full-bleed image */}
+          <div className="relative min-h-[500px] md:w-[45%] md:border-r md:border-gray-500">
+            <img
+              src="/assets/casestudy_images/cricket boy.png"
+              alt="Cricket audience"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </div>
+
+          {/* Right panel */}
+          <div className="flex flex-col md:w-[55%]">
             <div className="px-10 py-10">
               <h3 className="font-body font-normal text-[34px] leading-[1.1] text-yellow uppercase">
                 Who are we<br />talking to?
@@ -154,22 +163,12 @@ export default function CaseStudyVoice() {
               <div key={row.white} className={`flex flex-col${i < AUDIENCE_ROWS.length - 1 ? ' border-b border-gray-500' : ''}`}>
                 <div className="px-8 py-7 flex flex-col gap-2">
                   <span className="font-body font-normal text-white uppercase text-[20px] leading-tight">{row.white}</span>
-                  <span className="font-body font-normal text-[15px] leading-tight" style={{ color: '#D6587A' }}>{row.pink}</span>
                 </div>
                 <div className="px-8 pb-7 pt-0">
                   <p className="font-body font-normal text-white text-[15px] leading-[1.5]">{row.body}</p>
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Right panel — full-bleed image */}
-          <div className="relative min-h-[500px] md:w-[45%]">
-            <img
-              src="/assets/casestudy_images/cricket boy.png"
-              alt="Cricket audience"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
           </div>
 
         </div>
