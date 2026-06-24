@@ -47,9 +47,7 @@ export default function CaseStudyContext() {
           culture, making it a uniquely dynamic market for exactly this kind of
           proposition. Modern audiences demand shorter, high-intensity entertainment with
           big moments and full experiences, and the most successful sports properties in
-          the world have already answered that call. The IPL and Basketball Africa League
-          prove that blending sport with lifestyle, celebrity, and live music drives deeper
-          engagement and broader cultural relevance. Meanwhile, Afrobeats and Amapiano are
+          the world have already answered that call. Meanwhile, Afrobeats and Amapiano are
           reshaping global culture, signalling that Africa is no longer a niche market but
           a powerful export redefining entertainment worldwide. The opportunity is real,
           the timing is right, and Tamba10 is positioned to lead it.
