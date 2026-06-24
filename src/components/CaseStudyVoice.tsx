@@ -14,12 +14,8 @@ const PILLARS = [
   {
     id: '03',
     label: 'PROGRESSIVE',
-    body: 'This is a brand looking forward championing African talent, embracing new formats, and refusing to be defined by how things have always been done.',
-    bullets: [
-      'Forward-looking language, not nostalgic',
-      'Champion the new and the emerging',
-      'Challenge outdated narratives about Zimbabwe and Africa',
-    ],
+    body: 'The brand looks forward, championing African talent, embracing new formats, and refusing to be defined by how things have always been done. The language is never nostalgic; it champions what is emerging, celebrates what is next, and actively challenges the outdated narratives that have long defined how the world sees Zimbabwe and Africa.',
+    bullets: [],
   },
   {
     id: '04',
