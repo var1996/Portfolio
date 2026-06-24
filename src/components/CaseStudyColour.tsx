@@ -67,9 +67,9 @@ export default function CaseStudyColour() {
       <div className="flex flex-col gap-12 self-start mt-[60px]">
         <div className="flex flex-col gap-6">
           <p className="font-body text-[18px] font-normal leading-[1.5] text-white">
-            The colour palette was built to balance energy, culture, performance, and premium
-            positioning. The system combines bold signature colours with supporting neutrals,
-            creating flexibility across campaigns, digital platforms, merchandise, and event
+            The colour palette was built to balance energy, culture, and performance. The
+            system combines bold signature colours with supporting neutrals, creating
+            flexibility across campaigns, digital platforms, merchandise, and event
             experiences.
           </p>
         </div>
