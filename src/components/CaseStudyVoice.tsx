@@ -156,10 +156,10 @@ export default function CaseStudyVoice() {
             {AUDIENCE_ROWS.map((row, i) => (
               <div key={row.white} className={`flex flex-col${i < AUDIENCE_ROWS.length - 1 ? ' border-b border-gray-500' : ''}`}>
                 <div className="px-8 pt-4 pb-1 flex flex-col gap-1">
-                  <span className="font-body font-normal text-pink uppercase text-[20px] leading-tight">{row.white}</span>
+                  <span className="font-body font-normal text-pink uppercase text-[12px] leading-tight">{row.white}</span>
                 </div>
                 <div className="px-8 pb-4 pt-0">
-                  <p className="font-body font-normal uppercase tracking-[0.04em] text-white text-[15px] leading-[1.4]">{row.body}</p>
+                  <p className="font-body font-normal text-white text-[15px] leading-[1.4]">{row.body}</p>
                 </div>
               </div>
             ))}
