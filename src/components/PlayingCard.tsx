@@ -35,7 +35,7 @@ export default function PlayingCard() {
   const contentRef        = useRef<HTMLDivElement>(null)
   const cardBoxRef        = useRef<HTMLDivElement>(null)
   const qPipRef           = useRef<HTMLDivElement>(null)
-  const savedScrollRef    = useRef(0)
+  const lastHeadingRef    = useRef<HTMLHeadingElement>(null)
   // the card that slides up and flips
   const backCardRef       = useRef<HTMLDivElement>(null)
   const flipCardRef       = useRef<HTMLDivElement>(null)
@@ -51,7 +51,6 @@ export default function PlayingCard() {
     if (hasEndingFiredRef.current) return
     hasEndingFiredRef.current = true
     isEndingActiveRef.current = true
-    if (innerRef.current) savedScrollRef.current = innerRef.current.scrollTop
 
     const tl = gsap.timeline({
       onComplete: () => {
@@ -78,8 +77,14 @@ export default function PlayingCard() {
     if (caseStudyFaceRef.current) caseStudyFaceRef.current.style.pointerEvents = 'none'
     endingTl.current?.reverse()
 
-    if (innerRef.current) {
-      innerRef.current.scrollTop = savedScrollRef.current
+    const el      = innerRef.current
+    const heading = lastHeadingRef.current
+    if (el && heading) {
+      const elRect      = el.getBoundingClientRect()
+      const headingRect = heading.getBoundingClientRect()
+      const headingCenter = headingRect.top + headingRect.height / 2
+      const elCenter       = elRect.top + elRect.height / 2
+      el.scrollTop += headingCenter - elCenter
       ScrollTrigger.update()
     }
   }, [])
@@ -209,13 +214,19 @@ export default function PlayingCard() {
           >
             <div ref={innerRef} className="flex-1 min-h-0 overflow-y-scroll overflow-x-hidden scrollbar-hide">
               <div ref={contentRef} className="pt-[22px] px-8 pb-8">
-                {SECTIONS.map((text, i) => (
-                  <section key={text} className={i === SECTIONS.length - 1 ? 'mb-140' : 'mb-48'}>
-                    <h2 className="font-abril leading-[0.9] text-center uppercase text-[84px] text-black">
-                      {text}
-                    </h2>
-                  </section>
-                ))}
+                {SECTIONS.map((text, i) => {
+                  const isLast = i === SECTIONS.length - 1
+                  return (
+                    <section key={text} className={isLast ? 'mb-140' : 'mb-48'}>
+                      <h2
+                        ref={isLast ? lastHeadingRef : undefined}
+                        className="font-abril leading-[0.9] text-center uppercase text-[84px] text-black"
+                      >
+                        {text}
+                      </h2>
+                    </section>
+                  )
+                })}
               </div>
             </div>
             <Queens />
