@@ -22,7 +22,7 @@ export default function CaseStudyPhysical() {
       </div>
 
       {/* Image — spans both columns */}
-      <div className="col-span-2">
+      <div className="col-span-2 -mt-8">
         <img
           src="/assets/merch.jpg"
           alt="Merchandise"
