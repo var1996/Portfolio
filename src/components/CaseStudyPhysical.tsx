@@ -11,26 +11,14 @@ export default function CaseStudyPhysical() {
 
       {/* Col 2 — body */}
       <div className="flex flex-col gap-8 self-start mt-[75px]">
-        <div className="flex flex-col gap-6 font-body text-[18px] font-normal leading-[1.5] text-white/85">
-          <p>
-            The physical world. We wanted the brand to show up everywhere — as something people can
-            wear, touch, and be part of. The brand extends into physical spaces:
-          </p>
-          <ul className="flex flex-col gap-2 pl-1">
-            <li className="flex gap-3">
-              <span className="shrink-0 mt-[0.55em] w-1 h-1 rounded-full bg-white/85 inline-block" />
-              <span>Merchandise like bats, hats, and apparel</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="shrink-0 mt-[0.55em] w-1 h-1 rounded-full bg-white/85 inline-block" />
-              <span>Stadium experiences including signage and wayfinding</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="shrink-0 mt-[0.55em] w-1 h-1 rounded-full bg-white/85 inline-block" />
-              <span>Everyday touchpoints like tickets, posters, and packaging</span>
-            </li>
-          </ul>
-        </div>
+        <p className="font-body text-[18px] font-normal leading-[1.5] text-white/85">
+          The brand extends seamlessly into the physical world, showing up as something
+          people can wear, touch, and genuinely be part of. From merchandise like bats,
+          hats, and apparel to the full sweep of the stadium experience, including signage
+          and wayfinding. Every touchpoint is an opportunity to deepen connection. Even the
+          everyday details, like tickets, posters, and packaging, are treated as meaningful
+          moments where the brand can leave a lasting impression.
+        </p>
       </div>
 
       {/* Image — spans both columns */}
