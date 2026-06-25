@@ -5,7 +5,7 @@ export default function CaseStudyClosing() {
       {/* Left: section heading */}
       <div className="self-start">
         <h2 className="font-body text-[28px] font-normal leading-[1.1] text-white uppercase">
-          Learning from this project
+          Learnings from this project
         </h2>
       </div>
 
