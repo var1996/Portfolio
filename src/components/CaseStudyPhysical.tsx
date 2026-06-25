@@ -36,7 +36,7 @@ export default function CaseStudyPhysical() {
       {/* Image — spans both columns */}
       <div className="col-span-2">
         <img
-          src="/assets/merch.png"
+          src="/assets/merch.jpg"
           alt="Merchandise"
           className="w-full h-auto object-contain"
         />
