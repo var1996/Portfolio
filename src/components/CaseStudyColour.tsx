@@ -55,7 +55,7 @@ const PALETTE_IMAGES = [
 
 export default function CaseStudyColour() {
   return (
-    <div className="bg-black px-[30px] grid grid-cols-[1fr_2fr] gap-x-16 gap-y-12 pt-12 pb-12">
+    <div className="bg-black px-[30px] grid grid-cols-[1fr_2fr] gap-x-16 gap-y-12 pt-12 pb-12 mt-[20px]">
 
       {/* ── Intro ── */}
       <div className="self-start mt-[70px]">
