@@ -41,7 +41,7 @@ export default function CaseStudyPatterns() {
           Repeated, rotated, and layered, the forms create a sense of rhythm and movement.
         </p>
 
-        <div className="grid grid-cols-2 gap-6 items-start">
+        <div className="flex flex-col gap-6">
           <img src="/assets/casestudy_images/art direction graphic 4.png" alt="Graphic 4" className="w-full h-auto object-contain" />
           <img src="/assets/casestudy_images/graphic 5.png" alt="Graphic 5" className="w-full h-auto object-contain" />
         </div>
